@@ -9,6 +9,7 @@ class User(AbstractBaseUser):
     name = models.CharField(max_length=255)
     surname = models.CharField(max_length=255)
     birthday = models.DateField()
+    is_active = models.BooleanField(default=False)
     created_at = models.DateTimeField(default=timezone.now)
 
     USERNAME_FIELD = 'email'
