@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
 from .serializers import UserSerializer
 from .models import User
+from django.contrib.auth.models import update_last_login
 import jwt, datetime
 
 class RegisterView(APIView):
@@ -42,7 +43,7 @@ class LoginView(APIView):
         }
         
         response.set_cookie(key='jwt', value=token, httponly=True)
-
+        update_last_login(None, user)
         return response
         
 
