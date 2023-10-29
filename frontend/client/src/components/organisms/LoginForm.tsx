@@ -2,6 +2,7 @@ import React, {SyntheticEvent, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import EmailRegisterInput from '../../components/atoms/inputs/EmailRegisterInput';
 import PasswordRegisterInput from '../../components/atoms/inputs/PasswordRegisterInput';
+import LoginFormLinks from '../molecules/LoginFormLinks';
 
 
 const LoginForm = ({setName}: {setName: (name: string) => void}) => {
@@ -49,13 +50,16 @@ const LoginForm = ({setName}: {setName: (name: string) => void}) => {
 
 
     return (
+      <div>
         <div>
-        <form onSubmit={submit}>
-          <EmailRegisterInput onEmailChange={handleEmail} />
-          <PasswordRegisterInput onPasswordChange={handlePassword} />
-          <button type='submit'>Zaloguj się</button>
-        </form>
-        {message && <div>{message}</div>}
+          <form onSubmit={submit}>
+            <EmailRegisterInput onEmailChange={handleEmail} />
+            <PasswordRegisterInput onPasswordChange={handlePassword} />
+            <button type='submit'>Zaloguj się</button>
+          </form>
+          {message && <div>{message}</div>}
+        </div>
+      <LoginFormLinks />
       </div>
     );
   }

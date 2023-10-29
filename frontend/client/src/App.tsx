@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './styles/index.scss';
-import HomePage from "./pages/HomePage/HomePage";
-import LoginPage from './pages/LoginPage/LoginPage';
-import Layout from './pages/Layout/Layout';
-import RegisterPage from './pages/RegisterPage/RegisterPage';
-import RegisterSuccessfulPage from './pages/RegisterSuccessfulPage/RegisterSuccessfulPage';
+import HomePage from "./pages/HomePage";
+import LoginPage from './pages/LoginPage';
+import Layout from './pages/Layout';
+import RegisterPage from './pages/RegisterPage';
+import RegisterSuccessfulPage from './pages/RegisterSuccessfulPage';
 
 function App() {
 
