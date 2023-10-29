@@ -1,13 +1,12 @@
 import React from 'react';
 import { Outlet, Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-
+import '../styles/index.scss';
 
 
 const Layout = ({ name, setName }: { name: string, setName: (name: string) => void }) => {
 
   const navigate = useNavigate();
-
 
   const logout = async () => {
     const response = await fetch('http://localhost:8000/api/logout', {
@@ -24,21 +23,20 @@ const Layout = ({ name, setName }: { name: string, setName: (name: string) => vo
     }
   }
 
-  
-  let menu;
+  let authorization_div;
 
   if(name===''){
-    menu = (
+    authorization_div = (
       <div>niezalogowany
         <button type='button' onClick={()=>{navigate('/login');}}>zaloguj</button>
       </div>
     )
   }
   else {
-    menu = (
+    authorization_div = (
       <div>zalogowany {name}
-      <button type='button' className='logout-button' onClick={logout}>Wyloguj</button>
-</div>
+        <button type='button' className='logout-button' onClick={logout}>Wyloguj</button>
+      </div>
     )
   }
 
@@ -68,7 +66,7 @@ const Layout = ({ name, setName }: { name: string, setName: (name: string) => vo
           </ul>
         </nav>
         <div>
-          {menu} 
+          {authorization_div} 
         </div>
       </div>
       <Outlet />

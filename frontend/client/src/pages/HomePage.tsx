@@ -1,12 +1,11 @@
 import React from 'react';
+import HomePageTemplate from '../components/tmpls/HomePageTemplate';
 
 
 function HomePage(){
 
   return (
-    <div>
-      Home Page
-    </div>
+    <HomePageTemplate />
   );
 }
 
