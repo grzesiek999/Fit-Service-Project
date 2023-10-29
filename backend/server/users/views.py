@@ -6,13 +6,21 @@ from .serializers import UserSerializer
 from .models import User
 from django.contrib.auth.models import update_last_login
 import jwt, datetime
+from .utils import AccountActivation
 
 class RegisterView(APIView):
     def post(self, request):
         serializer = UserSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data)
+
+        user_email = request.data.get('email')
+        user = User.objects.filter(email=user_email).first()
+        activation = AccountActivation()
+        if activation.sendEmailActivation(request, user, user_email) is False:
+            raise SyntaxError
+        else:
+            return Response(serializer.data)
     
 
 class LoginView(APIView):

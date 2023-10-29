@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
-
 from django.contrib.auth.models import AbstractBaseUser
+
 
 class User(AbstractBaseUser):
     email = models.EmailField(max_length=255, unique=True)
