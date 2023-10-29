@@ -3,7 +3,7 @@ import '../../../styles/index.scss';
 
 const CreateAccountButton = () => {
     return(
-        <button type='submit' className="">Utwórz Konto</button>
+        <button type='submit' className="create-account-button-wrapper">Utwórz Konto</button>
     )
 }
 

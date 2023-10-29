@@ -1,7 +1,7 @@
 import React from 'react';
-import { Outlet, Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-import '../styles/index.scss';
+import { Outlet, useNavigate } from "react-router-dom";
+import LayoutMenu from '../components/organisms/LayoutMenu';
+import AuthorizationDiv from '../components/molecules/AuthorizationDiv';
 
 
 const Layout = ({ name, setName }: { name: string, setName: (name: string) => void }) => {
@@ -27,48 +27,18 @@ const Layout = ({ name, setName }: { name: string, setName: (name: string) => vo
 
   if(name===''){
     authorization_div = (
-      <div>niezalogowany
-        <button type='button' onClick={()=>{navigate('/login');}}>zaloguj</button>
-      </div>
+      <AuthorizationDiv name={name} logout={logout} />
     )
   }
   else {
     authorization_div = (
-      <div>zalogowany {name}
-        <button type='button' className='logout-button' onClick={logout}>Wyloguj</button>
-      </div>
+      <AuthorizationDiv name={name} logout={logout} />
     )
   }
 
   return (
     <>
-      <div>
-        <div>
-          <Link to='/'>Logo</Link>
-        </div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Artykuły</Link>
-            </li>
-            <li>
-              <Link to="/">Informacje</Link>
-            </li>
-            <li>
-              <Link to="/">Diety</Link>
-            </li>
-            <li>
-              <Link to="/">Dziennik</Link>
-            </li>
-            <li>
-              <Link to="/">Kontakt</Link>
-            </li>
-          </ul>
-        </nav>
-        <div>
-          {authorization_div} 
-        </div>
-      </div>
+      <LayoutMenu div={authorization_div} />
       <Outlet />
     </>
   )

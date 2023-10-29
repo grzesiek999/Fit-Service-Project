@@ -1,11 +1,13 @@
 import React, {SyntheticEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CreateAccountButton from '../atoms/Buttons/CreateAccountButton';
+import CreateAccountButton from '../atoms/buttons/CreateAccountButton';
 import PasswordRegisterInput from '../atoms/inputs/PasswordRegisterInput';
 import EmailRegisterInput from '../atoms/inputs/EmailRegisterInput';
 import NameRegisterInput from '../atoms/inputs/NameRegisterInput';
 import SurnameRegisterInput from '../atoms/inputs/SurnameRegisterInput';
 import BirthdayRegisterInput from '../atoms/inputs/BirthdayRegisterInput';
+import '../../styles/index.scss';
+
 
 const RegisterForm = () => {
 
@@ -70,7 +72,7 @@ const RegisterForm = () => {
   }
 
   return (
-      <div>
+      <div className='register-form-wrapper'>
         <form onSubmit={submit}>
           <NameRegisterInput onNameChange={handleName} />
           <SurnameRegisterInput onSurnameChange={handleSurname} />

@@ -6,7 +6,7 @@ const RegisterPageTemplate = () => {
 
   return (
     <main>
-      <h1>Register</h1>
+      <h1>Tworzenie nowego konta:</h1>
       <RegisterForm />
     </main>
   );
