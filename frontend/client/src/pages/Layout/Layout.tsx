@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { Outlet, Link } from "react-router-dom";
-import '../../styles/index.scss';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -31,7 +30,7 @@ const Layout = ({ name, setName }: { name: string, setName: (name: string) => vo
   if(name===''){
     menu = (
       <div>niezalogowany
-        <button type='button'>zaloguj</button>
+        <button type='button' onClick={()=>{navigate('/login');}}>zaloguj</button>
       </div>
     )
   }
@@ -49,9 +48,6 @@ const Layout = ({ name, setName }: { name: string, setName: (name: string) => vo
         <ul>
           <li>
             <Link to="/">HomePage</Link>
-          </li>
-          <li>
-            <Link to="/login">Login Page</Link>
           </li>
           <li>
             <Link to="/register">Register Page</Link>

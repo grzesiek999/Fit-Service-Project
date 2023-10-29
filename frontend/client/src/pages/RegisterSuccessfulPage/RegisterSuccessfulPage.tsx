@@ -1,10 +1,10 @@
 import React from 'react';
-import '../../styles/index.scss';
+import RegisterSuccessfulPageTemplate from '../../components/tmps/RegisterSuccessfulPageTemplate';
 
 
-function RegisterSuccessfulPage(){
+const RegisterSuccessfulPage = () => {
   return (
-    <div>Registr succesful page</div>
+    <RegisterSuccessfulPageTemplate />
   );
 }
 

@@ -1,1 +1,0 @@
-export type HandleType = (event: React.FocusEvent<HTMLInputElement>, newPlaceholder: string) => void;  
