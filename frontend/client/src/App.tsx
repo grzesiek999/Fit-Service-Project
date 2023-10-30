@@ -11,6 +11,7 @@ import AccountConfirmPage from './pages/AccountConfirmPage';
 function App() {
 
   const [name, setName] = useState('');
+  const [isActive, setIsActive] = useState<boolean>(true);
 
   useEffect(() => {
     (
