@@ -5,9 +5,6 @@ from rest_framework.exceptions import AuthenticationFailed
 from .serializers import UserSerializer
 from .models import User
 from django.contrib.auth.models import update_last_login
-from django.utils.http import urlsafe_base64_decode
-from django.utils.encoding import force_bytes, force_str
-from .tokens import AccountActivationTokenGenerator
 
 
 import jwt, datetime
@@ -92,26 +89,16 @@ class ConfirmAccountView(APIView):
     def post(self, request):
         uidb64 = request.data['uid']
         token = request.data['token']
-        user = None
         response = Response()
-        account_activation_token = AccountActivationTokenGenerator()
 
-
-        try:
-            uid = force_str(urlsafe_base64_decode(uidb64))
-            user = User.objects.filter(pk=uid).first()     
-        except:
-            user = None
-
-        if(user is not None and account_activation_token.check_token(user, token)):
-            user.is_active = True
-            user.save()
+        activation_status=AccountActivation()
+        if(activation_status.AccountActivationCheck(uidb64, token) == True):
             response.data = {
                 'message': 'activation successful'
-            } 
+            }
         else:
             response.data = {
                 'message': 'activation link is invalid'
-            } 
+            }
 
         return response

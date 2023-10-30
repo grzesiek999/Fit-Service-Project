@@ -3,6 +3,10 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from django.core.mail import EmailMessage
 from .tokens import AccountActivationTokenGenerator
+from .models import User
+from .tokens import AccountActivationTokenGenerator
+
+
 
 class AccountActivation:
     def sendEmailActivation(self, request, user, user_email):
@@ -21,3 +25,21 @@ class AccountActivation:
             return True
         else:
             return False
+        
+    def AccountActivationCheck(self, uidb64, token):
+                
+        account_activation_token = AccountActivationTokenGenerator()
+        user = None
+        activate_status = False
+
+        try:
+            uid = force_str(urlsafe_base64_decode(uidb64))
+            user = User.objects.filter(pk=uid).first()     
+        except:
+            user = None
+        if(user is not None and account_activation_token.check_token(user, token)):
+            user.is_active = True
+            user.save()
+            activate_status = True
+
+        return activate_status
