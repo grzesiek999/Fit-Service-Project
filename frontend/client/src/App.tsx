@@ -30,7 +30,7 @@ function App() {
       else{
         setName(content.name);
       }
-
+  
       }
     )();
   });
