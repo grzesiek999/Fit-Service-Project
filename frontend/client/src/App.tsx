@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage';
 import Layout from './pages/Layout';
 import RegisterPage from './pages/RegisterPage';
 import RegisterSuccessfulPage from './pages/RegisterSuccessfulPage';
+import AccountConfirmPage from './pages/AccountConfirmPage';
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
           <Route path="/login" element={<LoginPage setName={setName} />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/register_successful" element={<RegisterSuccessfulPage />} />
+          <Route path='/account_confirm/:uid/:token' element={<AccountConfirmPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

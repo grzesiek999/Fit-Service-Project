@@ -18,7 +18,7 @@ class RegisterView(APIView):
         user = User.objects.filter(email=user_email).first()
         activation = AccountActivation()
         if activation.sendEmailActivation(request, user, user_email) is False:
-            raise SyntaxError
+            raise SyntaxError                                                     # Zrobic swoj error 
         else:
             return Response(serializer.data)
     
@@ -80,4 +80,15 @@ class LogoutView(APIView):
         response.data = {
             'message': 'cookies deleted'
         }
+        return response
+    
+
+class ConfirmAccountView(APIView):
+    def post(self, request):
+        uid = request.data['uid']
+        token = request.data['token']
+        response = Response()
+        response.data = {
+            'message': 'konto aktywowane'
+        } 
         return response
