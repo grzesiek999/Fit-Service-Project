@@ -1,17 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Routing from './Routing';
 import './styles/index.scss';
-import HomePage from "./pages/HomePage";
-import LoginPage from './pages/LoginPage';
-import Layout from './pages/Layout';
-import RegisterPage from './pages/RegisterPage';
-import RegisterSuccessfulPage from './pages/RegisterSuccessfulPage';
-import AccountConfirmPage from './pages/AccountConfirmPage';
 
-function App() {
+
+const App = () => {
 
   const [name, setName] = useState('');
   const [isActive, setIsActive] = useState<boolean>(true);
+  const [isLogged, setIsLogged] = useState<boolean>(false);
 
   useEffect(() => {
     (
@@ -29,26 +25,16 @@ function App() {
       }
       else{
         setName(content.name);
+        setIsLogged(true);
+        setIsActive(content.is_active);
       }
-  
       }
     )();
   });
 
-
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout name={name} setName={setName}/>}>
-          <Route index element={<HomePage />} />
-          <Route path="/login" element={<LoginPage setName={setName} />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/register_successful" element={<RegisterSuccessfulPage />} />
-          <Route path='/account_confirm/:uid/:token' element={<AccountConfirmPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+    <Routing isLogged={isLogged} isActive={isActive} name={name} setName={setName} />
+  );  
 }
 
 export default App;

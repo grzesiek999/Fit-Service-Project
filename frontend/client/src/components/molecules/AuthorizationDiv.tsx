@@ -1,16 +1,18 @@
 import React from "react";
 import WelcomeUserSpan from "../atoms/spans/WelcomeUserSpan";
-import LogoutButton from "../atoms/buttons/LogoutButton";
-import LoginButton from "../atoms/buttons/LoginButton";
+import { useNavigate } from "react-router-dom";
+import Button from "../atoms/buttons/Button";
 import "../../styles/index.scss";
 
 
 const AuthorizationDiv = ({name, logout} : {name: string, logout: ()=>void}) => {
+
+    const navigate = useNavigate();
     
     if(name === ''){
         return (
             <div className='authorization-div-wrapper'>
-                <LoginButton />
+                <Button buttonType="button" className="login-button-wrapper" onClick={()=>{navigate('/login');}} buttonTittle="Zaloguj" />
             </div>
         );
     }
@@ -19,7 +21,7 @@ const AuthorizationDiv = ({name, logout} : {name: string, logout: ()=>void}) => 
         return (
             <div className='authorization-div-wrapper'>
                 <WelcomeUserSpan name={name} />
-                <LogoutButton Click={logout} />
+                <Button buttonType="button" className="logout-button-wrapper" onClick={logout} buttonTittle="Wyloguj" />
             </div>
         );
     }

@@ -16,6 +16,7 @@ const Layout = ({ name, setName }: { name: string, setName: (name: string) => vo
     });
     if(response.ok){
       setName('');
+      window.location.reload();
       return navigate('/');
     }
     else{

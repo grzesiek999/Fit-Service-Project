@@ -10,7 +10,9 @@
 
 @import "./variables";
 
-@import "./atoms/create-account-button-wrapper.scss";
+@import "./atoms/Buttons/login-button-wrapper.scss";
+
+@import "./atoms/Buttons/logout-button-wrapper.scss";
 
 @import "./organism/register-form-wrapper.scss";
 
@@ -20,4 +22,4 @@
 
 @import "./molecules/layout-nav-wrapper.scss";
 
-@import "./organism/layout-menu-div-wrapper.scss"
+@import "./organism/layout-menu-div-wrapper.scss";

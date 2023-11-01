@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import EmailRegisterInput from '../../components/atoms/inputs/EmailRegisterInput';
 import PasswordRegisterInput from '../../components/atoms/inputs/PasswordRegisterInput';
 import LoginFormLinks from '../molecules/LoginFormLinks';
+import Button from '../atoms/buttons/Button';
 
 
 const LoginForm = ({setName}: {setName: (name: string) => void}) => {
@@ -55,7 +56,7 @@ const LoginForm = ({setName}: {setName: (name: string) => void}) => {
           <form onSubmit={submit}>
             <EmailRegisterInput onEmailChange={handleEmail} />
             <PasswordRegisterInput onPasswordChange={handlePassword} />
-            <button type='submit'>Zaloguj się</button>
+            <Button buttonType='submit' className='login-button-wrapper' onClick={()=>{}} buttonTittle='Zaloguj' />
           </form>
           {message && <div>{message}</div>}
         </div>
