@@ -9,6 +9,7 @@ import AccountConfirmPage from './pages/AccountConfirmPage';
 import AccountNoActivePage from "./pages/AccountNoActivePage";
 import UserPanelPage from "./pages/UserPanelPage";
 import NotLoggedPage from "./pages/NotLoggedPage";
+import RestorePasswordPage from "./pages/RestorePasswordPage";
 
 
 const Routing = ({isLogged, isActive, email, name, setName} : {isLogged: boolean, isActive: boolean, email: string, name: string,  setName: (name: string) => void}) => {
@@ -20,6 +21,7 @@ const Routing = ({isLogged, isActive, email, name, setName} : {isLogged: boolean
                 <Route index element={<HomePage />} />
                 <Route path="/login" element={<LoginPage setName={setName} />} />
                 <Route path="/register" element={<RegisterPage />} />
+                <Route path="/restore_password" element={ <RestorePasswordPage />} />
                 <Route path="/register_successful" element={<RegisterSuccessfulPage />} />
                 <Route path='/account_confirm/:uid/:token' element={<AccountConfirmPage />} />
                 <Route path="/user_panel" element={ <NotLoggedPage /> } />
@@ -36,6 +38,7 @@ const Routing = ({isLogged, isActive, email, name, setName} : {isLogged: boolean
                 <Route index element={ isActive ? <HomePage /> : <AccountNoActivePage email={email} />} />
                 <Route path="/login" element={ isActive ? <HomePage /> : <AccountNoActivePage email={email} />} />
                 <Route path="/register" element={ isActive ? <HomePage /> : <AccountNoActivePage email={email} />} />
+                <Route path="/restore_password" element={ isActive ? <HomePage /> : <AccountNoActivePage email={email} />} />
                 <Route path="/register_successful" element={ isActive ? <HomePage /> : <AccountNoActivePage email={email} />} />
                 <Route path='/account_confirm/:uid/:token' element={ <AccountConfirmPage /> } />
                 <Route path="/user_panel" element={ isActive ? <UserPanelPage /> : <AccountNoActivePage email={email}/>} />
