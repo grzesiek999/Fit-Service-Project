@@ -19,7 +19,7 @@ const AuthorizationDiv = ({name, logout} : {name: string, logout: ()=>void}) => 
     else{
         return (
             <div className='authorization-div-wrapper'>
-                <Button buttonType="button" className="my-account-button-wrapper" onClick={()=>{}} buttonTittle="Moje Konto" />
+                <Button buttonType="button" className="my-account-button-wrapper" onClick={()=>{navigate('/user_panel');}} buttonTittle="Moje Konto" />
                 <Button buttonType="button" className="logout-button-wrapper" onClick={logout} buttonTittle="Wyloguj" />
             </div>
         );
