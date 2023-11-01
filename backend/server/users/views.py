@@ -102,3 +102,17 @@ class ConfirmAccountView(APIView):
             }
 
         return response
+    
+class SendEmailAgainView(APIView):
+    def post(self, request):
+        response = Response()
+        user_email = request.data.get('email')
+        user = User.objects.filter(email=user_email).first()
+        activation = AccountActivation()
+        if activation.sendEmailActivation(request, user, user_email) is False:
+            raise SyntaxError                                                     # Zrobic swoj error 
+        else:
+            response.data = {
+                'message': 'activation link sended again'
+            }
+            return response

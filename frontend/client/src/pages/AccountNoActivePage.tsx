@@ -1,10 +1,10 @@
 import React from "react";
 import AccountNoActivePageTemplate from "../components/tmpls/AccountNoActivePageTemplate";
 
-const AccountNoActivePage = () => {
+const AccountNoActivePage = ({email} :{email: string}) => {
     
     return(
-        <AccountNoActivePageTemplate />
+        <AccountNoActivePageTemplate email={email} />
     );
 }
 

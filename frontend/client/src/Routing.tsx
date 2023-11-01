@@ -9,7 +9,7 @@ import AccountConfirmPage from './pages/AccountConfirmPage';
 import AccountNoActivePage from "./pages/AccountNoActivePage";
 
 
-const Routing = ({isLogged, isActive, name, setName} : {isLogged: boolean, isActive: boolean, name: string,  setName: (name: string) => void}) => {
+const Routing = ({isLogged, isActive, email, name, setName} : {isLogged: boolean, isActive: boolean, email: string, name: string,  setName: (name: string) => void}) => {
     if(isLogged===false){
         return (
           <BrowserRouter>
@@ -30,10 +30,10 @@ const Routing = ({isLogged, isActive, name, setName} : {isLogged: boolean, isAct
           <BrowserRouter>
             <Routes>
             <Route path="/" element={<Layout name={name} setName={setName}/>}>
-                <Route index element={ isActive ? <HomePage /> : <AccountNoActivePage />} />
-                <Route path="/login" element={ isActive ? <HomePage /> : <AccountNoActivePage />} />
-                <Route path="/register" element={ isActive ? <HomePage /> : <AccountNoActivePage />} />
-                <Route path="/register_successful" element={ isActive ? <HomePage /> : <AccountNoActivePage />} />
+                <Route index element={ isActive ? <HomePage /> : <AccountNoActivePage email={email} />} />
+                <Route path="/login" element={ isActive ? <HomePage /> : <AccountNoActivePage email={email} />} />
+                <Route path="/register" element={ isActive ? <HomePage /> : <AccountNoActivePage email={email} />} />
+                <Route path="/register_successful" element={ isActive ? <HomePage /> : <AccountNoActivePage email={email} />} />
                 <Route path='/account_confirm/:uid/:token' element={ <AccountConfirmPage /> } />
             </Route>
             </Routes>

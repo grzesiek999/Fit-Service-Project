@@ -6,6 +6,7 @@ import './styles/index.scss';
 const App = () => {
 
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [isActive, setIsActive] = useState<boolean>(true);
   const [isLogged, setIsLogged] = useState<boolean>(false);
 
@@ -24,16 +25,17 @@ const App = () => {
         setName('');
       }
       else{
-        setName(content.name);
         setIsLogged(true);
         setIsActive(content.is_active);
+        setEmail(content.email);
+        setName(content.name);
       }
       }
     )();
   });
 
   return (
-    <Routing isLogged={isLogged} isActive={isActive} name={name} setName={setName} />
+    <Routing isLogged={isLogged} isActive={isActive} email={email} name={name} setName={setName} />
   );  
 }
 
