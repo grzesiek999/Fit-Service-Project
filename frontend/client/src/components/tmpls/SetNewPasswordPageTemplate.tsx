@@ -35,7 +35,7 @@ const SetNewPasswordPageTemplate = () => {
             })
           })
           if(response.ok){
-            return navigate('/register_successful');
+            return navigate('/password_changed');
           }
           else{
             console.error('Error', response.status, response.statusText);

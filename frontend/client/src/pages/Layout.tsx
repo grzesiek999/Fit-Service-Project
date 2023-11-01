@@ -16,8 +16,10 @@ const Layout = ({ name, setName }: { name: string, setName: (name: string) => vo
     });
     if(response.ok){
       setName('');
-      window.location.reload();
-      return navigate('/');
+      navigate('/');
+      setTimeout(() => {
+        window.location.reload();
+      }, 100);
     }
     else{
       console.log('Logout problem')
