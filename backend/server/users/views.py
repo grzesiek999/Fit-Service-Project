@@ -5,13 +5,13 @@ from rest_framework.exceptions import AuthenticationFailed
 from .serializers import UserSerializer
 from .models import User
 from django.contrib.auth.models import update_last_login
-
-
 import jwt, datetime
-from .utils import AccountActivation
+from .utils import AccountActivation, PasswordRestore
+
 
 class RegisterView(APIView):
     def post(self, request):
+        response = Response()
         serializer = UserSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -20,7 +20,9 @@ class RegisterView(APIView):
         user = User.objects.filter(email=user_email).first()
         activation = AccountActivation()
         if activation.sendEmailActivation(request, user, user_email) is False:
-            raise SyntaxError                                                     # Zrobic swoj error 
+            response.data = {
+                'message': 'activation link sended error'
+            }
         else:
             return Response(serializer.data)
     
@@ -110,9 +112,58 @@ class SendEmailAgainView(APIView):
         user = User.objects.filter(email=user_email).first()
         activation = AccountActivation()
         if activation.sendEmailActivation(request, user, user_email) is False:
-            raise SyntaxError                                                     # Zrobic swoj error 
+            response.data = {
+                'message': 'activation link sended error'
+            }
         else:
             response.data = {
                 'message': 'activation link sended again'
             }
-            return response
+        
+        return response
+        
+
+class SendPasswordRestoreView(APIView):
+    def post(self, request):
+        response = Response()
+        user_email = request.data.get('email')
+        user = User.objects.filter(email=user_email).first()
+        
+        if user is not None:
+            password_reset = PasswordRestore()
+            if password_reset.SendPasswordRestore(request, user, user_email) is False:
+                response.data = {
+                    'message': 'password reset link sended error'
+                }
+            else: 
+                response.data = {
+                    'message': 'password reset link sended'
+                }
+        else:
+            response.data = {
+                'message': 'Incorrect email address'
+            }
+            raise AuthenticationFailed('User not found!')
+        
+        return response
+    
+
+class SetNewPasswordView(APIView):
+    def post(self, request):
+        response = Response()
+        uidb64 = request.data['uid']
+        token = request.data['token']
+        password = request.data['password']
+
+        password_reset = PasswordRestore()
+        if(password_reset.SetNewPassword(uidb64, token, password) == True):
+            response.data = {
+                'message': 'password change successful'
+            }
+        else:
+            response.data = {
+                'message': 'password change error'
+            }
+        return response
+        
+        

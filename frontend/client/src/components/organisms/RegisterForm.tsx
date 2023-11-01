@@ -67,7 +67,7 @@ const RegisterForm = () => {
       }
     }
     else {
-      return setMessage('Passwords do not match');
+      return setMessage('Podane hasła nie są takie same');
     }
   }
 

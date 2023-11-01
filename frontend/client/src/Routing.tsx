@@ -10,6 +10,7 @@ import AccountNoActivePage from "./pages/AccountNoActivePage";
 import UserPanelPage from "./pages/UserPanelPage";
 import NotLoggedPage from "./pages/NotLoggedPage";
 import RestorePasswordPage from "./pages/RestorePasswordPage";
+import SetNewPasswordPage from "./pages/SetNewPasswordPage";
 
 
 const Routing = ({isLogged, isActive, email, name, setName} : {isLogged: boolean, isActive: boolean, email: string, name: string,  setName: (name: string) => void}) => {
@@ -24,6 +25,7 @@ const Routing = ({isLogged, isActive, email, name, setName} : {isLogged: boolean
                 <Route path="/restore_password" element={ <RestorePasswordPage />} />
                 <Route path="/register_successful" element={<RegisterSuccessfulPage />} />
                 <Route path='/account_confirm/:uid/:token' element={<AccountConfirmPage />} />
+                <Route path='/set_new_password/:uid/:token' element={<SetNewPasswordPage />} />
                 <Route path="/user_panel" element={ <NotLoggedPage /> } />
               </Route>
             </Routes>
@@ -41,6 +43,7 @@ const Routing = ({isLogged, isActive, email, name, setName} : {isLogged: boolean
                 <Route path="/restore_password" element={ isActive ? <HomePage /> : <AccountNoActivePage email={email} />} />
                 <Route path="/register_successful" element={ isActive ? <HomePage /> : <AccountNoActivePage email={email} />} />
                 <Route path='/account_confirm/:uid/:token' element={ <AccountConfirmPage /> } />
+                <Route path='/set_new_password/:uid/:token' element={ isActive ? <SetNewPasswordPage /> : <AccountNoActivePage email={email} />} />
                 <Route path="/user_panel" element={ isActive ? <UserPanelPage /> : <AccountNoActivePage email={email}/>} />
             </Route>
             </Routes>
