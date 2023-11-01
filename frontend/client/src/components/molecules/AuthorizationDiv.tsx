@@ -1,5 +1,4 @@
 import React from "react";
-import WelcomeUserSpan from "../atoms/spans/WelcomeUserSpan";
 import { useNavigate } from "react-router-dom";
 import Button from "../atoms/buttons/Button";
 import "../../styles/index.scss";
@@ -20,7 +19,7 @@ const AuthorizationDiv = ({name, logout} : {name: string, logout: ()=>void}) => 
     else{
         return (
             <div className='authorization-div-wrapper'>
-                <WelcomeUserSpan name={name} />
+                <Button buttonType="button" className="my-account-button-wrapper" onClick={()=>{}} buttonTittle="Moje Konto" />
                 <Button buttonType="button" className="logout-button-wrapper" onClick={logout} buttonTittle="Wyloguj" />
             </div>
         );

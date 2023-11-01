@@ -1,6 +1,6 @@
 import React, {SyntheticEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CreateAccountButton from '../atoms/buttons/CreateAccountButton';
+import Button from '../atoms/buttons/Button';
 import PasswordRegisterInput from '../atoms/inputs/PasswordRegisterInput';
 import EmailRegisterInput from '../atoms/inputs/EmailRegisterInput';
 import NameRegisterInput from '../atoms/inputs/NameRegisterInput';
@@ -80,7 +80,7 @@ const RegisterForm = () => {
           <EmailRegisterInput onEmailChange={handleEmail} />
           <PasswordRegisterInput onPasswordChange={handlePassword} />
           <PasswordRegisterInput onPasswordChange={handleConfirmPassword} />
-          <CreateAccountButton />
+          <Button buttonType='submit' className='create-account-button-wrapper' onClick={()=>{}} buttonTittle='Stwórz Konto' />
         </form>
         {message && <div>{message}</div>}
       </div>
