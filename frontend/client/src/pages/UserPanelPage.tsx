@@ -2,10 +2,10 @@ import React from "react";
 import UserPanelPageTemplate from "../components/tmpls/UserPanelPageTemplate";
 
 
-const UserPanelPage = () => {
+const UserPanelPage = ({name}: {name:string}) => {
 
     return(
-        <UserPanelPageTemplate />
+        <UserPanelPageTemplate name={name} />
     );
 }
 

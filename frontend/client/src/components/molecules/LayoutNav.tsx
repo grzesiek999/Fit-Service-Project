@@ -9,16 +9,16 @@ const LayoutNav = () =>{
             <nav>
                 <ul>
                     <li>
-                    <Link to="/" className='nav-link-wrapper'>Artykuły</Link>
+                    <Link to="/" className='nav-link-wrapper'>Aktualności</Link>
                     </li>
                     <li>
-                    <Link to="/" className='nav-link-wrapper'>Informacje</Link>
+                    <Link to="/" className='nav-link-wrapper'>ddd</Link>
                     </li>
                     <li>
-                    <Link to="/" className='nav-link-wrapper'>Diety</Link>
+                    <Link to="/" className='nav-link-wrapper'>Oferta</Link>
                     </li>
                     <li>
-                    <Link to="/" className='nav-link-wrapper'>Dziennik</Link>
+                    <Link to="/" className='nav-link-wrapper'>Kalkulatory</Link>
                     </li>
                     <li>
                     <Link to="/" className='nav-link-wrapper'>Kontakt</Link>
