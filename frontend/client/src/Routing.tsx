@@ -15,7 +15,15 @@ import PasswordChangedPage from "./pages/PasswordChangedPage";
 import UserSettingsPage from "./pages/UserSettingsPage";
 
 
-const Routing = ({isLogged, isActive, email, name, setName} : {isLogged: boolean, isActive: boolean, email: string, name: string,  setName: (name: string) => void}) => {
+type RoutingProps = {
+  isLogged: boolean;
+  isActive: boolean;
+  email: string;
+  name: string;
+  setName: (name: string) => void;
+}
+
+const Routing = ({isLogged, isActive, email, name, setName} : RoutingProps) => {
     if(isLogged===false){
         return (
           <BrowserRouter>

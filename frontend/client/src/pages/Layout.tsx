@@ -4,7 +4,12 @@ import LayoutMenu from '../components/organisms/LayoutMenu';
 import AuthorizationDiv from '../components/molecules/AuthorizationDiv';
 
 
-const Layout = ({ name, setName }: { name: string, setName: (name: string) => void }) => {
+type LayoutProps = {
+  name: string;
+  setName: (name: string) => void;
+}
+
+const Layout = ({ name, setName }: LayoutProps) => {
 
   const navigate = useNavigate();
 

@@ -2,7 +2,11 @@ import React from "react";
 import UserSettingsPageTemplate from "../components/tmpls/UserSettingsPageTemplate";
 
 
-const UserSettingsPage = ({email}: {email: string}) => {
+type UserSettingsPageProps = {
+    email: string;
+}
+
+const UserSettingsPage = ({email}: UserSettingsPageProps) => {
 
     return(
         <UserSettingsPageTemplate email={email}/>

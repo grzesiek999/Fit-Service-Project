@@ -1,7 +1,12 @@
 import React from "react";
 import "../../../styles/index.scss"
 
-const WelcomeUserSpan = ({name}: {name: string}) => {
+
+type WelcomeUserSpanProps = {
+    name: string;
+}
+
+const WelcomeUserSpan = ({name}: WelcomeUserSpanProps) => {
 
     return(
         <span>Witaj {name}</span>

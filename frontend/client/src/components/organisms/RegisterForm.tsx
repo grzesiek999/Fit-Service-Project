@@ -72,18 +72,18 @@ const RegisterForm = () => {
   }
 
   return (
-      <div className='register-form-wrapper'>
-        <form onSubmit={submit}>
-          <NameRegisterInput onNameChange={handleName} />
-          <SurnameRegisterInput onSurnameChange={handleSurname} />
-          <BirthdayRegisterInput onBirthdayChange={handleBirthday} />
-          <EmailRegisterInput onEmailChange={handleEmail} />
-          <PasswordRegisterInput onPasswordChange={handlePassword} />
-          <PasswordRegisterInput onPasswordChange={handleConfirmPassword} />
-          <Button buttonType='submit' className='create-account-button-wrapper' onClick={()=>{}} buttonTittle='Stwórz Konto' />
-        </form>
-        {message && <div>{message}</div>}
-      </div>
+    <div className='register-form-wrapper'>
+      <form onSubmit={submit}>
+        <NameRegisterInput onNameChange={handleName} />
+        <SurnameRegisterInput onSurnameChange={handleSurname} />
+        <BirthdayRegisterInput onBirthdayChange={handleBirthday} />
+        <EmailRegisterInput onEmailChange={handleEmail} />
+        <PasswordRegisterInput onPasswordChange={handlePassword} />
+        <PasswordRegisterInput onPasswordChange={handleConfirmPassword} />
+        <Button buttonType='submit' className='create-account-button-wrapper' onClick={()=>{}} buttonTittle='Stwórz Konto' />
+      </form>
+      {message && <div>{message}</div>}
+    </div>
   );
 }
 

@@ -6,7 +6,11 @@ import LoginFormLinks from '../molecules/LoginFormLinks';
 import Button from '../atoms/buttons/Button';
 
 
-const LoginForm = ({setName}: {setName: (name: string) => void}) => {
+type LoginFormProps = {
+  setName: (name: string) => void;
+}
+
+const LoginForm = ({setName}: LoginFormProps) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -49,20 +53,19 @@ const LoginForm = ({setName}: {setName: (name: string) => void}) => {
     }
   }
 
-
-    return (
+  return (
+    <div>
       <div>
-        <div>
-          <form onSubmit={submit}>
-            <EmailRegisterInput onEmailChange={handleEmail} />
-            <PasswordRegisterInput onPasswordChange={handlePassword} />
-            <Button buttonType='submit' className='login-button-wrapper' onClick={()=>{}} buttonTittle='Zaloguj' />
-          </form>
-          {message && <div>{message}</div>}
-        </div>
-      <LoginFormLinks />
+        <form onSubmit={submit}>
+          <EmailRegisterInput onEmailChange={handleEmail} />
+          <PasswordRegisterInput onPasswordChange={handlePassword} />
+          <Button buttonType='submit' className='login-button-wrapper' onClick={()=>{}} buttonTittle='Zaloguj' />
+        </form>
+        {message && <div>{message}</div>}
       </div>
-    );
-  }
-  
-  export default LoginForm;
+      <LoginFormLinks />
+    </div>
+  );
+}
+
+export default LoginForm;

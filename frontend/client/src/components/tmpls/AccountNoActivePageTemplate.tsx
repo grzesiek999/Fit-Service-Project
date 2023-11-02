@@ -2,7 +2,11 @@ import React, {useState} from "react";
 import Button from "../atoms/buttons/Button";
 
 
-const AccountNoActiveTemplatePage = ({email}: {email: string}) => {
+type AccountNoActivePageTemplateProps = {
+    email: string;
+}
+
+const AccountNoActivePageTemplate = ({email}: AccountNoActivePageTemplateProps) => {
 
     const [message, setMessage] = useState('');
 
@@ -35,4 +39,4 @@ const AccountNoActiveTemplatePage = ({email}: {email: string}) => {
     );
 }
 
-export default AccountNoActiveTemplatePage;
+export default AccountNoActivePageTemplate;

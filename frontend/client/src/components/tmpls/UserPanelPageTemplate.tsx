@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import WelcomeUserSpan from "../atoms/spans/WelcomeUserSpan";
 
 
-const UserPanelPageTemplate = ({name}: {name: string}) => {
+type UserPanelPageTemplateProps = {
+    name: string;
+}
 
+const UserPanelPageTemplate = ({name}: UserPanelPageTemplateProps) => {
 
     return (
         <div>
-            <h1>Witaj {name}</h1>
+            <WelcomeUserSpan name={name} />
             <div>
                 <div>Panel Użytkownika</div>
                 <ul>

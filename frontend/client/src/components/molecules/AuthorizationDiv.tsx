@@ -4,7 +4,12 @@ import Button from "../atoms/buttons/Button";
 import "../../styles/index.scss";
 
 
-const AuthorizationDiv = ({name, logout} : {name: string, logout: ()=>void}) => {
+type AuthorizationDivProps = {
+    name: string;
+    logout: () => void;
+}
+
+const AuthorizationDiv = ({name, logout} : AuthorizationDivProps) => {
 
     const navigate = useNavigate();
     

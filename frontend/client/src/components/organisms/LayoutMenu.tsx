@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 import LayoutNav from "../molecules/LayoutNav";
 import "../../styles/index.scss";
 
-const LayoutMenu = ({div}: {div: JSX.Element}) => {
+
+type LayoutMenuProps = {
+    div: JSX.Element;
+}
+
+const LayoutMenu = ({div}: LayoutMenuProps) => {
     return(
         <div className='layout-menu-div-wrapper'>
             <div>
