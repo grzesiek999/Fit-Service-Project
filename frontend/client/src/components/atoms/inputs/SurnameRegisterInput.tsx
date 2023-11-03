@@ -28,7 +28,7 @@ const SurnameRegisterInput = ({ onSurnameChange }: {onSurnameChange: (newSurname
       required
       onChange={handleChange}
     />
-  )
+  );
 }
 
 export default SurnameRegisterInput;

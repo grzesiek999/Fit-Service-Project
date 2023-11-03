@@ -17,7 +17,7 @@ const BirthdayRegisterInput = ({ onBirthdayChange }: {onBirthdayChange: (newBirt
       required
       onChange={handleChange}
     />
-  )
+  );
 }
 
 export default BirthdayRegisterInput;

@@ -1,8 +1,7 @@
 import React, {useState, SyntheticEvent} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "../atoms/buttons/Button";
-import PasswordRegisterInput from "../atoms/inputs/PasswordRegisterInput";
-
+import Input from "../atoms/inputs/Input";
 
 const SetNewPasswordPageTemplate = () => {
 
@@ -51,8 +50,8 @@ const SetNewPasswordPageTemplate = () => {
     return(
         <div>
             <form onSubmit={submit}>
-                <PasswordRegisterInput onPasswordChange={ handlePassword} />
-                <PasswordRegisterInput onPasswordChange={ handleConfirmPassword} />
+                <Input inputType="password" onChange={handlePassword} />
+                <Input inputType="password" onChange={handleConfirmPassword} />
                 <Button buttonType="submit" className="" onClick={()=>{}} buttonTittle="Ustaw nowe hasło" />
             </form>
             {message && <div>{message}</div>}
