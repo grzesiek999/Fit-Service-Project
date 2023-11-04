@@ -2,7 +2,7 @@ import React, {SyntheticEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../atoms/buttons/Button';
 import '../../styles/index.scss';
-import Input from '../atoms/inputs/Input';
+import SignInInput from '../atoms/inputs/SignInInput';
 
 
 const RegisterForm = () => {
@@ -70,12 +70,12 @@ const RegisterForm = () => {
   return (
     <div className='register-form-wrapper'>
       <form onSubmit={submit}>
-        <Input inputType="name" onChange={handleName} />
-        <Input inputType="surname" onChange={handleSurname} />
-        <Input inputType="birthday" onChange={handleBirthday} />
-        <Input inputType="email" onChange={handleEmail} />
-        <Input inputType="password" onChange={handlePassword} />
-        <Input inputType="password" onChange={handleConfirmPassword} />
+        <SignInInput inputType="name" onChange={handleName} />
+        <SignInInput inputType="surname" onChange={handleSurname} />
+        <SignInInput inputType="birthday" onChange={handleBirthday} />
+        <SignInInput inputType="email" onChange={handleEmail} />
+        <SignInInput inputType="password" onChange={handlePassword} />
+        <SignInInput inputType="password" onChange={handleConfirmPassword} />
         <Button buttonType='submit' className='create-account-button-wrapper' onClick={()=>{}} buttonTittle='Stwórz Konto' />
       </form>
       {message && <div>{message}</div>}

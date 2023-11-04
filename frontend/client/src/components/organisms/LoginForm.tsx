@@ -2,7 +2,7 @@ import React, {SyntheticEvent, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoginFormLinks from '../molecules/LoginFormLinks';
 import Button from '../atoms/buttons/Button';
-import Input from '../atoms/inputs/Input';
+import SignInInput from '../atoms/inputs/SignInInput';
 
 
 type LoginFormProps = {
@@ -56,8 +56,8 @@ const LoginForm = ({setName}: LoginFormProps) => {
     <div>
       <div>
         <form onSubmit={submit}>
-          <Input inputType='email' onChange={handleEmail} />
-          <Input inputType='password' onChange={handlePassword} />
+          <SignInInput inputType='email' onChange={handleEmail} />
+          <SignInInput inputType='password' onChange={handlePassword} />
           <Button buttonType='submit' className='login-button-wrapper' onClick={()=>{}} buttonTittle='Zaloguj' />
         </form>
         {message && <div>{message}</div>}
