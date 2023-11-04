@@ -13,6 +13,8 @@ import RestorePasswordPage from "./pages/RestorePasswordPage";
 import SetNewPasswordPage from "./pages/SetNewPasswordPage";
 import PasswordChangedPage from "./pages/PasswordChangedPage";
 import UserSettingsPage from "./pages/UserSettingsPage";
+import CalculatorsPage from "./pages/CalculatorsPage";
+import CheckProductPage from "./pages/CheckProductPage";
 
 
 type RoutingProps = {
@@ -39,6 +41,8 @@ const Routing = ({isLogged, isActive, email, name, setName} : RoutingProps) => {
                 <Route path='/password_changed' element={<PasswordChangedPage />} />
                 <Route path="/user_panel" element={ <NotLoggedPage /> } />
                 <Route path="/user_settings" element={ <NotLoggedPage /> } />
+                <Route path="/calculators" element={ <CalculatorsPage /> } />
+                <Route path="/calculators/check_product" element={ <CheckProductPage /> } />
               </Route>
             </Routes>
           </BrowserRouter>
@@ -59,6 +63,8 @@ const Routing = ({isLogged, isActive, email, name, setName} : RoutingProps) => {
                 <Route path='/password_changed' element={<PasswordChangedPage />} />
                 <Route path="/user_panel" element={ isActive ? <UserPanelPage name={name} /> : <AccountNoActivePage email={email}/>} />
                 <Route path="/user_settings" element={ isActive ? <UserSettingsPage email={email} /> : <AccountNoActivePage email={email} />} />
+                <Route path="/calculators" element={ isActive ? <CalculatorsPage /> : <AccountNoActivePage email={email} /> } />
+                <Route path="/calculators/check_product" element={ isActive ? <CheckProductPage /> : <AccountNoActivePage email={email} /> } />
             </Route>
             </Routes>
           </BrowserRouter>

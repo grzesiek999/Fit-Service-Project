@@ -9,19 +9,19 @@ const LayoutNav = () =>{
             <nav>
                 <ul>
                     <li>
-                    <Link to="/" className='nav-link-wrapper'>Aktualności</Link>
+                    <Link to="/" className='layout-nav-link-wrapper'>Aktualności</Link>
                     </li>
                     <li>
-                    <Link to="/" className='nav-link-wrapper'>ddd</Link>
+                    <Link to="/" className='layout-nav-link-wrapper'>ddd</Link>
                     </li>
                     <li>
-                    <Link to="/" className='nav-link-wrapper'>Oferta</Link>
+                    <Link to="/" className='layout-nav-link-wrapper'>Oferta</Link>
                     </li>
                     <li>
-                    <Link to="/" className='nav-link-wrapper'>Kalkulatory</Link>
+                    <Link to="/calculators" className='layout-nav-link-wrapper'>Kalkulatory</Link>
                     </li>
                     <li>
-                    <Link to="/" className='nav-link-wrapper'>Kontakt</Link>
+                    <Link to="/" className='layout-nav-link-wrapper'>Kontakt</Link>
                     </li>
                 </ul>
             </nav>
