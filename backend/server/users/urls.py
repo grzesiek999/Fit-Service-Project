@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from .views import RegisterView, LoginView, UserView, LogoutView, ConfirmAccountView, SendEmailAgainView, SendPasswordRestoreView, SetNewPasswordView
 
 urlpatterns = [
