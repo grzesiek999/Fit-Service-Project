@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
+import  SearchDiv  from "../organisms/SearchDiv";
 
 
 const CheckProductPageTemplate = () => {
+
     return (
-        <div>Sprawdz produkt</div>
+        <div><SearchDiv/></div>
     );
 }
 
