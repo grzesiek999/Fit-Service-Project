@@ -2,10 +2,14 @@ import React, {useState} from "react";
 import  SearchDiv  from "../organisms/SearchDiv";
 
 
-const CheckProductPageTemplate = () => {
+type CheckProductPageTemplateProps = {
+    isLogged: boolean
+}
+
+const CheckProductPageTemplate = ({isLogged}: CheckProductPageTemplateProps) => {
 
     return (
-        <div><SearchDiv/></div>
+        <div><SearchDiv isLogged={isLogged} /></div>
     );
 }
 

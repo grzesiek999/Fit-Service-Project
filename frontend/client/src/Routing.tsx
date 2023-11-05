@@ -42,7 +42,7 @@ const Routing = ({isLogged, isActive, email, name, setName} : RoutingProps) => {
                 <Route path="/user_panel" element={ <NotLoggedPage /> } />
                 <Route path="/user_settings" element={ <NotLoggedPage /> } />
                 <Route path="/calculators" element={ <CalculatorsPage /> } />
-                <Route path="/calculators/check_product" element={ <CheckProductPage /> } />
+                <Route path="/calculators/check_product" element={ <CheckProductPage isLogged={isLogged}/> } />
               </Route>
             </Routes>
           </BrowserRouter>
@@ -64,7 +64,7 @@ const Routing = ({isLogged, isActive, email, name, setName} : RoutingProps) => {
                 <Route path="/user_panel" element={ isActive ? <UserPanelPage name={name} /> : <AccountNoActivePage email={email}/>} />
                 <Route path="/user_settings" element={ isActive ? <UserSettingsPage email={email} /> : <AccountNoActivePage email={email} />} />
                 <Route path="/calculators" element={ isActive ? <CalculatorsPage /> : <AccountNoActivePage email={email} /> } />
-                <Route path="/calculators/check_product" element={ isActive ? <CheckProductPage /> : <AccountNoActivePage email={email} /> } />
+                <Route path="/calculators/check_product" element={ isActive ? <CheckProductPage isLogged={isLogged} /> : <AccountNoActivePage email={email} /> } />
             </Route>
             </Routes>
           </BrowserRouter>
