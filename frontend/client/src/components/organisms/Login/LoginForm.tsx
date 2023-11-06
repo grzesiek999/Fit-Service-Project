@@ -1,8 +1,8 @@
 import React, {SyntheticEvent, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import LoginFormLinks from '../molecules/LoginFormLinks';
-import Button from '../atoms/buttons/Button';
-import SignInInput from '../atoms/inputs/SignInInput';
+import LoginFormLinks from '../../molecules/Login/LoginFormLinks';
+import Button from '../../atoms/buttons/Button';
+import SignInInput from '../../atoms/inputs/SignInInput';
 
 
 type LoginFormProps = {

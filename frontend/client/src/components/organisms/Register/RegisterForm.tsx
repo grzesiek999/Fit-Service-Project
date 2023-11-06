@@ -1,8 +1,8 @@
 import React, {SyntheticEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../atoms/buttons/Button';
-import '../../styles/index.scss';
-import SignInInput from '../atoms/inputs/SignInInput';
+import Button from '../../atoms/buttons/Button';
+import '../../../styles/index.scss';
+import SignInInput from '../../atoms/inputs/SignInInput';
 
 
 const RegisterForm = () => {

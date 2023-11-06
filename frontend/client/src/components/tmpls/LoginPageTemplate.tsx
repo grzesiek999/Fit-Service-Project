@@ -1,5 +1,5 @@
 import React from 'react'
-import LoginForm from '../organisms/LoginForm';
+import LoginForm from '../organisms/Login/LoginForm';
 
 
 type LoginPageTemplateProps = {

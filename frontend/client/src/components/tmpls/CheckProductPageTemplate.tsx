@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import  SearchDiv  from "../organisms/SearchDiv";
+import React from "react";
+import SearchDiv from "../organisms/CheckProduct/SearchAndResultsDiv";
 
 
 type CheckProductPageTemplateProps = {

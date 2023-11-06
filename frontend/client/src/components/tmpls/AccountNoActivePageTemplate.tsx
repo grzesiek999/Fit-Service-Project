@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import Button from "../atoms/buttons/Button";
+import AccountNoActiveCommunicat from "../organisms/AccountNoActive/AccountNoActiveCommunicat";
 
 
 type AccountNoActivePageTemplateProps = {
@@ -30,12 +30,7 @@ const AccountNoActivePageTemplate = ({email}: AccountNoActivePageTemplateProps) 
 
 
     return (
-        <div>
-            <div>Konto nie aktywne</div>
-            <div>Sprawdź folder spam na poczcie elektronicznej lub wyślij link aktywacyjny ponownie </div>
-            <Button buttonType="button" className="" onClick={send} buttonTittle="Wyślij" />
-            <div>{message}</div>
-        </div>
+       <AccountNoActiveCommunicat message={message} send={send} />
     );
 }
 

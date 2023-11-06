@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, useNavigate } from "react-router-dom";
-import LayoutMenu from '../components/organisms/LayoutMenu';
-import AuthorizationDiv from '../components/molecules/AuthorizationDiv';
+import LayoutMenu from '../components/organisms/Layout/LayoutMenu';
+import AuthorizationDiv from '../components/molecules/Layout/AuthorizationDiv';
 
 
 type LayoutProps = {

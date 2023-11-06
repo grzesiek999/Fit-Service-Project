@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "../atoms/buttons/Button";
-import "../../styles/index.scss";
+import Button from "../../atoms/buttons/Button";
+import "../../../styles/index.scss";
 
 
 type AuthorizationDivProps = {

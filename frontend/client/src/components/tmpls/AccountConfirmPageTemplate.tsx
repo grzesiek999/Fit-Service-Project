@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
+import AccountConfirmCommunicat from "../organisms/AccountConfirm/AccountConfirmCommunicat";
 
 
 const AccountConfirmPageTemplate = () =>{
@@ -33,21 +34,10 @@ const AccountConfirmPageTemplate = () =>{
         }
         confirmEmail(uid, token);
     }, [uid, token, activeMessage, active]);
-
-    if(active === true){
-        return(
-            <div>
-                Twoje konto zostało zaaktywowane!
-            </div>
-        );
-    }
-    else{
-        return(
-            <div>
-                Nieważny link aktywacyjny!
-            </div>
-        );
-    }
+    
+    return (
+        <AccountConfirmCommunicat active={active}/>
+    );
 }
 
 export default AccountConfirmPageTemplate;

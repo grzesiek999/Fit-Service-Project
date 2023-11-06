@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from "react";
-import { FaSearch } from "react-icons/fa";
-import { CgAdd } from "react-icons/cg";
-import "../../styles/index.scss";
+import "../../../styles/index.scss";
+import ChooseDiv from "../../molecules/CheckProduct/ChooseDiv";
+import SearchDiv from "../../molecules/CheckProduct/SearchDiv";
 
-type SearchBarProps = {
+
+type SearchAndResultsDivProps = {
   isLogged: boolean
 }
 
@@ -17,7 +18,7 @@ interface Product {
     fats: number
   }
 
-const SearchBar = ({isLogged}: SearchBarProps) => {
+const SearchAndResultsDiv = ({isLogged}: SearchAndResultsDivProps) => {
   const [input, setInput] = useState("");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [results, setResults] = useState<Product[]>([]);
@@ -42,7 +43,7 @@ const SearchBar = ({isLogged}: SearchBarProps) => {
 
   const addProduct = () => {
     if (isLogged === true){
-
+      setSelectedProduct(null);
     }
     else{
       alert(`Aby dodać produkt musisz być zalogowany!`);
@@ -68,39 +69,10 @@ const SearchBar = ({isLogged}: SearchBarProps) => {
 
   return (
     <div>
-      <div className="search-div-wrapper">
-        <div className="search-bar-div-wrapper">
-          <FaSearch className="search-icon"/>
-          <input
-            placeholder="Szukaj"
-            value={input}
-            onChange={(e) => handleChange(e.target.value)}
-          />
-          <div className={addDivClass} onClick={addProduct}>
-            <CgAdd className="add-icon" />
-            <p>dodaj</p>
-          </div>
-        </div>
-        <ul className="search-results-ul-wrapper">
-          {results.map((product) => (
-            <li className="search-result-li-wrapper" key={product.id} onClick={() => handleProductClick(product)}>
-              {product.name}
-            </li>
-            ))}
-        </ul>
-      </div>
-      {selectedProduct && (
-        <div className="search-choose-div-wrapper">
-          <p>{selectedProduct.name}</p>
-          <p>Waga: {selectedProduct.weight}g</p>
-          <p>Energia: {selectedProduct.energy} kcal</p>
-          <p>Białko: {selectedProduct.proteins} g</p>
-          <p>Węglowodany: {selectedProduct.carbohydrates} g</p>
-          <p>Tłuszcze: {selectedProduct.fats} g</p>
-        </div>
-      )}
+      <SearchDiv input={input} handleChange={handleChange} addDivClass={addDivClass} addProduct={addProduct} results={results} handleProductClick={handleProductClick} />
+      <ChooseDiv selectedProduct={selectedProduct} />
     </div>
   );
 };
 
-export default SearchBar;
+export default SearchAndResultsDiv;
