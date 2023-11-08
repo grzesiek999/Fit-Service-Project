@@ -1,6 +1,5 @@
 import React from "react";
-import SearchAndResultsDiv from "../organisms/CheckProduct/SearchAndResultsDiv";
-
+import SearchProduct from "../organisms/CheckProduct/SearchProduct";
 
 type CheckProductPageTemplateProps = {
     isLogged: boolean
@@ -9,7 +8,7 @@ type CheckProductPageTemplateProps = {
 const CheckProductPageTemplate = ({isLogged}: CheckProductPageTemplateProps) => {
 
     return (
-        <div><SearchAndResultsDiv isLogged={isLogged} /></div>
+        <div><SearchProduct isLogged={isLogged} /></div>
     );
 }
 

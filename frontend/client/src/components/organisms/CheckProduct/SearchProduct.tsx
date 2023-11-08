@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, SyntheticEvent} from "react";
 import "../../../styles/index.scss";
 import ChooseDiv from "../../molecules/CheckProduct/ChooseDiv";
 import SearchDiv from "../../molecules/CheckProduct/SearchDiv";
+import AddProductDiv from "../../molecules/CheckProduct/AddProductDiv";
 
 
-type SearchAndResultsDivProps = {
+type SearchProductProps = {
   isLogged: boolean
 }
 
@@ -18,12 +19,12 @@ interface Product {
     fats: number
   }
 
-const SearchAndResultsDiv = ({isLogged}: SearchAndResultsDivProps) => {
+const SearchProduct = ({isLogged}: SearchProductProps) => {
   const [input, setInput] = useState("");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [results, setResults] = useState<Product[]>([]);
   const [addDivClass, setAddDivClass] = useState('');
-
+  const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
 
   const fetchData = (value:string) => {
     fetch("http://localhost:8000/api/products/get")
@@ -44,6 +45,7 @@ const SearchAndResultsDiv = ({isLogged}: SearchAndResultsDivProps) => {
   const addProduct = () => {
     if (isLogged === true){
       setSelectedProduct(null);
+      setIsDisplayed(true);
     }
     else{
       alert(`Aby dodać produkt musisz być zalogowany!`);
@@ -71,8 +73,9 @@ const SearchAndResultsDiv = ({isLogged}: SearchAndResultsDivProps) => {
     <div>
       <SearchDiv input={input} handleChange={handleChange} addDivClass={addDivClass} addProduct={addProduct} results={results} handleProductClick={handleProductClick} />
       <ChooseDiv selectedProduct={selectedProduct} />
+      <AddProductDiv isDisplayed={isDisplayed} />
     </div>
   );
 };
 
-export default SearchAndResultsDiv;
+export default SearchProduct;
