@@ -63,9 +63,9 @@ const SearchProduct = ({isLogged}: SearchProductProps) => {
 
   useEffect(() => {
     if (isLogged) {
-      setAddDivClass('active-add-product-div-wrapper');
+      setAddDivClass('active-add-product-div-button-wrapper');
     } else {
-      setAddDivClass('no-active-add-product-div-wrapper');
+      setAddDivClass('no-active-add-product-div-button-wrapper');
     }
   }, [isLogged]);
 

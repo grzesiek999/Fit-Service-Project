@@ -1,5 +1,7 @@
 import React, {useEffect, useState, SyntheticEvent} from "react";
 import "../../../styles/index.scss";
+import { AddProductTextInput, AddProductNumberInput } from "../../atoms/inputs/AddProductInput";
+import Button from "../../atoms/buttons/Button";
 
 
 type AddProductDivProps = {
@@ -15,9 +17,29 @@ const AddProductDiv = ({isDisplayed}: AddProductDivProps) => {
     const [carbohydrates, setCarbohydrates] = useState<number>(0);
     const [fats, setFats] = useState<number>();
 
+    const handleName = (name :string) => {
+        setName(name);
+    };
+
+    const handleEnergy = (energy: number) => {
+        setEnergy(energy);
+    }
+
+    const handleProteins = (proteins: number) => {
+        setProteins(proteins);
+    }
+
+    const handleCarbohydrates = (carbohydrates: number) => {
+        setCarbohydrates(carbohydrates);
+    }
+
+    const handleFats = (fats: number) => {
+        setFats(fats);
+    }
+
     const submit = async (e: SyntheticEvent) =>{
         e.preventDefault();
-        const response = await fetch('http://localhost:8000/api/register', {
+        const response = await fetch('http://localhost:8000/api/products/add', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -38,9 +60,15 @@ const AddProductDiv = ({isDisplayed}: AddProductDivProps) => {
 
     return (
         <div className="add-product-div-wrapper" style={{ display: isDisplayed ? 'flex' : 'none' }}>
-        <form>
-          
-        </form>
+            <form onSubmit={submit}>
+                <AddProductTextInput inputType="name" onChange={handleName} />
+                <AddProductNumberInput inputType="energy" onChange={handleEnergy} />
+                <AddProductNumberInput inputType="proteins" onChange={handleProteins} />
+                <AddProductNumberInput inputType="carbohydrates" onChange={handleCarbohydrates} />
+                <AddProductNumberInput inputType="fats" onChange={handleFats} />
+                <Button buttonType="submit" className="add-product-button-wrapper" onClick={()=>{}} buttonTittle="dodaj" />
+            </form>
+            {message && <div>{message}</div>}
       </div>
     );
 }

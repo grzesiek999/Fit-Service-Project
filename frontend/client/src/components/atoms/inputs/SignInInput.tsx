@@ -3,7 +3,7 @@ import React, {useState} from "react";
 
 type SignInInputProps = {
     inputType: string;
-    onChange: (newPassword: string) => void;
+    onChange: (newValue: string) => void;
 }
 
 const SignInInput = ({inputType, onChange}: SignInInputProps) => {
