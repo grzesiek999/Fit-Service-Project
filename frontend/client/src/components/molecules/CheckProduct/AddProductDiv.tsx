@@ -1,4 +1,4 @@
-import React, {useEffect, useState, SyntheticEvent} from "react";
+import React, { useState, SyntheticEvent} from "react";
 import "../../../styles/index.scss";
 import { AddProductTextInput, AddProductNumberInput } from "../../atoms/inputs/AddProductInput";
 import Button from "../../atoms/buttons/Button";
@@ -6,16 +6,17 @@ import Button from "../../atoms/buttons/Button";
 
 type AddProductDivProps = {
     isDisplayed: boolean;
+    setIsDisplayed: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const AddProductDiv = ({isDisplayed}: AddProductDivProps) => {
+const AddProductDiv = ({isDisplayed, setIsDisplayed}: AddProductDivProps) => {
 
     const [message, setMessage] = useState('');
     const [name, setName] = useState<string>('');
     const [energy, setEnergy] = useState<number>(0);
     const [proteins, setProteins] = useState<number>(0);
     const [carbohydrates, setCarbohydrates] = useState<number>(0);
-    const [fats, setFats] = useState<number>();
+    const [fats, setFats] = useState<number>(0);
 
     const handleName = (name :string) => {
         setName(name);
@@ -37,6 +38,10 @@ const AddProductDiv = ({isDisplayed}: AddProductDivProps) => {
         setFats(fats);
     }
 
+    const close = () => {
+        setIsDisplayed(false);
+    }
+
     const submit = async (e: SyntheticEvent) =>{
         e.preventDefault();
         const response = await fetch('http://localhost:8000/api/products/add', {
@@ -51,10 +56,17 @@ const AddProductDiv = ({isDisplayed}: AddProductDivProps) => {
             })
         })
         if(response.ok){
-            setMessage('ok');
+            setIsDisplayed(false);
+            setName('');
+            setEnergy(0);
+            setProteins(0);
+            setCarbohydrates(0);
+            setFats(0);
+            window.location.reload();
         }
         else{
             console.error('Error', response.status, response.statusText);
+            setMessage('Produkt o podanej nazwie już istnieje')
         }
     }
 
@@ -66,10 +78,13 @@ const AddProductDiv = ({isDisplayed}: AddProductDivProps) => {
                 <AddProductNumberInput inputType="proteins" onChange={handleProteins} />
                 <AddProductNumberInput inputType="carbohydrates" onChange={handleCarbohydrates} />
                 <AddProductNumberInput inputType="fats" onChange={handleFats} />
-                <Button buttonType="submit" className="add-product-button-wrapper" onClick={()=>{}} buttonTittle="dodaj" />
+                <div>
+                    <Button buttonType="submit" className="add-product-button-wrapper" onClick={()=>{}} buttonTittle="dodaj" />
+                    <Button buttonType="button" className="close-add-product-div-button-wrapper" onClick={close} buttonTittle="Zamknij" />
+                </div>
             </form>
             {message && <div>{message}</div>}
-      </div>
+        </div>
     );
 }
 

@@ -73,7 +73,7 @@ const SearchProduct = ({isLogged}: SearchProductProps) => {
     <div>
       <SearchDiv input={input} handleChange={handleChange} addDivClass={addDivClass} addProduct={addProduct} results={results} handleProductClick={handleProductClick} />
       <ChooseDiv selectedProduct={selectedProduct} />
-      <AddProductDiv isDisplayed={isDisplayed} />
+      <AddProductDiv isDisplayed={isDisplayed} setIsDisplayed={setIsDisplayed} />
     </div>
   );
 };
