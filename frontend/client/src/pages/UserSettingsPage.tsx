@@ -4,12 +4,13 @@ import UserSettingsPageTemplate from "../components/tmpls/UserSettingsPageTempla
 
 type UserSettingsPageProps = {
     email: string;
+    name: string;
 }
 
-const UserSettingsPage = ({email}: UserSettingsPageProps) => {
+const UserSettingsPage = ({email, name}: UserSettingsPageProps) => {
 
     return(
-        <UserSettingsPageTemplate email={email}/>
+        <UserSettingsPageTemplate email={email} name={name} />
     );
 }
 

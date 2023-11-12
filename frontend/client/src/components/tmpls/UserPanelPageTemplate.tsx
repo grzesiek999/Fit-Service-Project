@@ -1,6 +1,7 @@
 import React from "react";
-import WelcomeUserSpan from "../atoms/spans/WelcomeUserSpan";
-import UserSettingsList from "../atoms/lists/UserSettingsList";
+import UserPanelMenu from "../organisms/UserPanel/UserPanelMenu";
+import UserPanelContent from "../organisms/UserPanel/UserPanelContent";
+import "../../styles/index.scss";
 
 
 type UserPanelPageTemplateProps = {
@@ -10,12 +11,10 @@ type UserPanelPageTemplateProps = {
 const UserPanelPageTemplate = ({name}: UserPanelPageTemplateProps) => {
 
     return (
-        <main>
-            <div>
-                <WelcomeUserSpan name={name} />
-                <UserSettingsList />
-            </div>
-        </main>
+        <div className="user-panel-page-template-div-wrapper">
+            <UserPanelMenu name={name} />
+            <UserPanelContent />
+        </div>
     );
 }
 

@@ -1,41 +1,19 @@
-import React, { useState } from "react";
-import Button from "../atoms/buttons/Button";
+import React from "react";
+import UserPanelMenu from "../organisms/UserPanel/UserPanelMenu";
+import UserPanelSettings from "../organisms/UserPanel/UserPanelSettings";
 
 
 type UserSettingsPageTemplateProps = {
     email: string;
+    name: string;
 }
 
-const UserSettingsPageTemplate = ({email}: UserSettingsPageTemplateProps) => {
-
-    const [message, setMessage] = useState('');
-
-    const changePassword = async () => {
-        const response = await fetch('http://localhost:8000/api/send_password_restore', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({
-            email,
-          })
-        });
-        if(response.ok){
-          setMessage('Na podany adres email został wysłany link resetujący hasło')
-        }
-        else {
-          if(response.status === 403){
-            setMessage('Podano nieprawiłowy adres email');
-          }
-          else {
-            console.error('Error', response.status, response.statusText);
-          }
-        }
-      }
+const UserSettingsPageTemplate = ({email, name}: UserSettingsPageTemplateProps) => {
 
     return (
-        <div>
-            <div>Twój email {email}</div>
-            <Button buttonType="button" className="" onClick={changePassword} buttonTittle="Zmień hasło" />
-            <div>{message}</div>
+        <div className="user-panel-page-template-div-wrapper">
+            <UserPanelMenu name={name} />
+            <UserPanelSettings email={email} />
         </div>
     );
 }

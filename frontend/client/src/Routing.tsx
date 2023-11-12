@@ -62,7 +62,7 @@ const Routing = ({isLogged, isActive, email, name, setName} : RoutingProps) => {
                 <Route path='/set_new_password/:uid/:token' element={ isActive ? <SetNewPasswordPage /> : <AccountNoActivePage email={email} />} />
                 <Route path='/password_changed' element={<PasswordChangedPage />} />
                 <Route path="/user_panel" element={ isActive ? <UserPanelPage name={name} /> : <AccountNoActivePage email={email}/>} />
-                <Route path="/user_settings" element={ isActive ? <UserSettingsPage email={email} /> : <AccountNoActivePage email={email} />} />
+                <Route path="/user_settings" element={ isActive ? <UserSettingsPage email={email} name={name} /> : <AccountNoActivePage email={email} />} />
                 <Route path="/calculators" element={ isActive ? <CalculatorsPage /> : <AccountNoActivePage email={email} /> } />
                 <Route path="/calculators/check_product" element={ isActive ? <CheckProductPage isLogged={isLogged} /> : <AccountNoActivePage email={email} /> } />
             </Route>
