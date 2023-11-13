@@ -15,17 +15,23 @@ import PasswordChangedPage from "./pages/PasswordChangedPage";
 import UserSettingsPage from "./pages/UserSettingsPage";
 import CalculatorsPage from "./pages/CalculatorsPage";
 import CheckProductPage from "./pages/CheckProductPage";
+import UserProfilPage from "./pages/UserProfilPage";
 
 
 type RoutingProps = {
   isLogged: boolean;
-  isActive: boolean;
+  id: number;
+  lastLogin: Date;
   email: string;
   name: string;
+  surname: string;
+  birthday: Date;
+  createdAt: Date;
+  isActive: boolean;
   setName: (name: string) => void;
 }
 
-const Routing = ({isLogged, isActive, email, name, setName} : RoutingProps) => {
+const Routing = ({isLogged, id, lastLogin, email, name, surname, birthday, createdAt, isActive, setName}: RoutingProps) => {
     if(isLogged===false){
         return (
           <BrowserRouter>
@@ -41,6 +47,7 @@ const Routing = ({isLogged, isActive, email, name, setName} : RoutingProps) => {
                 <Route path='/password_changed' element={<PasswordChangedPage />} />
                 <Route path="/user_panel" element={ <NotLoggedPage /> } />
                 <Route path="/user_settings" element={ <NotLoggedPage /> } />
+                <Route path="/user_profil" element={ <NotLoggedPage /> } />
                 <Route path="/calculators" element={ <CalculatorsPage /> } />
                 <Route path="/calculators/check_product" element={ <CheckProductPage isLogged={isLogged}/> } />
               </Route>
@@ -63,6 +70,7 @@ const Routing = ({isLogged, isActive, email, name, setName} : RoutingProps) => {
                 <Route path='/password_changed' element={<PasswordChangedPage />} />
                 <Route path="/user_panel" element={ isActive ? <UserPanelPage name={name} /> : <AccountNoActivePage email={email}/>} />
                 <Route path="/user_settings" element={ isActive ? <UserSettingsPage email={email} name={name} /> : <AccountNoActivePage email={email} />} />
+                <Route path="/user_profil" element={ isActive ? <UserProfilPage name={name} /> : <AccountNoActivePage email={email} />} />
                 <Route path="/calculators" element={ isActive ? <CalculatorsPage /> : <AccountNoActivePage email={email} /> } />
                 <Route path="/calculators/check_product" element={ isActive ? <CheckProductPage isLogged={isLogged} /> : <AccountNoActivePage email={email} /> } />
             </Route>

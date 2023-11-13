@@ -5,10 +5,15 @@ import './styles/index.scss';
 
 const App = () => {
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [isActive, setIsActive] = useState<boolean>(true);
   const [isLogged, setIsLogged] = useState<boolean>(false);
+  const [id, setId] = useState<number>(0);
+  const [lastLogin, SetLastLogin] = useState<Date>(new Date());
+  const [email, setEmail] = useState<string>('');
+  const [name, setName] = useState<string>('');
+  const [surname, setSurname] = useState<string>('');
+  const [birthday, setBirthday] = useState<Date>(new Date());
+  const [createdAt, setCreatedAt] = useState<Date>(new Date());
+  const [isActive, setIsActive] = useState<boolean>(false);
 
   useEffect(() => {
     (
@@ -21,21 +26,24 @@ const App = () => {
       );
 
       const content = await response.json();
-      if(content.detail === 'Unauthenticated!'){
-        setName('');
-      }
+      if(content.detail === 'Unauthenticated!'){}
       else{
         setIsLogged(true);
-        setIsActive(content.is_active);
+        setId(content.id);
+        SetLastLogin(content.last_login);
         setEmail(content.email);
         setName(content.name);
+        setSurname(content.surname);
+        setBirthday(content.birthday);
+        setCreatedAt(content.created_at);
+        setIsActive(content.is_active);
       }
       }
     )();
   });
-
+  
   return (
-    <Routing isLogged={isLogged} isActive={isActive} email={email} name={name} setName={setName} />
+    <Routing isLogged={isLogged} id={id} lastLogin={lastLogin} email={email} name={name} surname={surname} birthday={birthday} createdAt={createdAt} isActive={isActive} setName={setName} />
   );  
 }
 

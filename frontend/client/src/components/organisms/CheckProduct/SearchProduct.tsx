@@ -1,4 +1,4 @@
-import React, {useEffect, useState, SyntheticEvent} from "react";
+import React, {useEffect, useState} from "react";
 import "../../../styles/index.scss";
 import ChooseDiv from "../../molecules/CheckProduct/ChooseDiv";
 import SearchDiv from "../../molecules/CheckProduct/SearchDiv";
@@ -17,7 +17,7 @@ interface Product {
     proteins: number,
     carbohydrates: number,
     fats: number
-  }
+}
 
 const SearchProduct = ({isLogged}: SearchProductProps) => {
   const [input, setInput] = useState("");

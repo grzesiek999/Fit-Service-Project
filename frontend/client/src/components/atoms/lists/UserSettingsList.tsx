@@ -5,20 +5,20 @@ import { Link } from "react-router-dom";
 const UserSettingsList = () => {
     
     return (
-        <div>
+        <div className="user-setting-nav-div-wrapper">
             <div>Panel Użytkownika</div>
             <ul>
                 <li>
-                    <Link to="/" className='-link-wrapper'>Moje Parametry</Link>
+                    <Link to="/user_profil" className='-link-wrapper'>Mój Profil</Link>
                 </li>
                 <li>
                     <Link to="/" className='-link-wrapper'>Moje Diety</Link>
                 </li>
                 <li>
-                    <Link to="/" className='-link-wrapper'>Dziennik żywieniowy</Link>
+                    <Link to="/" className='-link-wrapper'>Moje Posiłki</Link>
                 </li>
                 <li>
-                    <Link to="/user_settings" className='-link-wrapper'>Ustawienia</Link>
+                    <Link to="/user_settings" className='-link-wrapper'>Ustawienia konta</Link>
                 </li>
             </ul>
         </div>
