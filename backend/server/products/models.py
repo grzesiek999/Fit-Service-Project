@@ -8,6 +8,3 @@ class Product(models.Model):
     proteins = models.FloatField()
     carbohydrates = models.FloatField()
     fats = models.FloatField()
-
-    USERNAME_FIELD = 'name'
-    REQUIRED_FIELDS = []
