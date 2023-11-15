@@ -2,12 +2,12 @@ import React from "react";
 
 
 type AccountConfirmCommunicatProps = {
-    active: boolean;
+    actived: boolean;
 }
 
-const AccountConfirmCommunicat = ({active}: AccountConfirmCommunicatProps) => {
+const AccountConfirmCommunicat = ({actived}: AccountConfirmCommunicatProps) => {
 
-    if(active === true) {
+    if(actived === true) {
         return(
             <div>
                 Twoje konto zostało zaaktywowane!
