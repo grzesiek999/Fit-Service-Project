@@ -1,4 +1,4 @@
-import { createContext, useState, useCallback, ReactNode } from 'react';
+import { createContext, useState, useCallback, ReactNode, useEffect } from 'react';
 
 type User = {
   id: number;
@@ -27,26 +27,34 @@ interface UserDataContextProps {
   children: ReactNode;
 }
 
-export function UserDataContextProvider({ children }: UserDataContextProps) {
-  const [userData, setUserData] = useState<User | null>(null);
+  export function UserDataContextProvider({ children }: UserDataContextProps) {
+    const [userData, setUserData] = useState<User | null>(null);
 
-  const sigIn = useCallback( (data: User) => {
-    setUserData(data);
-  },[]);
+    const sigIn = useCallback( (data: User) => {
+      setUserData(data);
+    },[]);
 
-  const logOut = useCallback(() => {
-    setUserData(null);
-  }, []);
+    const logOut = useCallback(() => {
+      setUserData(null);
+    }, []);
 
-  const context = {
-    user: userData,
-    sigIn: sigIn,
-    logOut: logOut,
-  };
+    useEffect (
+      ()=>{
+        if(userData){
+          const timeout = setTimeout(logOut, 3600000);
+          return () => clearTimeout(timeout);
+        }
+      }, [userData, logOut]);
 
-  return (
-    <UserAuth.Provider value={context}>
-      {children}
-    </UserAuth.Provider>
-  );
-}
+    const context = {
+      user: userData,
+      sigIn: sigIn,
+      logOut: logOut,
+    };
+
+    return (
+      <UserAuth.Provider value={context}>
+        {children}
+      </UserAuth.Provider>
+    );
+  }
