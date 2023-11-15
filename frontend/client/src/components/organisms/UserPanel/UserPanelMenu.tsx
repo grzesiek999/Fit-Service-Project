@@ -4,14 +4,11 @@ import UserSettingsList from "../../atoms/lists/UserSettingsList";
 import "../../../styles/index.scss";
 
 
-type UserPanelMenuProps = {
-    name: string;
-}
+const UserPanelMenu = () => {
 
-const UserPanelMenu = ({name}: UserPanelMenuProps) => {
     return (
         <div className="user-panel-menu-div-wrapper">
-            <WelcomeUserSpan name={name} />
+            <WelcomeUserSpan />
             <UserSettingsList />
         </div>
     );

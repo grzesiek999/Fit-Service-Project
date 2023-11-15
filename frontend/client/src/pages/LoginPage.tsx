@@ -2,14 +2,10 @@ import React from 'react'
 import LoginPageTemplate from '../components/tmpls/LoginPageTemplate';
 
 
-type LoginPageProps = {
-  setName: (name: string) => void;
-}
-
-const LoginPage = ({setName}: LoginPageProps) => {
+const LoginPage = () => {
 
   return (
-      <LoginPageTemplate setName={setName} />
+      <LoginPageTemplate  />
   );
 }
 

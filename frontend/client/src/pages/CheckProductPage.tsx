@@ -1,15 +1,13 @@
-import React, {useState} from "react";
+import React from "react";
 import CheckProductPageTemplate from "../components/tmpls/CheckProductPageTemplate";
 
 
-type CheckProductPageProps = {
-    isLogged: boolean
-}
 
-const CheckProductPage = ({isLogged}: CheckProductPageProps) => {
+
+const CheckProductPage = () => {
 
     return (
-        <CheckProductPageTemplate isLogged={isLogged} />
+        <CheckProductPageTemplate />
     );
 }
 

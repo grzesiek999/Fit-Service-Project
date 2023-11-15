@@ -1,0 +1,15 @@
+export const ROUTER_PATH = {
+    HOME: '/',
+    LOGIN: '/login',
+    REGISTER: '/register',
+    RESTORE_PASSWORD: '/restore_password',
+    REGISTER_SUCCESFUL: '/register_successful',
+    ACCOUNT_CONFIRM: '/account_confirm/:uid/:token',
+    SET_NEW_PASSWORD: '/set_new_password/:uid/:token',
+    PASSWORD_CHANGED: '/password_changed',
+    USER_PANEL: '/user_panel',
+    USER_SETTINGS: '/user_settings',
+    USER_PROFIL: '/user_profil',
+    CALCULATORS: '/calculators',
+    CHECK_PRODUCT: '/calculators/check_product',
+  };

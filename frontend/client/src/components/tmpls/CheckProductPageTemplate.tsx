@@ -1,14 +1,13 @@
 import React from "react";
 import SearchProduct from "../organisms/CheckProduct/SearchProduct";
 
-type CheckProductPageTemplateProps = {
-    isLogged: boolean
-}
 
-const CheckProductPageTemplate = ({isLogged}: CheckProductPageTemplateProps) => {
+const CheckProductPageTemplate = () => {
 
     return (
-        <div><SearchProduct isLogged={isLogged} /></div>
+        <div>
+            <SearchProduct />
+        </div>
     );
 }
 

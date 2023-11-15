@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import "../../../styles/index.scss";
 import ChooseDiv from "../../molecules/CheckProduct/ChooseDiv";
 import SearchDiv from "../../molecules/CheckProduct/SearchDiv";
 import AddProductDiv from "../../molecules/CheckProduct/AddProductDiv";
+import { UserAuth } from "../../../context/UserDataContext";
 
 
 type SearchProductProps = {
@@ -19,7 +20,9 @@ interface Product {
     fats: number
 }
 
-const SearchProduct = ({isLogged}: SearchProductProps) => {
+const SearchProduct = () => {
+
+  const {user} = useContext(UserAuth);
   const [input, setInput] = useState("");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [results, setResults] = useState<Product[]>([]);
@@ -43,7 +46,7 @@ const SearchProduct = ({isLogged}: SearchProductProps) => {
   };
 
   const addProduct = () => {
-    if (isLogged === true){
+    if (user){
       setSelectedProduct(null);
       setIsDisplayed(true);
     }
@@ -62,12 +65,12 @@ const SearchProduct = ({isLogged}: SearchProductProps) => {
   };
 
   useEffect(() => {
-    if (isLogged) {
+    if (user) {
       setAddDivClass('active-add-product-div-button-wrapper');
     } else {
       setAddDivClass('no-active-add-product-div-button-wrapper');
     }
-  }, [isLogged]);
+  }, [user]);
 
   return (
     <div>

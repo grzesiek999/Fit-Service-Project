@@ -1,16 +1,16 @@
-import React, {SyntheticEvent, useState} from 'react';
+import React, {SyntheticEvent, useContext, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoginFormLinks from '../../molecules/Login/LoginFormLinks';
 import Button from '../../atoms/buttons/Button';
 import SignInInput from '../../atoms/inputs/SignInInput';
+import { UserAuth } from '../../../context/UserDataContext';
 
 
-type LoginFormProps = {
-  setName: (name: string) => void;
-}
 
-const LoginForm = ({setName}: LoginFormProps) => {
 
+const LoginForm = () => {
+
+  const {sigIn} = useContext(UserAuth);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -24,6 +24,18 @@ const LoginForm = ({setName}: LoginFormProps) => {
     setPassword(password);
   };
 
+  const fetchUser = async () =>{
+    const response = await fetch('http://localhost:8000/api/user', {
+      method: 'GET',
+      headers: {'Content-Type': 'application/json'},
+      credentials: 'include',
+    });
+    const content = await response.json();
+    if(content.detail === 'Unauthenticated!'){}
+    else{
+      sigIn(content);
+    }
+  }
 
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
@@ -38,8 +50,7 @@ const LoginForm = ({setName}: LoginFormProps) => {
       })
     });
     if(response.ok){
-      const content = await response.json();
-      setName(content.name);
+      fetchUser();
       return navigate('/');
     }
     else {

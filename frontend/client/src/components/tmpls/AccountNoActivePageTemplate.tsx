@@ -1,14 +1,13 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import AccountNoActiveCommunicat from "../organisms/AccountNoActive/AccountNoActiveCommunicat";
+import { UserAuth } from "../../context/UserDataContext";
 
 
-type AccountNoActivePageTemplateProps = {
-    email: string;
-}
+const AccountNoActivePageTemplate = () => {
 
-const AccountNoActivePageTemplate = ({email}: AccountNoActivePageTemplateProps) => {
-
+    const {user} = useContext(UserAuth);
     const [message, setMessage] = useState('');
+    const [email, setEmail] = useState(user?.email);
 
     const send = async () => {
 

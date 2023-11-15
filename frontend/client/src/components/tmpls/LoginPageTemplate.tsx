@@ -2,17 +2,10 @@ import React from 'react'
 import LoginForm from '../organisms/Login/LoginForm';
 
 
-type LoginPageTemplateProps = {
-  setName: (name: string) => void;
-}
-
-const LoginPageTemplate = ({setName}: LoginPageTemplateProps) => {
+const LoginPageTemplate = () => {
 
   return (
-    <main>
-      <h1>Zaloguj sie</h1>
-      <LoginForm setName={setName} />
-    </main>
+    <LoginForm />
   );
 }
 

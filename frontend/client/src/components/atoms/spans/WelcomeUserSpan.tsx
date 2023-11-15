@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../../styles/index.scss"
+import { UserAuth } from "../../../context/UserDataContext";
 
 
-type WelcomeUserSpanProps = {
-    name: string;
-}
 
-const WelcomeUserSpan = ({name}: WelcomeUserSpanProps) => {
+
+const WelcomeUserSpan = () => {
+
+    const {user} = useContext(UserAuth);
+
 
     return(
-        <span>Witaj {name}</span>
+        <span>Witaj {user?.name}</span>
     )
 }
 

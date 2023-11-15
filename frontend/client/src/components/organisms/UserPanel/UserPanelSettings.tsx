@@ -1,14 +1,14 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import Button from "../../atoms/buttons/Button";
+import { UserAuth } from "../../../context/UserDataContext";
 
 
-type UserPanelSettingsProps = {
-    email: string;
-}
 
-const UserPanelSettings = ({email}: UserPanelSettingsProps) => {
+const UserPanelSettings = () => {
 
+    const {user} = useContext(UserAuth);
     const [message, setMessage] = useState('');
+    const [email, setEmail] = useState(user?.email);
 
     const changePassword = async () => {
         const response = await fetch('http://localhost:8000/api/send_password_restore', {
