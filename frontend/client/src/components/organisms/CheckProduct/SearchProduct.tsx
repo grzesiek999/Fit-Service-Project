@@ -6,10 +6,6 @@ import AddProductDiv from "../../molecules/CheckProduct/AddProductDiv";
 import { UserAuth } from "../../../context/UserDataContext";
 
 
-type SearchProductProps = {
-  isLogged: boolean
-}
-
 interface Product {
     id: number,
     name: string,
@@ -46,9 +42,14 @@ const SearchProduct = () => {
   };
 
   const addProduct = () => {
-    if (user){
-      setSelectedProduct(null);
-      setIsDisplayed(true);
+    if(user){
+      if(user.is_active){
+        setSelectedProduct(null);
+        setIsDisplayed(true);
+      }
+      else{
+        alert('Aby dodać produkt musisz aktywować swoje konto, jesli nie otrzymałes linku aktywujacego wejdz w zakładke Moje Konto i wyslij ponownie link');
+      }
     }
     else{
       alert(`Aby dodać produkt musisz być zalogowany!`);
@@ -65,7 +66,7 @@ const SearchProduct = () => {
   };
 
   useEffect(() => {
-    if (user) {
+    if (user && user.is_active) {
       setAddDivClass('active-add-product-div-button-wrapper');
     } else {
       setAddDivClass('no-active-add-product-div-button-wrapper');

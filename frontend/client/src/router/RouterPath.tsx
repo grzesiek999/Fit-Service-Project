@@ -12,4 +12,5 @@ export const ROUTER_PATH = {
     USER_PROFIL: '/user_profil',
     CALCULATORS: '/calculators',
     CHECK_PRODUCT: '/calculators/check_product',
+    ACCOUNT_NO_ACTIVE: 'account_no_active',
   };
