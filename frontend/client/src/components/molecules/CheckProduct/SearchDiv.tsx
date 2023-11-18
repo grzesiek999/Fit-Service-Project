@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState, useContext, useEffect,} from "react";
 import SearchProductInput from "../../atoms/inputs/SearchProductInput";
 import ProductSearchList from "../../atoms/lists/ProductSearchList";
 import "../../../styles/index.scss";
+import { UserAuth } from "../../../context/UserDataContext";
+import AddProductDiv from "./AddProductDiv";
 
 
 interface Product {
@@ -15,21 +17,60 @@ interface Product {
 }
 
 type SearchDivProps = {
-    input: string;
-    handleChange: (value: string) => void;
-    addDivClass: string;
-    addProduct: () => void;
-    results: Product[];
     handleProductClick: (product: Product) => void;
 }
 
-const SearchDiv = ({input, handleChange, addDivClass, addProduct, results, handleProductClick}: SearchDivProps) => {
+const SearchDiv = ({handleProductClick}: SearchDivProps) => {
+
+    const {user} = useContext(UserAuth);
+    const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
+    const [results, setResults] = useState<Product[]>([]);
+    const [addDivClass, setAddDivClass] = useState('');
+
+    const fetchData = (value:string) => {
+        fetch("http://localhost:8000/api/products/get")
+          .then((response) => response.json())
+          .then((json) => {
+            const results = json.filter((product:Product) => {
+              return (
+                value &&
+                product &&
+                product.name &&
+                product.name.toLowerCase().includes(value)
+              );
+            });
+            setResults(results);
+          });
+    };
+
+    useEffect(() => {
+        if (user && user.is_active) {
+            setAddDivClass('active-add-product-div-button-wrapper');
+        } else {
+            setAddDivClass('no-active-add-product-div-button-wrapper');
+        }
+    }, [user]);
+
+    const addProduct = () => {
+        if(user){
+            if(user.is_active){
+                setIsDisplayed(true);
+            }
+            else{
+                alert('Aby dodać produkt musisz aktywować swoje konto, jesli nie otrzymałes linku aktywujacego wejdz w zakładke Moje Konto i wyslij ponownie link');
+            }
+        }
+        else{
+            alert(`Aby dodać produkt musisz być zalogowany!`);
+        }
+    };
 
     return (
-    <div className="search-div-wrapper">
-        <SearchProductInput input={input} handleChange={handleChange} addDivClass={addDivClass} addProduct={addProduct}/>
-        <ProductSearchList results={results} handleProductClick={handleProductClick} />
-      </div>
+        <div className="search-div-wrapper">
+            <SearchProductInput fetchData={fetchData} addDivClass={addDivClass} addProduct={addProduct}/>
+            <ProductSearchList results={results} handleProductClick={handleProductClick} />
+            <AddProductDiv isDisplayed={isDisplayed} setIsDisplayed={setIsDisplayed} />
+        </div>
     );
 }
 

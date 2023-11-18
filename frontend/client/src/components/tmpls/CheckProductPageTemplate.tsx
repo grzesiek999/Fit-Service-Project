@@ -1,12 +1,12 @@
 import React from "react";
-import SearchProduct from "../organisms/CheckProduct/SearchProduct";
+import CheckProduct from "../organisms/CheckProduct/CheckProduct";
 
 
 const CheckProductPageTemplate = () => {
 
     return (
         <div>
-            <SearchProduct />
+            <CheckProduct />
         </div>
     );
 }
