@@ -53,14 +53,10 @@ const LoginForm = () => {
       fetchUser();
       return navigate('/');
     }
-    else {
-      if(response.status === 403){
-        return setMessage('Nieprawidłowy email lub hasło');
-      }
-      else {
-        console.error('Error', response.status, response.statusText);
-      }
+    if(response.status === 403){
+      return setMessage('Nieprawidłowy email lub hasło');
     }
+    console.error('Error', response.status, response.statusText);
   }
 
   return (
