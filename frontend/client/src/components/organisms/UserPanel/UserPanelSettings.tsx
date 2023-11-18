@@ -7,8 +7,8 @@ import { UserAuth } from "../../../context/UserDataContext";
 const UserPanelSettings = () => {
 
     const {user} = useContext(UserAuth);
-    const [message, setMessage] = useState('');
-    const [email, setEmail] = useState(user?.email);
+    const [message, setMessage] = useState('');   
+    const email = user?.email;
 
     const changePassword = async () => {
         const response = await fetch('http://localhost:8000/api/send_password_restore', {
@@ -33,7 +33,7 @@ const UserPanelSettings = () => {
 
     return (
         <div>
-            <div>Twój email {email}</div>
+            <div>Twój email {user?.email}</div>
             <Button buttonType="button" className="" onClick={changePassword} buttonTittle="Zmień hasło" />
             <div>{message}</div>
         </div>

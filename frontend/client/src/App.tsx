@@ -7,22 +7,13 @@ import { UserAuth } from './context/UserDataContext';
 const App = () => {
 
   const {sigIn} = useContext(UserAuth);
-
-  const fetchUser = async () =>{
-    const response = await fetch('http://localhost:8000/api/user', {
-      method: 'GET',
-      headers: {'Content-Type': 'application/json'},
-      credentials: 'include',
-    });
-    const content = await response.json();
-    if(content.detail === 'Unauthenticated!'){}
-    else{
-      sigIn(content);
-    }
-  } 
   
   useEffect(() => {
-    fetchUser(); 
+    const userDataFromLocalStorage = localStorage.getItem('user');
+    if (userDataFromLocalStorage) {
+        const parsedUserData = JSON.parse(userDataFromLocalStorage);
+        sigIn(parsedUserData);
+      }
   }, []);
   
   return (

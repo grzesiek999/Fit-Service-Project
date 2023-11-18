@@ -30,9 +30,11 @@ const LoginForm = () => {
       headers: {'Content-Type': 'application/json'},
       credentials: 'include',
     });
+    
     const content = await response.json();
     if(content.detail === 'Unauthenticated!'){}
     else{
+      localStorage.setItem('user', JSON.stringify(content));
       sigIn(content);
     }
   }

@@ -19,6 +19,7 @@ const AuthorizationDiv = () => {
       });
       if(response.ok){
         logOut();
+        localStorage.removeItem('user');
         navigate(ROUTER_PATH.HOME);
       }
       else{
@@ -26,7 +27,6 @@ const AuthorizationDiv = () => {
       }
     }
 
-    
     if(user){
         return (
             <div className='authorization-div-wrapper'>
