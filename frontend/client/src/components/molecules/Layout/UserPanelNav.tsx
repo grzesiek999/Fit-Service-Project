@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {ROUTER_PATH} from "../../../router/RouterPath";
 
 
-const UserSettingsList = () => {
+const UserPanelNav = () => {
     
-    return (
-        <div className="user-setting-nav-div-wrapper">
-            <div>Panel Użytkownika</div>
+    return (    
+        <nav>
             <ul>
                 <li>
-                    <Link to="/user_profil" className='-link-wrapper'>Mój Profil</Link>
+                    <Link to={ROUTER_PATH.USER_PROFIL} className='-link-wrapper'>Mój Profil</Link>
                 </li>
                 <li>
                     <Link to="/" className='-link-wrapper'>Moje Diety</Link>
@@ -18,11 +18,11 @@ const UserSettingsList = () => {
                     <Link to="/" className='-link-wrapper'>Moje Posiłki</Link>
                 </li>
                 <li>
-                    <Link to="/user_settings" className='-link-wrapper'>Ustawienia konta</Link>
+                    <Link to={ROUTER_PATH.USER_SETTINGS} className='-link-wrapper'>Ustawienia konta</Link>
                 </li>
             </ul>
-        </div>
+        </nav>
     );
 }
 
-export default UserSettingsList;
+export default UserPanelNav;

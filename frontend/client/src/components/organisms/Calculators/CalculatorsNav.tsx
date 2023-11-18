@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../../styles/index.scss";
+import { ROUTER_PATH } from '../../../router/RouterPath';
+
 
 
 const CalculatorsNav = () => {
@@ -15,7 +17,7 @@ const CalculatorsNav = () => {
                         <Link to="/bmr" className='calculators-nav-link-wrapper'>BMR</Link>
                     </li>
                     <li>
-                        <Link to="/calculators/check_product" className='calculators-nav-link-wrapper'>Sprawdź produkt</Link>
+                        <Link to={ROUTER_PATH.CHECK_PRODUCT} className='calculators-nav-link-wrapper'>Sprawdź produkt</Link>
                     </li>
                 </ul>
             </nav>

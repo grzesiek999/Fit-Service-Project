@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../atoms/buttons/Button";
 import "../../../styles/index.scss";
 import { UserAuth } from "../../../context/UserDataContext";
+import { ROUTER_PATH } from '../../../router/RouterPath';
 
 
 const AuthorizationDiv = () => {
 
-    const {user} = useContext(UserAuth);
+    const {user, logOut} = useContext(UserAuth);
     const navigate = useNavigate();
-    const {logOut} = useContext(UserAuth);
   
     const logout = async () => {
       const response = await fetch('http://localhost:8000/api/logout', {
@@ -19,7 +19,7 @@ const AuthorizationDiv = () => {
       });
       if(response.ok){
         logOut();
-        navigate('/');
+        navigate(ROUTER_PATH.HOME);
       }
       else{
         console.log('Logout problem')
@@ -30,7 +30,7 @@ const AuthorizationDiv = () => {
     if(user){
         return (
             <div className='authorization-div-wrapper'>
-                <Button buttonType="button" className="my-account-button-wrapper" onClick={()=>{navigate('/user_panel');}} buttonTittle="Moje Konto" />
+                <Button buttonType="button" className="my-account-button-wrapper" onClick={()=>{navigate(ROUTER_PATH.USER_PANEL);}} buttonTittle="Moje Konto" />
                 <Button buttonType="button" className="logout-button-wrapper" onClick={logout} buttonTittle="Wyloguj" />
             </div>
         );
@@ -38,7 +38,7 @@ const AuthorizationDiv = () => {
     else{
         return (
             <div className='authorization-div-wrapper'>
-                <Button buttonType="button" className="login-button-wrapper" onClick={()=>{navigate('/login');}} buttonTittle="Zaloguj" />
+                <Button buttonType="button" className="login-button-wrapper" onClick={()=>{navigate(ROUTER_PATH.LOGIN);}} buttonTittle="Zaloguj" />
             </div>
         );
     }

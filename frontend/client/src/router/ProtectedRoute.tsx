@@ -13,7 +13,7 @@ export default function ProtectedRoute() {
     }
 
     if(!user.is_active) {
-        return <Navigate to={ROUTER_PATH.ACCOUNT_NO_ACTIVE} />
+        return <Navigate to={ROUTER_PATH.ACCOUNT_NO_ACTIVE} />;
     }
 
     return <Outlet />;

@@ -6,7 +6,7 @@ import ProtectedRoute from './ProtectedRoute';
 
 import HomePage from "../pages/HomePage";
 import LoginPage from '../pages/LoginPage';
-import Layout from '../pages/Layout';
+import WebsiteLayout from '../pages/WebsiteLayout';
 import RegisterPage from '../pages/RegisterPage';
 import RegisterSuccessfulPage from '../pages/RegisterSuccessfulPage';
 import AccountConfirmPage from '../pages/AccountConfirmPage';
@@ -16,27 +16,33 @@ import RestorePasswordPage from "../pages/RestorePasswordPage";
 import SetNewPasswordPage from "../pages/SetNewPasswordPage";
 import PasswordChangedPage from "../pages/PasswordChangedPage";
 import UserSettingsPage from "../pages/UserSettingsPage";
-import CalculatorsPage from "../pages/CalculatorsPage";
 import CheckProductPage from "../pages/CheckProductPage";
 import UserProfilPage from "../pages/UserProfilPage";
 import {ROUTER_PATH} from "./RouterPath";
+import CalculatorsPage from '../pages/CalculatorsPage';
+import CalculatorsLyaout from '../components/organisms/Layout/CalculatorsLayout';
+import UserPanelLyaout from '../components/organisms/Layout/UserPanelLayout';
 
 
 const ROUTER = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<Layout />}>
+    <Route path='/' element={<WebsiteLayout />}>
       <Route path={ROUTER_PATH.HOME} element={<HomePage />} />
       <Route path={ROUTER_PATH.ACCOUNT_CONFIRM} element={ <AccountConfirmPage /> } />
       <Route path={ROUTER_PATH.SET_NEW_PASSWORD} element={<SetNewPasswordPage />} />
       <Route path={ROUTER_PATH.PASSWORD_CHANGED} element={<PasswordChangedPage />} />
-      <Route path={ROUTER_PATH.CALCULATORS} element={ <CalculatorsPage /> } />
-      <Route path={ROUTER_PATH.CHECK_PRODUCT} element={ <CheckProductPage /> } />
       <Route path={ROUTER_PATH.ACCOUNT_NO_ACTIVE} element={<AccountNoActivePage />} />
+      <Route path={ROUTER_PATH.CALCULATORS} element={<CalculatorsLyaout />} >
+        <Route path={ROUTER_PATH.CALCULATORS} element={ <CalculatorsPage /> } />
+        <Route path={ROUTER_PATH.CHECK_PRODUCT} element={ <CheckProductPage /> } />
+      </Route>
+      
       <Route element={<ProtectedRoute />}>
-        
-        <Route path={ROUTER_PATH.USER_PANEL} element={<UserPanelPage />} />
-        <Route path={ROUTER_PATH.USER_SETTINGS} element={<UserSettingsPage />} />
-        <Route path={ROUTER_PATH.USER_PROFIL} element={<UserProfilPage />} />
+        <Route path={ROUTER_PATH.USER_PANEL} element={<UserPanelLyaout />} >
+          <Route path={ROUTER_PATH.USER_PANEL} element={<UserPanelPage />} />
+          <Route path={ROUTER_PATH.USER_SETTINGS} element={<UserSettingsPage />} />
+          <Route path={ROUTER_PATH.USER_PROFIL} element={<UserProfilPage />} />
+        </Route>
       </Route>
       <Route element={<PublicRoute />}>
         <Route path={ROUTER_PATH.LOGIN} element={<LoginPage />} />
