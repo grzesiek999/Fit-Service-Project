@@ -48,6 +48,7 @@ const SearchDiv = ({handleProductClick}: SearchDivProps) => {
             setAddDivClass('active-add-product-div-button-wrapper');
         } else {
             setAddDivClass('no-active-add-product-div-button-wrapper');
+            setIsDisplayed(false);
         }
     }, [user]);
 

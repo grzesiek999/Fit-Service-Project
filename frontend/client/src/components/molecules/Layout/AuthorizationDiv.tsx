@@ -4,6 +4,7 @@ import Button from "../../atoms/buttons/Button";
 import "../../../styles/index.scss";
 import { UserAuth } from "../../../context/UserDataContext";
 import { ROUTER_PATH } from '../../../router/RouterPath';
+import { SESSION } from "../../../constant/Session";
 
 
 const AuthorizationDiv = () => {
@@ -19,7 +20,7 @@ const AuthorizationDiv = () => {
       });
       if(response.ok){
         logOut();
-        localStorage.removeItem('user');
+        localStorage.removeItem(SESSION.USER);
         navigate(ROUTER_PATH.HOME);
       }
       else{

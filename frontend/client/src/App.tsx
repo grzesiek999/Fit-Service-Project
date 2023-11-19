@@ -2,19 +2,19 @@ import React, { useEffect, useContext} from 'react';
 import Routing from './router/Routing';
 import './styles/index.scss';
 import { UserAuth } from './context/UserDataContext';
+import { getItemWithExpiry } from './utils/LocalStorageManagment';
+import { SESSION } from './constant/Session';
 
 
 const App = () => {
 
-  const {sigIn} = useContext(UserAuth);
+  const {sigIn, user} = useContext(UserAuth);
   
   useEffect(() => {
-    const userDataFromLocalStorage = localStorage.getItem('user');
-    if (userDataFromLocalStorage) {
-        const parsedUserData = JSON.parse(userDataFromLocalStorage);
-        sigIn(parsedUserData);
-      }
-  }, []);
+    if (!user) { 
+      sigIn(getItemWithExpiry(SESSION.USER));
+    }
+  }, [getItemWithExpiry(SESSION.USER), user]);
   
   return (
     <Routing />
