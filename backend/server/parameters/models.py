@@ -1,13 +1,21 @@
 from django.db import models
 from django.utils import timezone
+from users.models import User
 
-
-class Paremeters(models.Model):
-    user_id = models.IntegerField()
+class Parameters(models.Model):
+    user_id = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+    )
     created_at = models.DateTimeField(default=timezone.now)
     height = models.FloatField()
     weight = models.FloatField()
-    bmi = models.FloatField()
+    bmi = models.FloatField(
+        blank=True,
+        null=True,
+    )
     PHYSICAL_ACTIVITY_CHOICES = [
         (0, 'not define'),
         (1, 'brak aktywnosci fizycznej'),
