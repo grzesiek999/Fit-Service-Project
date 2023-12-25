@@ -27,7 +27,7 @@ const SearchDiv = ({handleProductClick}: SearchDivProps) => {
     const [results, setResults] = useState<Product[]>([]);
     const [addDivClass, setAddDivClass] = useState('');
 
-    const fetchData = (value:string) => {
+    const fetchProduct = (value:string) => {
         fetch("http://localhost:8000/api/products/get")
           .then((response) => response.json())
           .then((json) => {
@@ -68,7 +68,7 @@ const SearchDiv = ({handleProductClick}: SearchDivProps) => {
 
     return (
         <div className="search-div-wrapper">
-            <SearchProductInput fetchData={fetchData} addDivClass={addDivClass} addProduct={addProduct}/>
+            <SearchProductInput fetchProduct={fetchProduct} addDivClass={addDivClass} addProduct={addProduct}/>
             <ProductSearchList results={results} handleProductClick={handleProductClick} />
             <AddProductDiv isDisplayed={isDisplayed} setIsDisplayed={setIsDisplayed} />
         </div>

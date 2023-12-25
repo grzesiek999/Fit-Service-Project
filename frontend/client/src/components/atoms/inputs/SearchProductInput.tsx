@@ -5,18 +5,18 @@ import "../../../styles/index.scss";
 
 
 type SearchProductInputProps = {
-    fetchData: (value: string) => void;
+    fetchProduct: (value: string) => void;
     addDivClass: string;
     addProduct: () => void;
 }
 
-const SearchProductInput = ({fetchData, addDivClass, addProduct}: SearchProductInputProps) => {
+const SearchProductInput = ({fetchProduct, addDivClass, addProduct}: SearchProductInputProps) => {
 
     const [input, setInput] = useState("");
 
     const handleChange = (value:string) => {
         setInput(value);
-        fetchData(value);
+        fetchProduct(value);
     };
 
     const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {

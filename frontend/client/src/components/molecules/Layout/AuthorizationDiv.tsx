@@ -9,9 +9,9 @@ import { SESSION } from "../../../constant/Session";
 
 const AuthorizationDiv = () => {
 
-    const {user, logOut} = useContext(UserAuth);
     const navigate = useNavigate();
-  
+    const {user, logOut} = useContext(UserAuth);
+
     const logout = async () => {
       const response = await fetch('http://localhost:8000/api/logout', {
         method: 'POST',
@@ -28,21 +28,21 @@ const AuthorizationDiv = () => {
       }
     }
 
-    if(user){
-        return (
-            <div className='authorization-div-wrapper'>
-                <Button buttonType="button" className="my-account-button-wrapper" onClick={()=>{navigate(ROUTER_PATH.USER_PANEL);}} buttonTittle="Moje Konto" />
-                <Button buttonType="button" className="logout-button-wrapper" onClick={logout} buttonTittle="Wyloguj" />
-            </div>
-        );
-    }
-    else{
-        return (
-            <div className='authorization-div-wrapper'>
-                <Button buttonType="button" className="login-button-wrapper" onClick={()=>{navigate(ROUTER_PATH.LOGIN);}} buttonTittle="Zaloguj" />
-            </div>
-        );
-    }
+    return (
+      <div>
+        {user ?
+          <div className='authorization-div-wrapper'>
+            <Button buttonType="button" className="my-account-button-wrapper" onClick={()=>{navigate(ROUTER_PATH.USER_PANEL);}} buttonTittle="Moje Konto" />
+            <Button buttonType="button" className="logout-button-wrapper" onClick={logout} buttonTittle="Wyloguj" />
+          </div> 
+          :
+          <div className='authorization-div-wrapper'>
+            <Button buttonType="button" className="login-button-wrapper" onClick={()=>{navigate(ROUTER_PATH.LOGIN);}} buttonTittle="Zaloguj" />
+          </div>        
+        }
+      </div>
+    );
+      
 }
 
 export default AuthorizationDiv;
