@@ -4,7 +4,7 @@ import LoginFormLinks from '../../molecules/Login/LoginFormLinks';
 import Button from '../../atoms/buttons/Button';
 import SignInInput from '../../atoms/inputs/SignInInput';
 import { UserAuth } from '../../../context/UserDataContext';
-import {setItemWithExpiry, getItemWithExpiry} from '../../../utils/LocalStorageManagment';
+import {setUserWithExpiry} from '../../../utils/LocalStorageManagment';
 import { SESSION } from '../../../constant/Session';
 
 
@@ -34,8 +34,7 @@ const LoginForm = () => {
     const content = await response.json();
     if(content.detail === 'Unauthenticated!'){}
     else{
-      setItemWithExpiry(SESSION.USER, content, SESSION.TIME)
-      sigIn(getItemWithExpiry(SESSION.USER));
+      sigIn(setUserWithExpiry(SESSION.USER, content, SESSION.TIME));
     }
   }
 

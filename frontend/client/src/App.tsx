@@ -2,7 +2,7 @@ import React, { useEffect, useContext} from 'react';
 import Routing from './router/Routing';
 import './styles/index.scss';
 import { UserAuth } from './context/UserDataContext';
-import { getItemWithExpiry } from './utils/LocalStorageManagment';
+import { getUserWithExpiry } from './utils/LocalStorageManagment';
 import { SESSION } from './constant/Session';
 
 
@@ -12,9 +12,9 @@ const App = () => {
   
   useEffect(() => {
     if (!user) { 
-      sigIn(getItemWithExpiry(SESSION.USER));
+      sigIn(getUserWithExpiry(SESSION.USER));
     }
-  }, [getItemWithExpiry(SESSION.USER), user]);
+  }, [getUserWithExpiry(SESSION.USER), user]);
   
   return (
     <Routing />
