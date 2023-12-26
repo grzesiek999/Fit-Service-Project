@@ -39,13 +39,12 @@ interface UserDataContextProps {
       setUserData(null);
     }, []);
 
-    useEffect (
-      ()=>{
-        if(userData){
-          const timeout = setTimeout(logOut, SESSION.TIME);
-          return () => clearTimeout(timeout);
-        }
-      }, [userData, logOut]);
+    useEffect (()=>{
+      if(userData){
+        const timeout = setTimeout(logOut, SESSION.TIME);
+        return () => clearTimeout(timeout);
+      }
+    }, [userData, logOut]);
 
     const context = {
       user: userData,

@@ -1,11 +1,11 @@
 import React from "react";
-import UserProfilParameters from "../organisms/UserPanel/UserProfilParameters";
+import UserProfilParametersHistory from "../organisms/UserPanel/UserProfilParametersHistory";
 
 
 const UserProfilPageTemplate = () => {
     return (
     <div>
-        <UserProfilParameters />
+        <UserProfilParametersHistory />
     </div>
     );
 }

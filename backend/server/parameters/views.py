@@ -14,7 +14,7 @@ class AddParametersView(APIView):
         return Response(serializer.data)
     
 
-class GetParametersView(APIView):
+class GetAllUserParametersView(APIView):
     def post(self, request):
         user_id = request.data['user_id']
         parameters = Parameters.objects.filter(user_id=user_id)
