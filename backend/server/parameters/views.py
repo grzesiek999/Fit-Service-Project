@@ -24,6 +24,23 @@ class GetAllUserParametersView(APIView):
             return Response(serializer.data)
         else:
             return Response({'message': 'user dont have any parameters'})
+        
+
+class GetLastUserParametersView(APIView):
+    def post(self, request):
+        user_id = request.data['user_id']
+        parameters = Parameters.objects.filter(user_id=user_id)
+
+        if parameters.exists():
+            temp = parameters[0]
+            for param in parameters:
+                if temp.created_at < param.created_at:
+                    temp = param
+    
+            serializer = ParametersSerializer(temp)
+            return Response(serializer.data)
+        else:
+            return Response({'message': 'user dont have any parameters'})
     
 
 class EditParametersView(APIView):
