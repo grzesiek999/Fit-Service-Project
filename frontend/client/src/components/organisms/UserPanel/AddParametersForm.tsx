@@ -2,20 +2,7 @@ import React, { SyntheticEvent, useState } from "react";
 import Button from "../../atoms/buttons/Button";
 
 
-interface AddingParameters {
-    user_id: number,
-    sex: number,
-    age: number,
-    height: number,
-    weight: number,
-    physic_activity: number,
-    chest: number,
-    belly: number,
-    biceps: number,
-    arms: number,
-    thighs: number,
-    calves: number
-}
+
 
 const AddParametersForm = () =>  {
 
