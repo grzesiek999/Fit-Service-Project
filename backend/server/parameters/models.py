@@ -10,6 +10,16 @@ class Parameters(models.Model):
         null=True,
     )
     created_at = models.DateTimeField(default=timezone.now)
+    SEX = [
+        (0, 'not define'),
+        (1, 'man'),
+        (2, 'women'),
+    ]
+    sex = models.IntegerField(
+        choices=SEX,
+        default=0
+    )
+    age = models.IntegerField()
     height = models.FloatField()
     weight = models.FloatField()
     bmi = models.FloatField(
