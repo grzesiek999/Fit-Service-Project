@@ -1,12 +1,12 @@
 import React from "react";
-import UserProfilAvaibleParameters from "../organisms/UserPanel/UserProfilAvaibleParameters";
+import UserProfilContent from "../organisms/UserPanel/UserProfilContent";
 
 
 const UserProfilPageTemplate = () => {
     return (
-    <div>
-        <UserProfilAvaibleParameters />
-    </div>
+        <>
+            <UserProfilContent />
+        </>
     );
 }
 

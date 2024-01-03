@@ -2,6 +2,8 @@ import React, {useEffect, useState } from "react";
 import { getUserWithExpiry } from "../../../utils/LocalStorageManagment";
 import { SESSION } from "../../../constant/Session";
 import AddParametersForm from "./AddParametersForm";
+import "../../../styles/index.scss";
+
 
 
 interface Parameters {
@@ -22,7 +24,7 @@ interface Parameters {
     calves: number
 }
 
-const UserProfilAvaibleParameters = () => {
+const UserProfilContent = () => {
 
     const [user_id, setID] = useState(getUserWithExpiry(SESSION.USER).id);
     const [avaibleParameters, setAvaibleParameters] = useState<Parameters | null>(null);
@@ -52,7 +54,7 @@ const UserProfilAvaibleParameters = () => {
 
 
     return (
-        <div>
+        <div className="user-profil-content-div-wrapper">
             {
                 existParatmetrs ? 
                 <div className="user-parameters-div-wrapper">
@@ -62,6 +64,7 @@ const UserProfilAvaibleParameters = () => {
                         <div>{avaibleParameters?.weight}</div>
                     </div>
                     <div className="user-parameters-model-div-wrapper">
+                        <img src="/public/images/model.PNG" alt="model image error" className="model-image" />
                         <div className="biceps-parameters-div-wrapper">{avaibleParameters?.biceps} cm</div>
                         <div className="chest-parameters-div-wrapper">{avaibleParameters?.chest} cm</div>
                         <div className="arms-parameters-div-wrapper">{avaibleParameters?.arms} cm</div>
@@ -78,4 +81,4 @@ const UserProfilAvaibleParameters = () => {
     );
 }
 
-export default UserProfilAvaibleParameters;
+export default UserProfilContent;

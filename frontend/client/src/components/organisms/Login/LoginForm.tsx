@@ -6,6 +6,7 @@ import SignInInput from '../../atoms/inputs/SignInInput';
 import { UserAuth } from '../../../context/UserDataContext';
 import {setUserWithExpiry} from '../../../utils/LocalStorageManagment';
 import { SESSION } from '../../../constant/Session';
+import { ROUTER_PATH } from '../../../router/RouterPath';
 
 
 const LoginForm = () => {
@@ -52,7 +53,7 @@ const LoginForm = () => {
     });
     if(response.ok){
       fetchUser();
-      return navigate('/');
+      return navigate(ROUTER_PATH.HOME);
     }
     if(response.status === 403){
       return setMessage('Nieprawidłowy email lub hasło');
