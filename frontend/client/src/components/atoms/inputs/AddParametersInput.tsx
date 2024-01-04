@@ -56,6 +56,7 @@ const AddParameterInput = ({inputType, value, onChange }: AddParameterInputProps
                     value={2}
                     checked={value === 2}
                     onChange={onChange}
+                    required
                 /><label>Kobieta</label>
                 <input 
                     type="radio"
@@ -64,6 +65,7 @@ const AddParameterInput = ({inputType, value, onChange }: AddParameterInputProps
                     value={1}
                     checked={value === 1}
                     onChange={onChange}
+                    required
                 /><label>Męzczyzna</label>
               <input 
                     type="radio"
@@ -72,7 +74,59 @@ const AddParameterInput = ({inputType, value, onChange }: AddParameterInputProps
                     value={0}
                     checked={value === 0}
                     onChange={onChange}
+                    required
                 /><label>Nie chce podawać</label>
+            </div>
+        );
+    }
+    else if(inputType === 'physic_activity'){
+        return (
+            <div>
+                <input 
+                    type="radio"
+                    id="none"
+                    name="physActv"
+                    value={1}
+                    checked={value === 1}
+                    onChange={onChange}
+                    required
+                /><label>Brak aktywnosci fizycznej</label>
+                <input 
+                    type="radio"
+                    id="small"
+                    name="physActv"
+                    value={2}
+                    checked={value === 2}
+                    onChange={onChange}
+                    required
+                /><label>Mała aktywnosc fizyczna</label>
+              <input 
+                    type="radio"
+                    id="middle"
+                    name="physActv"
+                    value={3}
+                    checked={value === 3}
+                    onChange={onChange}
+                    required
+                /><label>Umiarkowana aktywnosc fizyczna</label>
+              <input 
+                    type="radio"
+                    id="Huge"
+                    name="physActv"
+                    value={4}
+                    checked={value === 4}
+                    onChange={onChange}
+                    required
+                /><label>Duza aktywnosc fizyczna</label>
+              <input 
+                    type="radio"
+                    id="EveryDay"
+                    name="physActv"
+                    value={5}
+                    checked={value === 5}
+                    onChange={onChange}
+                    required
+                /><label>Codzienna aktywnosc fizyczna</label>
             </div>
         );
     }

@@ -22,6 +22,7 @@ import {ROUTER_PATH} from "./RouterPath";
 import CalculatorsPage from '../pages/CalculatorsPage';
 import CalculatorsLyaout from '../components/organisms/Layout/CalculatorsLayout';
 import UserPanelLyaout from '../components/organisms/Layout/UserPanelLayout';
+import AddParametersPage from '../pages/AddParametersPage';
 
 
 const ROUTER = createBrowserRouter(
@@ -42,6 +43,7 @@ const ROUTER = createBrowserRouter(
           <Route path={ROUTER_PATH.USER_PANEL} element={<UserPanelPage />} />
           <Route path={ROUTER_PATH.USER_SETTINGS} element={<UserSettingsPage />} />
           <Route path={ROUTER_PATH.USER_PROFIL} element={<UserProfilPage />} />
+          <Route path={ROUTER_PATH.ADD_PARAMETERS} element={<AddParametersPage />} />
         </Route>
       </Route>
       <Route element={<PublicRoute />}>
