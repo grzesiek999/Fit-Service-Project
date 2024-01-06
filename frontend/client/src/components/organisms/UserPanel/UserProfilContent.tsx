@@ -6,6 +6,9 @@ import Button from "../../atoms/buttons/Button";
 import ParametersHistory from "../../molecules/UserPanel/ParametersHistory";
 import { useNavigate } from "react-router-dom";
 import { ROUTER_PATH } from "../../../router/RouterPath";
+import AddParametersForm from "./AddParametersForm";
+import { calculateAge } from "../../../utils/CalculateAge";
+import EditParametersForm from "./EditParametersForm";
 
 
 
@@ -14,7 +17,6 @@ interface Parameters {
     user_id: number,
     created_at: string,
     sex: number,
-    age: number,
     height: number,
     weight: number,
     bmi: number,
@@ -29,9 +31,14 @@ interface Parameters {
 
 const UserProfilContent = () => {
 
-    const [user_id, setID] = useState(getUserWithExpiry(SESSION.USER).id);
+    const user_id =getUserWithExpiry(SESSION.USER).id;
     const [avaibleParameters, setAvaibleParameters] = useState<Parameters | null>(null);
+    const [displayAddPar, setDisplayAddPar] = useState<boolean>(false);
+    const [displayEditPar, setDisplayEditPar] = useState<boolean>(false);
     const navigate = useNavigate();
+    const birthday = getUserWithExpiry(SESSION.USER).birthday;
+    const age = calculateAge(birthday);
+
 
 
     const fetchParameters = async () => {
@@ -53,13 +60,16 @@ const UserProfilContent = () => {
         fetchParameters();
     }, []);
 
-    const addParameters = () => { return navigate(ROUTER_PATH.ADD_PARAMETERS); }
+
 
     return (
         <div className="user-profil-content-div-wrapper">
             <div className="user-parameters-div-wrapper">
+                <Button buttonType="button" className="edit-parameters-button-wrapper" onClick={()=>{setDisplayEditPar(true);}} buttonTittle="Edytuj parametry"/>
+                {displayEditPar ? <EditParametersForm parameters_id={avaibleParameters?.id} isSex={avaibleParameters?.sex} /> : null}
+                {displayEditPar ? <Button buttonType="button" className="edit-parameters-button-wrapper" onClick={()=>{setDisplayEditPar(false);}} buttonTittle="Zamknij"/> : null}
                 <div>
-                    <div>{avaibleParameters?.age}</div>
+                    <div>{age}</div>
                     <div>{avaibleParameters?.height}</div>
                     <div>{avaibleParameters?.weight}</div>
                 </div>
@@ -73,8 +83,10 @@ const UserProfilContent = () => {
                     <div className="calves-parameters-div-wrapper">{avaibleParameters?.calves} cm</div>
                     <div className="bmi-parameters-div-wrapper">{avaibleParameters?.bmi}</div>
                 </div>
-                <Button buttonType="button" className="p" onClick={addParameters} buttonTittle="Dodaj parametry" />
                 <ParametersHistory />
+                <Button buttonType="button" className="p" onClick={()=>{setDisplayAddPar(true);}} buttonTittle="Dodaj parametry do historii" />
+                {displayAddPar ? <AddParametersForm isSex={avaibleParameters?.sex} /> : null}
+                {displayAddPar ? <Button buttonType="button" className="p" onClick={()=>{setDisplayAddPar(false);}} buttonTittle="Zamknij" /> : null}
             </div>
         </div>
     );

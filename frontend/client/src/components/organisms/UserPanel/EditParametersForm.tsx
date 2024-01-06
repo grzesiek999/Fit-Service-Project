@@ -1,22 +1,16 @@
 import React, { SyntheticEvent, useState } from "react";
 import Button from "../../atoms/buttons/Button";
-import { ROUTER_PATH } from "../../../router/RouterPath";
-import { useNavigate } from "react-router-dom";
 import AddParameterInput from "../../atoms/inputs/AddParametersInput";
-import { getUserWithExpiry } from "../../../utils/LocalStorageManagment";
-import { SESSION } from "../../../constant/Session";
 
 
-type AddParametersFormProps = {
+type EditParametersProps = {
     isSex?: number | null;
+    parameters_id?: number;
 }
 
+const EditParametersForm = ({parameters_id, isSex = null}: EditParametersProps) => {
 
-const AddParametersForm = ( {isSex = null}: AddParametersFormProps) =>  {
-
-    const navigate = useNavigate();
     const [message, setMessage] = useState<string>('');
-    const user_id = getUserWithExpiry(SESSION.USER).id;
     const [sex, setSex] = useState<number>(isSex===null ? 0 : isSex);
     const [height, setHeight] = useState<number | null>(null);
     const [weight, setWeight] = useState<number | null>(null);
@@ -27,7 +21,6 @@ const AddParametersForm = ( {isSex = null}: AddParametersFormProps) =>  {
     const [arms, setArms] = useState<number | null>(null);
     const [thighs, setThighs] = useState<number | null>(null);
     const [calves, setCalves] = useState<number | null>(null);
-
 
     const handleSex = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSex(parseInt(e.target.value));
@@ -100,39 +93,36 @@ const AddParametersForm = ( {isSex = null}: AddParametersFormProps) =>  {
             setCalves(inputCalves);
         }
     }
-    
-    const addParameters = async (e: SyntheticEvent) =>{
-        e.preventDefault();
 
-        const response = await fetch('http://localhost:8000/api/parameters/add', {
+    const changeParameters = async (e:SyntheticEvent) =>{
+        e.preventDefault();
+        
+        const response = await fetch('http://localhost:8000/api/parameters/edit', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                user_id,
+                parameters_id,
                 sex,
-                height,
-                weight,
-                physic_activity,
-                chest,
-                belly,
-                biceps,
+                height, 
+                weight,  
+                physic_activity, 
+                chest, 
+                belly, 
+                biceps, 
                 arms, 
-                thighs,
+                thighs, 
                 calves
             })
         });
-        if(response.ok) {
-            if(isSex===null) { return navigate(ROUTER_PATH.USER_PROFIL); }
-            else { window.location.reload(); } 
-        }
-        else { setMessage(response.statusText) }
-    };
+        if(response.ok) { window.location.reload(); }
+        else { setMessage(response.statusText); }
+    }
+    
 
-
-    return (
+    return(
         <div>
-            <form onSubmit={addParameters}>
-                {isSex===null ? <AddParameterInput inputType="sex" value={sex} onChange={handleSex}/> : null}
+            <form onSubmit={changeParameters}>
+                <AddParameterInput inputType="sex" value={sex} onChange={handleSex}/>
                 <AddParameterInput inputType="float" value={height} onChange={handleHeight}/>
                 <AddParameterInput inputType="float" value={weight} onChange={handleWeight}/>
                 <AddParameterInput inputType="physic_activity" value={physic_activity} onChange={handlePhysicActivity}/>
@@ -142,11 +132,11 @@ const AddParametersForm = ( {isSex = null}: AddParametersFormProps) =>  {
                 <AddParameterInput inputType="float" value={arms} onChange={handleArms}/>
                 <AddParameterInput inputType="float" value={thighs} onChange={handleThighs}/>
                 <AddParameterInput inputType="float" value={calves} onChange={handleCalves}/>
-                <Button buttonType="submit" className="add-parameters-button-wrapper" onClick={()=>{}} buttonTittle="Dodaj" />
+                <Button buttonType="submit" className="change-parameters-button-wrapper" onClick={()=>{}} buttonTittle="Zmień"/>
             </form>
             {message && <div>{message}</div>}
         </div>
     );
 }
 
-export default AddParametersForm;
+export default EditParametersForm;

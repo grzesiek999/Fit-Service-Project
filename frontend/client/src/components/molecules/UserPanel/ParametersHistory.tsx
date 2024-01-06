@@ -9,7 +9,6 @@ interface Parameters {
     user_id: number,
     created_at: string,
     sex: number,
-    age: number,
     height: number,
     weight: number,
     bmi: number,
@@ -50,7 +49,6 @@ const ParametersHistory = () => {
                     <li key={parameters.id}>
                         <ul>
                             <li>{new Date(parameters.created_at).toLocaleDateString()}</li>
-                            <li>{parameters.age}</li>
                             <li>{parameters.height}</li>
                             <li>{parameters.weight}</li>
                             <li>{parameters.bmi}</li>

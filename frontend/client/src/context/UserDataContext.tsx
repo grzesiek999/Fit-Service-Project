@@ -1,5 +1,6 @@
 import { createContext, useState, useCallback, ReactNode, useEffect } from 'react';
 import { SESSION } from '../constant/Session';
+import { checkTime } from '../utils/LocalStorageManagment';
 
 type User = {
   id: number;
@@ -38,10 +39,9 @@ interface UserDataContextProps {
     const logOut = useCallback(() => {
       setUserData(null);
     }, []);
-
     useEffect (()=>{
       if(userData){
-        const timeout = setTimeout(logOut, SESSION.TIME);
+        const timeout = setTimeout(logOut, checkTime(SESSION.USER));
         return () => clearTimeout(timeout);
       }
     }, [userData, logOut]);

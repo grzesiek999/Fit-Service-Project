@@ -6,7 +6,7 @@ class ParametersSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Parameters
-        fields = ['id', 'user_id', 'created_at', 'sex', 'age', 'height', 'weight', 'bmi', 'physic_activity', 'chest', 'belly', 'biceps', 'arms', 'thighs', 'calves']
+        fields = ['id', 'user_id', 'created_at', 'sex', 'height', 'weight', 'bmi', 'physic_activity', 'chest', 'belly', 'biceps', 'arms', 'thighs', 'calves']
 
     def create(self, validated_data):
         height = validated_data.get('height')

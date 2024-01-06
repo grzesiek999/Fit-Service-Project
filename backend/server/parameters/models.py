@@ -19,7 +19,6 @@ class Parameters(models.Model):
         choices=SEX,
         default=0
     )
-    age = models.IntegerField()
     height = models.FloatField()
     weight = models.FloatField()
     bmi = models.FloatField(
