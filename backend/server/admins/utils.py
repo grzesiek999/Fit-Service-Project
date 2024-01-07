@@ -3,24 +3,24 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from django.core.mail import EmailMessage
 from .tokens import AccountActivationTokenGenerator
-from .models import User
+from .models import Admin
 from .tokens import AccountActivationTokenGenerator
 
 
 
 class AccountActivation:
-    def sendEmailActivation(self, request, user, user_email):
+    def sendEmailActivation(self, request, admin, admin_email):
         account_activation_token = AccountActivationTokenGenerator()
         mail_subject = 'Fit Service aktywacja konta'
 
-        user_name = user.name
+        admin_name = admin.name
         protocol = 'https' if request.is_secure() else 'http'
-        uid = urlsafe_base64_encode(force_bytes(user.pk))
-        token = account_activation_token.make_token(user)
-        message = f"Witaj {user_name}\n\n"
+        uid = urlsafe_base64_encode(force_bytes(admin.pk))
+        token = account_activation_token.make_token(admin)
+        message = f"Witaj {admin_name}\n\n"
         message += f"Aby aktywować swoje konto, kliknij w poniższy link:\n\n"
         message += f"{protocol}://localhost:5173/account_confirm/{uid}/{token}"
-        email = EmailMessage(mail_subject, message, to=[user_email])
+        email = EmailMessage(mail_subject, message, to=[admin_email])
         if email.send():
             return True
         else:
@@ -29,35 +29,35 @@ class AccountActivation:
     def AccountActivationCheck(self, uidb64, token):
                 
         account_activation_token = AccountActivationTokenGenerator()
-        user = None
+        admin = None
         activate_status = False
 
         try:
             uid = force_str(urlsafe_base64_decode(uidb64))
-            user = User.objects.filter(pk=uid).first()     
+            admin = Admin.objects.filter(pk=uid).first()     
         except:
-            user = None
-        if(user is not None and account_activation_token.check_token(user, token)):
-            user.is_active = True
-            user.save()
+            admin = None
+        if(admin is not None and account_activation_token.check_token(admin, token)):
+            admin.is_active = True
+            admin.save()
             activate_status = True
 
         return activate_status
     
 
 class PasswordRestore():
-    def SendPasswordRestore(self, request, user, user_email):
+    def SendPasswordRestore(self, request, admin, admin_email):
         password_restore_token = AccountActivationTokenGenerator()
         mail_subject = 'Fit Service zmiana hasła'
 
-        user_name = user.name
+        admin_name = admin.name
         protocol = 'https' if request.is_secure() else 'http'
-        uid = urlsafe_base64_encode(force_bytes(user.pk))
-        token = password_restore_token.make_token(user)
-        message = f"Witaj {user_name}\n\n"
+        uid = urlsafe_base64_encode(force_bytes(admin.pk))
+        token = password_restore_token.make_token(admin)
+        message = f"Witaj {admin_name}\n\n"
         message += f"Aby ustawić nowe hasło, kliknij w poniższy link:\n\n"
         message += f"{protocol}://localhost:5173/set_new_password/{uid}/{token}"
-        email = EmailMessage(mail_subject, message, to=[user_email])
+        email = EmailMessage(mail_subject, message, to=[admin_email])
         if email.send():
             return True
         else:
@@ -65,19 +65,17 @@ class PasswordRestore():
         
     def SetNewPassword(self, uidb64, token, password):
         password_restore_token = AccountActivationTokenGenerator()
-        user = None
+        admin = None
         set_password_status = False
 
         try:
             uid = force_str(urlsafe_base64_decode(uidb64))
-            user = User.objects.filter(pk=uid).first()     
+            admin = Admin.objects.filter(pk=uid).first()     
         except:
-            user = None
-        if(user is not None and password_restore_token.check_token(user, token)):
-            user.set_password(password)
-            user.save()
+            admin = None
+        if(admin is not None and password_restore_token.check_token(admin, token)):
+            admin.set_password(password)
+            admin.save()
             set_password_status = True
 
         return set_password_status
-
-        

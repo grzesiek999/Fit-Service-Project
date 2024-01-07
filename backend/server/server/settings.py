@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'parameters',
     'meals',
     'diets',
+    'admins',
 ]
 
 MIDDLEWARE = [
