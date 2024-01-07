@@ -11,6 +11,7 @@ class User(AbstractBaseUser):
     birthday = models.DateField()
     is_active = models.BooleanField(default=False)
     created_at = models.DateTimeField(default=timezone.now)
+    is_admin = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []

@@ -1,12 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { SESSION } from "../../../constant/Session";
+import { UserAuth } from "../../../context/UserDataContext";
+import { setUserWithExpiry } from "../../../utils/LocalStorageManagment";
 
 
 const AccountConfirmCommunicat = () => {
 
+    const {sigIn} = useContext(UserAuth);
     const {uid, token} = useParams();
     const [actived, setActived] = useState<boolean>(false);
     const [activeMessage, setActiveMessage] = useState('');
+
+    const fetchUser = async () =>{
+        const response = await fetch('http://localhost:8000/api/user', {
+          method: 'GET',
+          headers: {'Content-Type': 'application/json'},
+          credentials: 'include',
+        });
+        
+        const content = await response.json();
+        if(content.detail === 'Unauthenticated!'){}
+        else{
+          sigIn(setUserWithExpiry(SESSION.USER, content, SESSION.TIME));
+        }
+    }
 
     const confirmEmail = async (uid:string | undefined, token:string | undefined) => {
         if(uid && token){
@@ -23,6 +41,7 @@ const AccountConfirmCommunicat = () => {
                 setActiveMessage(content.message);
                 if(activeMessage === "activation successful"){
                     setActived(true);
+                    fetchUser();
                 }
             }
             else{

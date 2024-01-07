@@ -5,7 +5,9 @@ import LoginForm from '../organisms/Login/LoginForm';
 const LoginPageTemplate = () => {
 
   return (
-    <LoginForm />
+    <div className='login-page-template-div-wrapper'>
+      <LoginForm />
+    </div>
   );
 }
 

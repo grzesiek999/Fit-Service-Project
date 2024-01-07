@@ -1,13 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Button from "../../atoms/buttons/Button";
-import { UserAuth } from "../../../context/UserDataContext";
+import { getUserWithExpiry } from "../../../utils/LocalStorageManagment";
+import { SESSION } from "../../../constant/Session";
 
 
 const AccountNoActiveCommunicat = () => {
 
-    const {user} = useContext(UserAuth);
     const [message, setMessage] = useState('');
-    const [email, setEmail] = useState(user?.email);
+    const [email, setEmail] = useState(getUserWithExpiry(SESSION.USER).email);
 
     const send = async () => {
 

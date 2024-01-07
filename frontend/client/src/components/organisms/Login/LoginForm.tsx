@@ -62,10 +62,13 @@ const LoginForm = () => {
   }
 
   return (
-    <div>
-      <div>
+    <div className='login-organism-div-wrapper'>
+      <div className='login-form-div-wrapper'>
         <form onSubmit={submit}>
+          <h6>Logowanie</h6>
+          <label className='login-form-label-wrapper'>Podaj adres email:</label>
           <SignInInput inputType='email' onChange={handleEmail} />
+          <label className='login-form-label-wrapper'>Podaj hasło:</label>
           <SignInInput inputType='password' onChange={handlePassword} />
           <Button buttonType='submit' className='login-button-wrapper' onClick={()=>{}} buttonTittle='Zaloguj' />
         </form>

@@ -2,7 +2,7 @@ import React from 'react';
 import HomePageTemplate from '../components/tmpls/HomePageTemplate';
 
 
-function HomePage(){
+const HomePage = () => {
 
   return (
     <HomePageTemplate />

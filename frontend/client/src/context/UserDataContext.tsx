@@ -11,6 +11,7 @@ type User = {
   birthday: Date;
   created_at: Date;
   is_active: boolean;
+  is_admin: boolean;
 };
 
 export type UserContextType = {
