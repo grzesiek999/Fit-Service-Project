@@ -29,10 +29,10 @@ const LayoutNav = () =>{
                             <Link to="/" className='layout-nav-link-wrapper'>Aktualności</Link>
                         </li>
                         <li>
-                            <Link to="/" className='layout-nav-link-wrapper'>ddd</Link>
+                            <Link to="/" className='layout-nav-link-wrapper'>Informacje</Link>
                         </li>
                         <li>
-                            <Link to="/" className='layout-nav-link-wrapper'>Oferta</Link>
+                            <Link to="/" className='layout-nav-link-wrapper'>Diety</Link>
                         </li>
                         <li>
                             <Link to={ROUTER_PATH.CALCULATORS} className='layout-nav-link-wrapper'>Kalkulatory</Link>

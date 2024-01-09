@@ -68,4 +68,20 @@
 
 @import "./atoms/Inputs/password-register-input.scss";
 
+@import "./atoms/Inputs/email-register-input.scss";
+
 @import "./organism/Login/login-form-label-wrapper.scss";
+
+@import "./molecules/Login/login-form-links-div-wrapper.scss";
+
+@import "./organism/Register/register-form-wrapper.scss";
+
+@import "./tmpls/register-page-template-div-wrapper.scss";
+
+@import "./atoms/Inputs/name-register-input.scss";
+
+@import "./atoms/Inputs/surname-register-input.scss";
+
+@import "./atoms/Inputs/birthday-register-input.scss";
+
+@import "./atoms/Inputs/checkbox-register-input.scss";

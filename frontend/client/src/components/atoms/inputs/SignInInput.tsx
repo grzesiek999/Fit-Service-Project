@@ -143,6 +143,16 @@ const SignInInput = ({inputType, onChange}: SignInInputProps) => {
             />
         );
     }
+    else if(inputType==='check'){
+
+        return(
+            <input 
+                type='checkbox' 
+                className='checkbox-register-input' 
+                required
+            />
+        );
+    }
     else {
         return null;
     }

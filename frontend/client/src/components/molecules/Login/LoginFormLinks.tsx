@@ -1,15 +1,22 @@
 import React from "react"
 import { Link } from "react-router-dom";
 import { ROUTER_PATH } from '../../../router/RouterPath';
+import "../../../styles/index.scss";
 
 
 
 const LoginFormLinks = () => {
 
     return (
-        <div>
-            <Link to={ROUTER_PATH.RESTORE_PASSWORD}>Przypomnij hasło</Link>
-            <Link to={ROUTER_PATH.REGISTER}>Stwórz konto</Link>
+        <div className="login-form-links-div-wrapper">
+            <div>
+                <label>Nie pamiętasz hasła?</label>
+                <Link className='login-form-link' to={ROUTER_PATH.RESTORE_PASSWORD}>Przypomnij hasło &#10148;</Link>
+            </div>
+            <div>
+                <label>Nie masz konta?</label>
+                <Link className='login-form-link' to={ROUTER_PATH.REGISTER}>Stwórz konto &#10148;</Link>
+            </div>
         </div>
     );
 }
