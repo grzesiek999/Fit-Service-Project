@@ -11,7 +11,7 @@ const WelcomeUserSpan = () => {
 
 
     return(
-        <span>Witaj {user?.name}</span>
+        <span className="welcome-user-span-wrapper">Witaj {user?.name}</span>
     )
 }
 

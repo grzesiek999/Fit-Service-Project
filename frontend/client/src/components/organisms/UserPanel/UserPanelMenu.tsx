@@ -9,7 +9,7 @@ const UserPanelMenu = () => {
     return (
         <div className="user-panel-menu-div-wrapper">
             <WelcomeUserSpan />
-            <div className="user-setting-nav-div-wrapper">
+            <div className="user-nav-div-wrapper">
                 <div>Panel Użytkownika</div>
                 <UserPanelNav />
             </div>

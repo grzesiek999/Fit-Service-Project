@@ -1,4 +1,7 @@
 .user-panel-menu-div-wrapper {
+    height: 100%;
+    width: 260px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    border-right: 1px solid $layout-border-color;
 }

@@ -1,5 +1,276 @@
 .user-profil-content-div-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
     display: flex;
-    width: 100%;
+    flex-direction: column; 
+}
+
+.edit-parameters-div-wrapper{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.user-main-parameters-div-wrapper{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    border-bottom: 1px solid $layout-border-color;
+}
+
+.user-parameters-model-div-wrapper {
+    display: flex;
+    flex-direction: row;
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bmi-parameters-div-wrapper{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-parameters-div-wrapper {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.model-image {
+    height: 500px;
+}
+
+.biceps-parameters-div-wrapper {
+    width: 120px;
+    margin-top: 100px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.arms-parameters-div-wrapper{
+    width: 120px;
+    margin-top: 70px;
+    margin-right: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.calves-parameters-div-wrapper {
+    width: 120px;
+    margin-top: 70px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.chest-parameters-div-wrapper {
+    width: 120px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.belly-parameters-div-wrapper { 
+    width: 120px;
+    margin-top: 70px;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.thighs-parameters-div-wrapper {
+    width: 120px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;  
+}
+
+.parameter-title-div-wrapper{
+    background-color: #eaeaea;
+    color: rgb(64, 64, 64);
+    font-size: 16px;
+    font-weight: 600;  
+    font-family: 'Work Sans', sans-serif;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.parameter-value-div-wrapper{
+    background-color: #f0f0f0;
+    color: rgb(44, 44, 44);
+    font-size: 20px;
+    font-weight: 500;  
+    font-family: 'Work Sans', sans-serif;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.age-parameters-div-wrapper {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.height-parameters-div-wrapper {
+    width: 60px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.weight-parameters-div-wrapper {
+    width: 60px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-parameter-title-div-wrapper{
+    color: rgb(64, 64, 64);
+    font-size: 16px;
+    font-weight: 600;  
+    font-family: 'Work Sans', sans-serif;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-parameter-value-div-wrapper{
+    color: rgb(44, 44, 44);
+    font-size: 20px;
+    font-weight: 500;  
+    font-family: 'Work Sans', sans-serif;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-parameters-button-wrapper {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70px;
+	height: 30px;
+	background-color: rgb(93, 93, 93);
+	border: none;
+	border-radius: 4px;
+	font-size: 16px;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 500;
+	color: white;
+	cursor: pointer;
+    transition: all 0.5s ease-in-out;
+	&:hover{
+		scale: 1.1;
+	}
+}
+
+.add-parameters-button-wrapper{
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 90px;
+	height: 40px;
+	background-color: #00C82F;
+	border: none;
+	border-radius: 16px;
+	font-size: 20px;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 500;
+	color: white;
+    border: 2px solid #01bb2c;
+	cursor: pointer;
+    transition: all 0.5s ease-in-out;
+	&:hover{
+		scale: 1.1;
+	}
+}
+
+.bmi-parameters-div-wrapper{
+    margin-top: 20px;
+    width: 60px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid $layout-border-color;
+}
+
+.bmi-title-div-wrapper{
+    color: rgb(64, 64, 64);
+    font-size: 16px;
+    font-weight: 600;  
+    font-family: 'Work Sans', sans-serif;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.bmi-value-div-wrapper{
+    color: rgb(44, 44, 44);
+    font-size: 20px;
+    font-weight: 500;  
+    font-family: 'Work Sans', sans-serif;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

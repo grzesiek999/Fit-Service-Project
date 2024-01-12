@@ -1,0 +1,23 @@
+.mobile-layout-menu-div-wrapper {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #dddddd;
+}
+
+.mobile-menu-header-div-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+    border-bottom: 1px solid $layout-border-color;
+}
+
+.menu-open-icon-div-wrapper {
+    margin-left: 3%;
+    margin-right: 25%;
+}
+
+.mobile-menu-header-div-wrapper .login-button-wrapper{
+    margin-left: auto;
+    margin-right: 5%;
+}

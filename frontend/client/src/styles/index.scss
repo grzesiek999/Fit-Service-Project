@@ -26,7 +26,7 @@
 
 @import "./molecules/layout-nav-wrapper.scss";
 
-@import "./organism/layout-menu-div-wrapper.scss";
+@import "./organism/Layout/layout-menu-div-wrapper.scss";
 
 @import "./organism/calculators-nav-div-wrapper.scss";
 
@@ -52,13 +52,11 @@
 
 @import "./tmpls/user-panel-page-template-div-wrapper.scss";
 
-@import "./atoms/Lists/user-setting-nav-div-wrapper.scss";
+@import "./atoms/Lists/user-nav-div-wrapper.scss";
 
 @import "./organism/UserPanel/user-profil-content-div-wrapper.scss";
 
 @import "./organism/UserPanel/user-parameters-div-wrapper.scss";
-
-@import "./organism/UserPanel/model-image";
 
 @import "./tmpls/login-page-template-div-wrapper.scss";
 
@@ -85,3 +83,15 @@
 @import "./atoms/Inputs/birthday-register-input.scss";
 
 @import "./atoms/Inputs/checkbox-register-input.scss";
+
+@import "./organism/Layout/mobile-layout-menu-div-wrapper.scss";
+
+@import "./molecules/Layout/mobile-layout-menu-logo-div-wrapper.scss";
+
+@import "./atoms/Spans/welcome-user-span-wrapper.scss";
+
+@import "./molecules/UserPanel/parameters-history-div-wrapper.scss";
+
+@import "./atoms/Buttons/show-history-button-wrapper.scss";
+
+@import "./molecules/Layout/mobile-nav-div-wrapper.scss";

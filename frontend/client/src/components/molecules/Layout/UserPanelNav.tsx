@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {ROUTER_PATH} from "../../../router/RouterPath";
+import "../../../styles/index.scss";
 
 
 const UserPanelNav = () => {
@@ -9,16 +10,16 @@ const UserPanelNav = () => {
         <nav>
             <ul>
                 <li>
-                    <Link to={ROUTER_PATH.USER_PROFIL} className='-link-wrapper'>Mój Profil</Link>
+                    <Link to={ROUTER_PATH.USER_PROFIL} className='user-panel-link-wrapper'>Mój Profil</Link>
                 </li>
                 <li>
-                    <Link to="/" className='-link-wrapper'>Moje Diety</Link>
+                    <Link to="/" className='user-panel-link-wrapper'>Moje Diety</Link>
                 </li>
                 <li>
-                    <Link to="/" className='-link-wrapper'>Moje Posiłki</Link>
+                    <Link to="/" className='user-panel-link-wrapper'>Moje Posiłki</Link>
                 </li>
                 <li>
-                    <Link to={ROUTER_PATH.USER_SETTINGS} className='-link-wrapper'>Ustawienia konta</Link>
+                    <Link to={ROUTER_PATH.USER_SETTINGS} className='user-panel-link-wrapper'>Ustawienia konta</Link>
                 </li>
             </ul>
         </nav>

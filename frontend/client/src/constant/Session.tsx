@@ -1,4 +1,4 @@
 export const SESSION = {
     USER: 'user',
-    TIME: 1800000,
+    TIME: 3800000,
 }

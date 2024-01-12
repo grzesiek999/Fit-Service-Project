@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "../../atoms/buttons/Button";
 import { SESSION } from "../../../constant/Session";
 import { getUserWithExpiry } from "../../../utils/LocalStorageManagment";
+import "../../../styles/index.scss";
 
 
 interface Parameters {
@@ -42,8 +43,8 @@ const ParametersHistory = () => {
     }
 
     return (
-        <div>
-            <Button buttonType="button" className="l" onClick={showHistory} buttonTittle="Pokaz historie"/>
+        <div className="parameters-history-div-wrapper">
+            <Button buttonType="button" className="show-history-button-wrapper" onClick={showHistory} buttonTittle="Historia"/>
             <ul>
                 {historyParameters.map((parameters: Parameters) => (
                     <li key={parameters.id}>
