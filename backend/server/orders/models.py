@@ -17,6 +17,8 @@ class Order(models.Model):
         blank=True,
         null=True,
     )
+    expiry_days = models.IntegerField()
     payment_status=models.BooleanField(default=False)
     created_at = models.DateTimeField(default=timezone.now)
-    expiry_date = models.DateTimeField()
+    expiry_date = models.DateTimeField(blank = True, null = True)
+    price = models.IntegerField()
