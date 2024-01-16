@@ -31,7 +31,8 @@ INSTALLED_APPS = [
     'products',
     'parameters',
     'diets',
-    'orders'
+    'orders',
+    'user_messages'
 ]
 
 MIDDLEWARE = [

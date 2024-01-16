@@ -1,19 +1,18 @@
 from django.db import models
+from user_messages.models import UserMessage
 
 
 class Diet(models.Model):
-    KIND = [
-        (0, 'default'),
-        (1, 'sport'),
-        (2, 'health'),
-    ]
-    kind = models.IntegerField(
-        choices=KIND,
-        default=0
+    user_message_id = models.ForeignKey(
+        UserMessage,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
     )
-    describe = models.TextField()
-    kcal = models.IntegerField()
-    proteins = models.FloatField()
-    carbohydrates = models.FloatField()
-    fats = models.FloatField()
-    fluids = models.IntegerField()
+    describe = models.TextField(blank=True, null=True)
+    kcal = models.IntegerField(blank=True, null=True)
+    proteins = models.FloatField(blank=True, null=True)
+    carbohydrates = models.FloatField(blank=True, null=True)
+    fats = models.FloatField(blank=True, null=True)
+    fiber = models.FloatField(blank=True, null=True)
+    fluids = models.FloatField(blank=True, null=True)
