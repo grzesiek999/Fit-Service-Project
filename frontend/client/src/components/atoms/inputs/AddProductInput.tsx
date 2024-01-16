@@ -106,6 +106,21 @@ const AddProductNumberInput = ({inputType, value, onChange}: AddProductNumberInp
             />
         );
     }
+    else if(inputType==='fiber'){
+        return(
+            <input 
+                type='number'
+                step={0.1} 
+                className='add-product-number-input-wrapper'
+                placeholder="0"
+                value={value === null ? '' : value}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                required
+                onChange={onChange}
+            />
+        );
+    }
     else {
         return null;
     }

@@ -9,7 +9,8 @@ interface Product {
   energy: number,
   proteins: number,
   carbohydrates: number,
-  fats: number
+  fats: number,
+  fiber: number
 }
 
 type ChooseDivProps = {
@@ -27,6 +28,7 @@ const ChooseDiv = ({selectedProduct}: ChooseDivProps) => {
           <p>Białko: {selectedProduct.proteins} g</p>
           <p>Węglowodany: {selectedProduct.carbohydrates} g</p>
           <p>Tłuszcze: {selectedProduct.fats} g</p>
+          <p>Błonnik: {selectedProduct.fiber} g</p>
         </div>
       )}
     </div>

@@ -13,7 +13,8 @@ interface Product {
     energy: number,
     proteins: number,
     carbohydrates: number,
-    fats: number
+    fats: number,
+    fiber: number
 }
 
 type SearchDivProps = {

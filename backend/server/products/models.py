@@ -8,3 +8,4 @@ class Product(models.Model):
     proteins = models.FloatField()
     carbohydrates = models.FloatField()
     fats = models.FloatField()
+    fiber = models.FloatField()

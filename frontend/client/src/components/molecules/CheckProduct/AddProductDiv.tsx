@@ -17,6 +17,7 @@ const AddProductDiv = ({isDisplayed, setIsDisplayed}: AddProductDivProps) => {
     const [proteins, setProteins] = useState<number | null>(null);
     const [carbohydrates, setCarbohydrates] = useState<number | null>(null);
     const [fats, setFats] = useState<number | null>(null);
+    const [fiber, setFiber] = useState<number | null>(null);
 
     const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value);
@@ -54,6 +55,14 @@ const AddProductDiv = ({isDisplayed, setIsDisplayed}: AddProductDivProps) => {
         }    
     }
 
+    const handleFiber = (e :React.ChangeEvent<HTMLInputElement>) => {
+        if(e.target.value === '') {setFiber(null); }
+        else {
+            const inputFiber = parseFloat(e.target.value);
+            setFiber(inputFiber);
+        }    
+    }
+
     const close = () => {
         setIsDisplayed(false);
         setName('');
@@ -61,6 +70,7 @@ const AddProductDiv = ({isDisplayed, setIsDisplayed}: AddProductDivProps) => {
         setProteins(null);
         setCarbohydrates(null);
         setFats(null);
+        setFiber(null);
     }
 
     const submit = async (e: SyntheticEvent) =>{
@@ -73,7 +83,8 @@ const AddProductDiv = ({isDisplayed, setIsDisplayed}: AddProductDivProps) => {
                 energy,
                 proteins,
                 carbohydrates,
-                fats
+                fats,
+                fiber
             })
         })
         if(response.ok){
@@ -83,6 +94,7 @@ const AddProductDiv = ({isDisplayed, setIsDisplayed}: AddProductDivProps) => {
             setProteins(null);
             setCarbohydrates(null);
             setFats(null);
+            setFiber(null);
         }
         else{
             console.error('Error', response.status, response.statusText);
@@ -98,6 +110,7 @@ const AddProductDiv = ({isDisplayed, setIsDisplayed}: AddProductDivProps) => {
                 <AddProductNumberInput inputType="proteins" value={proteins} onChange={handleProteins} />
                 <AddProductNumberInput inputType="carbohydrates" value={carbohydrates} onChange={handleCarbohydrates} />
                 <AddProductNumberInput inputType="fats" value={fats} onChange={handleFats} />
+                <AddProductNumberInput inputType="fiber" value={fiber} onChange={handleFiber} />
                 <div>
                     <Button buttonType="submit" className="add-product-button-wrapper" onClick={()=>{}} buttonTittle="dodaj" />
                     <Button buttonType="button" className="close-add-product-div-button-wrapper" onClick={close} buttonTittle="Zamknij" />
