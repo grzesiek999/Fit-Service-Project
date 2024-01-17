@@ -65,4 +65,21 @@ class ActivateOrderView(APIView):
             else:
                 return Response({"error": "sending email message error"})
             
-        return Response({'error': 'order doesnt error'})
+        return Response({'error': 'order doesnt exist'})
+    
+
+class GetOrderByUserIdView(APIView):
+    def post(self, request):
+        user_id = request.data.get('user_id')
+        orders = Order.objects.filter(user_id=user_id)
+
+        if orders.exists():
+            temp = orders[0]
+            for order in orders:
+                if temp.created_at < order.created_at:
+                    temp = order
+            last_order = Order.objects.get(id=temp.id)
+            serializer = OrderSerializer(last_order)
+            return Response(serializer.data)
+        else:
+            return Response({'error': 'order doesnt exist'})
