@@ -32,7 +32,8 @@ INSTALLED_APPS = [
     'parameters',
     'diets',
     'orders',
-    'user_messages'
+    'user_messages',
+    'diet_meals'
 ]
 
 MIDDLEWARE = [
