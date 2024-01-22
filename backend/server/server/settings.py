@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'drf_yasg',
     'users',
     'products',
     'parameters',
@@ -139,3 +140,9 @@ EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 
 PASSWORD_RESET_TIMEOUT = 7200
+
+
+SWAGGER_SETTINGS = {
+    'USE_SESSION_AUTH': False,
+    'PERSIST_AUTH': True,
+}
