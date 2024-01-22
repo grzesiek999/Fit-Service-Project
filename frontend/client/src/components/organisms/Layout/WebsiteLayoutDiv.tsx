@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Squash as Hamburger } from 'hamburger-react'
 import { Link, useNavigate } from "react-router-dom";
 import LayoutNav from "../../molecules/Layout/LayoutNav";
 import "../../../styles/index.scss";
@@ -15,6 +16,7 @@ const WebsiteLayoutDiv = () => {
     const navigate = useNavigate();
     const isWide = useMedia({ minWidth: 768 });
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
 
     const openCloseMenu = () => {
         if(menuOpen) { setMenuOpen(false); }
@@ -34,7 +36,7 @@ const WebsiteLayoutDiv = () => {
                 <div className='mobile-layout-menu-div-wrapper'>
                     <div className="mobile-menu-header-div-wrapper">
                         <div className="menu-open-icon-div-wrapper" onClick={openCloseMenu}>
-                            X
+                            <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
                         </div>
                         <div className="mobile-layout-menu-logo-div-wrapper">
                             <Link to={ROUTER_PATH.HOME}>Logo</Link>

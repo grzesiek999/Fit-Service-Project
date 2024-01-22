@@ -17,5 +17,17 @@
 	background-color: #00C82F;
 	border-radius: 8px;
     font-size: 25px;
+}
 
+@media only screen and (max-width: 768px) {
+    .login-form-div-wrapper .login-button-wrapper{
+        margin-top: 30px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 100px;
+        height: 45px;
+        background-color: #00C82F;
+        border-radius: 8px;
+        font-size: 20px;
+    }
 }

@@ -18,3 +18,26 @@
 	border: 2px solid #00B42A;
 	cursor: pointer;
 }
+
+@media only screen and (max-width: 768px) {
+	.create-account-button-wrapper {
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 30px;
+		margin-bottom: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 110px;
+		height: 44px;
+		background-color: #00C82F;
+		border: none;
+		border-radius: 8px;
+		font-size: 22px;
+		font-family: 'Work Sans', sans-serif;
+		font-weight: bold;
+		color: white;
+		border: 2px solid #00B42A;
+		cursor: pointer;
+	}
+}
