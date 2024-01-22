@@ -36,5 +36,4 @@ yarn-error.log*
 
 .idea
 
-#tests screenshots
-/tests
+/database_dump
