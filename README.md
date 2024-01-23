@@ -108,4 +108,5 @@ npm run dev
 
 <br/>
 
-### Application work on localhost - port 3000, you can open application at link: http://localhost:3000
+### Application work on localhost - port 3000
+### You can open application at link: http://localhost:3000
