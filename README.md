@@ -21,6 +21,6 @@ Web application created for dietician and their clients, dietician can remote ta
 ## Launch application
 
 ### 1. Clone repository
-'''
+```
 git clone https://github.com/SebastianDev10/Clothes.git
-'''
+```
