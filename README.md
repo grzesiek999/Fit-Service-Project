@@ -22,5 +22,18 @@ Web application created for dietician and their clients, dietician can remote ta
 
 ### 1. Clone repository
 ```
-git clone https://github.com/SebastianDev10/Clothes.git
+git clone https://github.com/grzesiek999/Fit-Service-Project.git
+```
+### 2. Go to backend catalog to install and activate virtual environment
+<br/>
+windows
+<br/>
+```
+py -m pip install --user virtualenv
+```
+<br/>
+unix / mac
+</br>
+```
+python3 -m pip install --user virtualenv
 ```
