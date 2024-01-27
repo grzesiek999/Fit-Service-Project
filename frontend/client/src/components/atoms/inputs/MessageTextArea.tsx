@@ -30,6 +30,7 @@ const MessageTextArea = ({className, onChange}: MessageTextAreaTypes) => {
             rows={10}
             cols={30}
             required
+            placeholder="Treść wiadomości ..."
             onFocus={handleFocus}
             onBlur={handleBlur}
             onChange={handleChange}
