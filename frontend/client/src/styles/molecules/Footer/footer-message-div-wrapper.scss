@@ -1,0 +1,53 @@
+.footer-message-div-wrapper form {
+    margin-left: 10vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-span{
+    margin-bottom: 25px;
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+}
+
+.email-input-to-message {
+    height: 40px;
+    width: 360px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #3a3a3a;
+    padding: 0 20px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.test-input-to-message {
+    height: 120px;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #3a3a3a;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.send-message-button-wrapper {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    height: 51px;
+    width: 138px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff2e2e;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+}

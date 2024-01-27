@@ -3,10 +3,11 @@ import React, {useState} from "react";
 
 type SignInInputProps = {
     inputType: string;
+    className: string;
     onChange: (newValue: string) => void;
 }
 
-const SignInInput = ({inputType, onChange}: SignInInputProps) => {
+const SignInInput = ({inputType, className, onChange}: SignInInputProps) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -33,7 +34,7 @@ const SignInInput = ({inputType, onChange}: SignInInputProps) => {
         return (
             <input 
                 type='password' 
-                className='password-register-input' 
+                className={className}
                 placeholder="hasło" 
                 onFocus={handleFocus}
                 onBlur={handleBlur}
@@ -61,7 +62,7 @@ const SignInInput = ({inputType, onChange}: SignInInputProps) => {
         return(
             <input 
                 type='email' 
-                className='email-register-input' 
+                className={className} 
                 placeholder="email@gmail.com" 
                 onFocus={handleFocus}
                 onBlur={handleBlur}
@@ -89,7 +90,7 @@ const SignInInput = ({inputType, onChange}: SignInInputProps) => {
         return(
             <input 
                 type='text' 
-                className='name-register-input' 
+                className={className} 
                 placeholder="Imię" 
                 onFocus={handleFocus}
                 onBlur={handleBlur}
@@ -117,7 +118,7 @@ const SignInInput = ({inputType, onChange}: SignInInputProps) => {
         return(
             <input 
                 type='text' 
-                className='surname-register-input' 
+                className={className}
                 placeholder="Nazwisko" 
                 onFocus={handleFocus}
                 onBlur={handleBlur}
@@ -137,7 +138,7 @@ const SignInInput = ({inputType, onChange}: SignInInputProps) => {
         return(
             <input 
                 type='date' 
-                className='birthday-register-input' 
+                className={className}
                 required
                 onChange={handleChange}
             />
@@ -148,7 +149,7 @@ const SignInInput = ({inputType, onChange}: SignInInputProps) => {
         return(
             <input 
                 type='checkbox' 
-                className='checkbox-register-input' 
+                className={className} 
                 required
             />
         );

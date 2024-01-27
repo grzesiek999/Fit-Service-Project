@@ -1,10 +1,11 @@
 import React from 'react'
+import "../../styles/index.scss";
 
 
 const HomePageTemplate = () => {
 
   return (
-      <div>Strona glowna</div>
+      <div className='temp'>Strona glowna</div>
   );
 }
 

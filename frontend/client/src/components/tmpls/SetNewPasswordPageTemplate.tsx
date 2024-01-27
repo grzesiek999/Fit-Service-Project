@@ -51,8 +51,8 @@ const SetNewPasswordPageTemplate = () => {
     return(
         <div>
             <form onSubmit={submit}>
-                <SignInInput inputType="password" onChange={handlePassword} />
-                <SignInInput inputType="password" onChange={handleConfirmPassword} />
+                <SignInInput inputType="password" className="password-register-input" onChange={handlePassword} />
+                <SignInInput inputType="password" className="password-register-input" onChange={handleConfirmPassword} />
                 <Button buttonType="submit" className="" onClick={()=>{}} buttonTittle="Ustaw nowe hasło" />
             </form>
             {message && <div>{message}</div>}
@@ -60,4 +60,4 @@ const SetNewPasswordPageTemplate = () => {
     );
 }
 
-export default SetNewPasswordPageTemplate
+export default SetNewPasswordPageTemplate;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from "react-router-dom";
 import WebsiteLayoutDiv from '../components/organisms/Layout/WebsiteLayoutDiv';
+import Footer from '../components/organisms/Footer/Footer';
 
 
 const WebsiteLayout = () => {
@@ -9,6 +10,7 @@ const WebsiteLayout = () => {
     <>
       <WebsiteLayoutDiv />
       <Outlet />
+      <Footer />
     </>
   )
 };

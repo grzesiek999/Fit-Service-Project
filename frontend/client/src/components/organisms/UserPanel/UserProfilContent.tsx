@@ -11,7 +11,6 @@ import { calculateAge } from "../../../utils/CalculateAge";
 import EditParametersForm from "./EditParametersForm";
 
 
-
 interface Parameters {
     id: number,
     user_id: number,
@@ -39,8 +38,6 @@ const UserProfilContent = () => {
     const birthday = getUserWithExpiry(SESSION.USER).birthday;
     const age = calculateAge(birthday);
 
-
-
     const fetchParameters = async () => {
         const response =  await fetch('http://localhost:8000/api/parameters/last_users_parameters', {
             method: 'POST',
@@ -59,8 +56,6 @@ const UserProfilContent = () => {
     useEffect(() => {
         fetchParameters();
     }, []);
-
-
 
     return (
         <div className="user-profil-content-div-wrapper">

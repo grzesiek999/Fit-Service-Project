@@ -39,7 +39,7 @@ const RestorePasswordPageTemplate = () => {
     <div>
       <form onSubmit={submit}>
         <h2>Odzyskaj hasło</h2>
-        <SignInInput inputType="email" onChange={handleEmail} />
+        <SignInInput inputType="email" className="email-register-input" onChange={handleEmail} />
         <Button buttonType="submit" className="" onClick={()=>{}} buttonTittle="Resetuj hasło" />
       </form>
       {message && <div>{message}</div>}

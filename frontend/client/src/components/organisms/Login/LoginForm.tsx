@@ -67,9 +67,9 @@ const LoginForm = () => {
         <form onSubmit={submit}>
           <h6>Logowanie</h6>
           <label className='login-form-label-wrapper'>Podaj adres email:</label>
-          <SignInInput inputType='email' onChange={handleEmail} />
+          <SignInInput inputType='email' className='email-register-input' onChange={handleEmail} />
           <label className='login-form-label-wrapper'>Podaj hasło:</label>
-          <SignInInput inputType='password' onChange={handlePassword} />
+          <SignInInput inputType='password' className='password-register-input' onChange={handlePassword} />
           <Button buttonType='submit' className='login-button-wrapper' onClick={()=>{}} buttonTittle='Zaloguj' />
         </form>
         {message && <div>{message}</div>}
