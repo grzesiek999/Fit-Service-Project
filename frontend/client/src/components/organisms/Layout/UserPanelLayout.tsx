@@ -8,7 +8,7 @@ import UserPanelMenu from "../UserPanel/UserPanelMenu";
 const UserPanelLyaout = () => {
 
     return (
-      <div className="user-panel-page-template-div-wrapper">
+      <div className="user-panel-layout-div-wrapper">
         <UserPanelMenu />
         <Outlet />
       </div>

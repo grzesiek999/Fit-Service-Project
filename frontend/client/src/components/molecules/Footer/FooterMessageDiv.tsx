@@ -27,7 +27,7 @@ const FooterMessageDiv = () => {
             <form onSubmit={sendMessage}>
                 <span className="message-span">Chcesz dowiedzieć się więcej ?</span>
                 <SignInInput inputType="email" className="email-input-to-message" onChange={handleEmail} />
-                <MessageTextArea className="test-input-to-message" onChange={handleMessage} />
+                <MessageTextArea className="text-input-to-message" onChange={handleMessage} />
                 <Button buttonType="submit" className="send-message-button-wrapper" onClick={()=>{}} buttonTittle="Wyślij" />
             </form>
         </div>
