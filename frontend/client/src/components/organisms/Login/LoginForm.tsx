@@ -43,7 +43,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     const response = await fetch('http://localhost:8000/api/login', {
-      method: 'POST',
+      method: 'PATCH',
       headers: {'Content-Type': 'application/json'},
       credentials: 'include',
       body: JSON.stringify({

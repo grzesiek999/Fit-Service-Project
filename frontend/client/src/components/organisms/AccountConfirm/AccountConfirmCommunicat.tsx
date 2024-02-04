@@ -29,7 +29,7 @@ const AccountConfirmCommunicat = () => {
     const confirmEmail = async (uid:string | undefined, token:string | undefined) => {
         if(uid && token){
             const response = await fetch('http://localhost:8000/api/confirm_email', {
-                method: 'POST',
+                method: 'PATCH',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
                     uid,

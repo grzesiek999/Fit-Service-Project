@@ -28,7 +28,7 @@ class RegisterView(APIView):
     
 
 class LoginView(APIView):
-    def post(self, request):
+    def patch(self, request):
         email = request.data['email']
         password = request.data['password']
         normalize_email = email.lower()
@@ -78,7 +78,7 @@ class UserView(APIView):
     
 
 class LogoutView(APIView):
-    def post(self, request):
+    def delete(self, request):
         response = Response()
         response.delete_cookie('jwt')
         response.data = {
@@ -88,7 +88,7 @@ class LogoutView(APIView):
     
 
 class ConfirmAccountView(APIView):
-    def post(self, request):
+    def patch(self, request):
         uidb64 = request.data['uid']
         token = request.data['token']
         response = Response()
