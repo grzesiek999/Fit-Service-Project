@@ -17,7 +17,7 @@ class AddMessageView(APIView):
     
 
 class GetMessageView(APIView):
-    def post(self, request):
+    def get(self, request):
         message_id = request.data.get('message_id')
 
         try:

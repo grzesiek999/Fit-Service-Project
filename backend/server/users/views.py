@@ -149,7 +149,7 @@ class SendPasswordRestoreView(APIView):
     
 
 class SetNewPasswordView(APIView):
-    def post(self, request):
+    def patch(self, request):
         response = Response()
         uidb64 = request.data['uid']
         token = request.data['token']
@@ -165,5 +165,3 @@ class SetNewPasswordView(APIView):
                 'message': 'password change error'
             }
         return response
-        
-        
