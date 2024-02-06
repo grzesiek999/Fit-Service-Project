@@ -39,12 +39,10 @@ const UserProfilContent = () => {
     const age = calculateAge(birthday);
 
     const fetchParameters = async () => {
-        const response =  await fetch('http://localhost:8000/api/parameters/last_users_parameters', {
-            method: 'POST',
+        const url = `http://localhost:8000/api/parameters/last_users_parameters?user_id=${user_id}`
+        const response =  await fetch(url, {
+            method: 'GET',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                user_id
-            })
         });
         if(response.ok) {
             const content = await response.json();

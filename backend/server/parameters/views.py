@@ -15,8 +15,8 @@ class AddParametersView(APIView):
     
 
 class GetAllUserParametersView(APIView):
-    def post(self, request):
-        user_id = request.data['user_id']
+    def get(self, request):
+        user_id = request.query_params.get('user_id')
         parameters = Parameters.objects.filter(user_id=user_id)
         
         if parameters.exists():
@@ -27,8 +27,8 @@ class GetAllUserParametersView(APIView):
         
 
 class GetLastUserParametersView(APIView):
-    def post(self, request):
-        user_id = request.data['user_id']
+    def get(self, request):
+        user_id = request.query_params.get('user_id')
         parameters = Parameters.objects.filter(user_id=user_id)
 
         if parameters.exists():
@@ -44,7 +44,7 @@ class GetLastUserParametersView(APIView):
     
 
 class EditParametersView(APIView):
-    def post(self, request):
+    def put(self, request):
         parameters_id = request.data['parameters_id']
         
         try:

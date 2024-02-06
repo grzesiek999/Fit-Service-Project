@@ -98,7 +98,7 @@ const EditParametersForm = ({parameters_id, isSex = null}: EditParametersProps) 
         e.preventDefault();
         
         const response = await fetch('http://localhost:8000/api/parameters/edit', {
-            method: 'POST',
+            method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 parameters_id,
