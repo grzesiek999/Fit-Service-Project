@@ -16,7 +16,7 @@ class AddDietView(APIView):
     
 
 class EditDietView(APIView):
-    def post(self, request):
+    def patch(self, request):
         diet_id = request.data.get('id')    
         try:
             diet = Diet.objects.get(id=diet_id)
@@ -31,7 +31,7 @@ class EditDietView(APIView):
         
 
 class GetDietByUserIdView(APIView):
-    def post(self, request):
+    def get(self, request):
         user_id = request.data.get('user_id')
         orders = Order.objects.filter(user_id=user_id)
         if orders.exists():
