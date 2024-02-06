@@ -14,7 +14,7 @@ class AddDietMealView(APIView):
         return Response(serializer.data)
     
 class EditDietMealView(APIView):
-    def post(self, request):
+    def patch(self, request):
         diet_meal_id = request.data.get('id')
         try:
             diet_meal = DietMeal.objects.get(id=diet_meal_id)
@@ -29,7 +29,7 @@ class EditDietMealView(APIView):
         
 
 class GetByIdView(APIView):
-    def post(self, request):
+    def get(self, request):
         diet_meal_id = request.data.get('id')
         try:
             diet_meal = DietMeal.objects.get(id=diet_meal_id)
@@ -41,7 +41,7 @@ class GetByIdView(APIView):
 
 
 class GetAllForDietByKindView(APIView):
-    def post(self, request):
+    def get(self, request):
         diet_id = request.data.get('diet_id')
         meal = request.data.get('meal', None)
         if meal:
@@ -56,7 +56,7 @@ class GetAllForDietByKindView(APIView):
 
 
 class DeleteDietMealView(APIView):
-    def post(self, request):
+    def delete(self, request):
         id = request.data.get('id')
         DietMeal.objects.filter(pk=id).delete()
         return Response({'message': 'object deleted succesfully'})
