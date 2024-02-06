@@ -23,7 +23,7 @@ class AddOrderView(APIView):
     
 
 class SetPaymentStatusView(APIView):
-    def post(self, request):
+    def patch(self, request):
         message = OrderMessages()
         user_id = request.data.get('user_id')
         orders = Order.objects.filter(user_id=user_id)
@@ -46,7 +46,7 @@ class SetPaymentStatusView(APIView):
     
 
 class ActivateOrderView(APIView):
-    def post(self, request):
+    def patch(self, request):
         message = OrderMessages()
         user_id = request.data.get('user_id')
         orders = Order.objects.filter(user_id=user_id)
@@ -69,7 +69,7 @@ class ActivateOrderView(APIView):
     
 
 class GetOrderByUserIdView(APIView):
-    def post(self, request):
+    def get(self, request):
         user_id = request.data.get('user_id')
         orders = Order.objects.filter(user_id=user_id)
 
