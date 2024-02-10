@@ -2,6 +2,7 @@ import React, {useState, SyntheticEvent} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "../atoms/buttons/Button";
 import SignInInput from "../atoms/inputs/SignInInput";
+import "../../styles/index.scss";
 
 
 const SetNewPasswordPageTemplate = () => {
@@ -49,7 +50,7 @@ const SetNewPasswordPageTemplate = () => {
     
 
     return(
-        <div>
+        <div className="set-new-password-page-template-div-wrapper">
             <form onSubmit={submit}>
                 <SignInInput inputType="password" className="password-register-input" onChange={handlePassword} />
                 <SignInInput inputType="password" className="password-register-input" onChange={handleConfirmPassword} />

@@ -1,12 +1,14 @@
 import React from "react";
-import UserPanelContent from "../organisms/UserPanel/UserPanelContent";
+import UserPanelContent from "../organisms/UserPanel/Main/UserPanelContent";
 import "../../styles/index.scss";
 
 
 const UserPanelPageTemplate = () => {
 
     return (
-        <UserPanelContent />
+        <div className="user-panel-page-template-div-wrapper">
+            <UserPanelContent />
+        </div>
     );
 }
 

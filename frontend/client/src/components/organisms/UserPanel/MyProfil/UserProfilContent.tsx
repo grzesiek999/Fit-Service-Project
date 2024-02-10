@@ -1,13 +1,12 @@
 import React, {useEffect, useState } from "react";
-import { getUserWithExpiry } from "../../../utils/LocalStorageManagment";
-import { SESSION } from "../../../constant/Session";
-import "../../../styles/index.scss";
-import Button from "../../atoms/buttons/Button";
-import ParametersHistory from "../../molecules/UserPanel/ParametersHistory";
+import { getUserWithExpiry } from "../../../../utils/LocalStorageManagment";
+import { SESSION } from "../../../../constant/Session";
+import Button from "../../../atoms/buttons/Button";
+import ParametersHistory from "../../../molecules/UserPanel/ParametersHistory";
 import { useNavigate } from "react-router-dom";
-import { ROUTER_PATH } from "../../../router/RouterPath";
+import { ROUTER_PATH } from "../../../../router/RouterPath";
 import AddParametersForm from "./AddParametersForm";
-import { calculateAge } from "../../../utils/CalculateAge";
+import { calculateAge } from "../../../../utils/CalculateAge";
 import EditParametersForm from "./EditParametersForm";
 
 
@@ -56,7 +55,7 @@ const UserProfilContent = () => {
     }, []);
 
     return (
-        <div className="user-profil-content-div-wrapper">
+        <div className="user-profil-div-wrapper">
             <div className="edit-parameters-div-wrapper">
                 {displayEditPar ? null : <Button buttonType="button" className="edit-parameters-button-wrapper" onClick={()=>{setDisplayEditPar(true);}} buttonTittle="Edytuj"/>}
                 {displayEditPar ? <EditParametersForm parameters_id={avaibleParameters?.id} isSex={avaibleParameters?.sex} /> : null}

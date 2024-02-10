@@ -1,11 +1,12 @@
 import React from "react";
-import UserPanelSettings from "../organisms/UserPanel/UserPanelSettings";
+import UserPanelSettings from "../organisms/UserPanel/AccountSettings/UserPanelSettings";
+import "../../styles/index.scss";
 
 
 const UserSettingsPageTemplate = () => {
 
     return (
-        <div>
+        <div className="user-settings-page-template-div-wrapper">
             <UserPanelSettings />
         </div>
     );

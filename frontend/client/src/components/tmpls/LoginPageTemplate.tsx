@@ -1,5 +1,7 @@
 import React from 'react'
 import LoginForm from '../organisms/Login/LoginForm';
+import "../../styles/index.scss";
+
 
 
 const LoginPageTemplate = () => {

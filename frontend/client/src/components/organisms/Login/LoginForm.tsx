@@ -7,6 +7,7 @@ import { UserAuth } from '../../../context/UserDataContext';
 import {setUserWithExpiry} from '../../../utils/LocalStorageManagment';
 import { SESSION } from '../../../constant/Session';
 import { ROUTER_PATH } from '../../../router/RouterPath';
+import SignInLabel from '../../atoms/labels/SignInLabel';
 
 
 const LoginForm = () => {
@@ -62,18 +63,16 @@ const LoginForm = () => {
   }
 
   return (
-    <div className='login-organism-div-wrapper'>
-      <div className='login-form-div-wrapper'>
-        <form onSubmit={submit}>
-          <h6>Logowanie</h6>
-          <label className='login-form-label-wrapper'>Podaj adres email:</label>
-          <SignInInput inputType='email' className='email-register-input' onChange={handleEmail} />
-          <label className='login-form-label-wrapper'>Podaj hasło:</label>
-          <SignInInput inputType='password' className='password-register-input' onChange={handlePassword} />
-          <Button buttonType='submit' className='login-button-wrapper' onClick={()=>{}} buttonTittle='Zaloguj' />
-        </form>
-        {message && <div>{message}</div>}
-      </div>
+    <div className='login-form-div-wrapper'>
+      <form onSubmit={submit}>
+        <h6>Logowanie</h6>
+        <SignInLabel context='Podaj adres email:' />
+        <SignInInput inputType='email' className='signin-input' onChange={handleEmail} />
+        <SignInLabel context='Podaj hasło:' />
+        <SignInInput inputType='password' className='signin-input' onChange={handlePassword} />
+        <Button buttonType='submit' className='login-button-wrapper' onClick={()=>{}} buttonTittle='Zaloguj' />
+      </form>
+      {message && <div className='error-message-div-wrapper'>{message}</div>}
       <LoginFormLinks />
     </div>
   );

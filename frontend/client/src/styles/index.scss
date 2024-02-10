@@ -18,17 +18,15 @@
 
 @import "./atoms/Buttons/my-account-button-wrapper.scss";
 
-@import "./organism/register-form-wrapper.scss";
-
 @import "./molecules/authorization-div-wrapper.scss";
 
 @import "./atoms/nav-link-wrapper.scss";
 
 @import "./molecules/layout-nav-wrapper.scss";
 
-@import "./organism/Layout/layout-menu-div-wrapper.scss";
+@import "./organism/Layouts/layout-menu-div-wrapper.scss";
 
-@import "./organism/calculators-nav-div-wrapper.scss";
+@import "./organism/Calculators/calculators-nav-div-wrapper.scss";
 
 @import "./atoms/calculators-nav-link-wrapper.scss";
 
@@ -48,25 +46,17 @@
 
 @import "./molecules/add-product-div-wrapper.scss";
 
-@import "./organism/user-panel-menu-div-wrapper.scss";
+@import "./organism/UserPanel/Main/user-panel-menu-div-wrapper.scss";
 
-@import "./atoms/Lists/user-nav-div-wrapper.scss";
+@import "./molecules/UserPanel/user-nav-div-wrapper.scss";
 
-@import "./organism/UserPanel/user-profil-content-div-wrapper.scss";
-
-@import "./organism/UserPanel/user-parameters-div-wrapper.scss";
+@import "./organism/UserPanel/MyProfil/user-profil-div-wrapper.scss";
 
 @import "./tmpls/login-page-template-div-wrapper.scss";
 
-@import "./organism/Login/login-organism-div-wrapper.scss";
-
 @import "./organism/Login/login-form-div-wrapper.scss";
 
-@import "./atoms/Inputs/password-register-input.scss";
-
-@import "./atoms/Inputs/email-register-input.scss";
-
-@import "./organism/Login/login-form-label-wrapper.scss";
+@import "./atoms/Labels/signin-label.scss";
 
 @import "./molecules/Login/login-form-links-div-wrapper.scss";
 
@@ -74,15 +64,9 @@
 
 @import "./tmpls/register-page-template-div-wrapper.scss";
 
-@import "./atoms/Inputs/name-register-input.scss";
-
-@import "./atoms/Inputs/surname-register-input.scss";
-
-@import "./atoms/Inputs/birthday-register-input.scss";
+@import "./atoms/Inputs/signin-input.scss";
 
 @import "./atoms/Inputs/checkbox-register-input.scss";
-
-@import "./organism/Layout/mobile-layout-menu-div-wrapper.scss";
 
 @import "./molecules/Layout/mobile-layout-menu-logo-div-wrapper.scss";
 
@@ -100,8 +84,38 @@
 
 @import "./molecules/Footer/footer-contact-div-wrapper.scss";
 
-@import "./tmpls/home-page-template.scss";
+@import "./tmpls/home-page-template-div-wrapper.scss";
 
 @import "./tmpls/calculators-page-template-div-wrepper.scss";
 
-@import "./organism/UserPanel/user-panel-layout-div-wrapper.scss";
+@import "./organism/Layouts/user-panel-layout-div-wrapper.scss";
+
+@import "./tmpls/user-settings-page-template-div-wrapper.scss";
+
+@import "./tmpls/user-profil-page-template-div-wrapper.scss";
+
+@import "./tmpls/user-panel-page-template-div-wrapper.scss";
+
+@import "./tmpls/set-new-password-page-template-div-wrapper.scss";
+
+@import "./tmpls/restore-password-page-template-div-wrapper.scss";
+
+@import "./tmpls/register-succesful-page-template-div-wrapper.scss";
+
+@import "./tmpls/password-changed-page-template-div-wrapper.scss";
+
+@import "./tmpls/check-product-page-template-div-wrapper.scss";
+
+@import "./tmpls/add-parameters-page-template-div-wrapper.scss";
+
+@import "./tmpls/account-confirm-page-template-div-wrapper.scss";
+
+@import "./organism/Layouts/calculators-layout-div-wrapper.scss";
+
+@import "./organism/UserPanel/AccountSettings/user-settings-div-wrapper.scss";
+
+@import "./organism/UserPanel/Main/user-panel-content-div-wrapper.scss";
+
+@import "./organism/UserPanel/MyProfil/edit-parameters-div-wrapper.scss";
+
+@import "./organism/UserPanel/MyProfil/add-parameters-div-wrapper.scss";

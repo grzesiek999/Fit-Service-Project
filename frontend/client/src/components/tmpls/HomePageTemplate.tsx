@@ -5,7 +5,9 @@ import "../../styles/index.scss";
 const HomePageTemplate = () => {
 
   return (
-      <div className='temp'>Strona glowna</div>
+      <div className='home-page-template-div-wrapper'>
+        Strona glowna
+      </div>
   );
 }
 

@@ -1,11 +1,12 @@
 import React from "react";
 import CheckProduct from "../organisms/CheckProduct/CheckProduct";
+import "../../styles/index.scss";
 
 
 const CheckProductPageTemplate = () => {
 
     return (
-        <div>
+        <div className="check-product-page-template-div-wrapper">
             <CheckProduct />
         </div>
     );

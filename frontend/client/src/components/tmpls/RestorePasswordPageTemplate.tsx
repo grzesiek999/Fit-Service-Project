@@ -1,6 +1,7 @@
 import React, {useState, SyntheticEvent} from "react";
 import Button from "../atoms/buttons/Button";
 import SignInInput from "../atoms/inputs/SignInInput";
+import "../../styles/index.scss";
 
 
 const RestorePasswordPageTemplate = () => {
@@ -36,7 +37,7 @@ const RestorePasswordPageTemplate = () => {
   }
 
   return (
-    <div>
+    <div className="restore-password-page-template-div-wrapper">
       <form onSubmit={submit}>
         <h2>Odzyskaj hasło</h2>
         <SignInInput inputType="email" className="email-register-input" onChange={handleEmail} />

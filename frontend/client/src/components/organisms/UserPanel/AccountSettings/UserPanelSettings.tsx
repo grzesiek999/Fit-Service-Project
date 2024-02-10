@@ -1,6 +1,7 @@
 import React, {useContext, useState} from "react";
-import Button from "../../atoms/buttons/Button";
-import { UserAuth } from "../../../context/UserDataContext";
+import Button from "../../../atoms/buttons/Button";
+import { UserAuth } from "../../../../context/UserDataContext";
+
 
 
 
@@ -32,7 +33,7 @@ const UserPanelSettings = () => {
     }
 
     return (
-        <div>
+        <div className="user-settings-div-wrapper">
             <div>Twój email {user?.email}</div>
             <Button buttonType="button" className="" onClick={changePassword} buttonTittle="Zmień hasło" />
             <div>{message}</div>

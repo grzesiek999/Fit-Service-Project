@@ -1,8 +1,8 @@
 import React, {SyntheticEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../atoms/buttons/Button';
-import '../../../styles/index.scss';
 import SignInInput from '../../atoms/inputs/SignInInput';
+import SignInLabel from '../../atoms/labels/SignInLabel';
 
 
 const RegisterForm = () => {
@@ -68,28 +68,28 @@ const RegisterForm = () => {
   }
 
   return (
-    <div className='register-form-wrapper'>
+    <div className='register-form-div-wrapper'>
       <form onSubmit={submit}>
         <h6>Utwórz Konto</h6>
-        <label className='login-form-label-wrapper'>Podaj swoje imię:</label>
-        <SignInInput inputType="name" className='name-register-input' onChange={handleName} />
-        <label className='login-form-label-wrapper'>Podaj swoje nazwisko:</label>
-        <SignInInput inputType="surname" className='surname-register-input' onChange={handleSurname} />
-        <label className='login-form-label-wrapper'>Wybierz swoją date urodzenia:</label>
-        <SignInInput inputType="birthday" className='birthday-register-input' onChange={handleBirthday} />
-        <label className='login-form-label-wrapper'>Podaj adres email:</label>
-        <SignInInput inputType="email" className='email-register-input' onChange={handleEmail} />
-        <label className='login-form-label-wrapper'>Podaj hasło:</label>
-        <SignInInput inputType="password" className='password-register-input' onChange={handlePassword} />
-        <label className='login-form-label-wrapper'>Powtórz hasło:</label>
-        <SignInInput inputType="password" className='password-register-input' onChange={handleConfirmPassword} />
+        <SignInLabel context='Podaj swoje imię:'/>
+        <SignInInput inputType="name" className='signin-input' onChange={handleName} />
+        <SignInLabel context='Podaj swoje nazwisko:'/>
+        <SignInInput inputType="surname" className='signin-input' onChange={handleSurname} />
+        <SignInLabel context='Wybierz swoją date urodzenia:'/>
+        <SignInInput inputType="birthday" className='signin-input' onChange={handleBirthday} />
+        <SignInLabel context='Podaj adres email:'/>
+        <SignInInput inputType="email" className='signin-input' onChange={handleEmail} />
+        <SignInLabel context='Podaj hasło:'/>
+        <SignInInput inputType="password" className='signin-input' onChange={handlePassword} />
+        <SignInLabel context='Powtórz hasło:'/>
+        <SignInInput inputType="password" className='signin-input' onChange={handleConfirmPassword} />
+        {message && <div className='error-message-div-wrapper'>{message}</div>}
         <div className='register-check-div-wrapper'>
           <SignInInput inputType='check' className='checkbox-register-input' onChange={()=>{}} />
           <label className='register-check-form-label-wrapper'>Akceptuję regulamin</label>
         </div>
         <Button buttonType='submit' className='create-account-button-wrapper' onClick={()=>{}} buttonTittle='Utwórz' />
       </form>
-      {message && <div>{message}</div>}
     </div>
   );
 }
