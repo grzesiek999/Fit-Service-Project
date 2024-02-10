@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom";
 import { ROUTER_PATH } from '../../../router/RouterPath';
-import "../../../styles/index.scss";
 
 
 

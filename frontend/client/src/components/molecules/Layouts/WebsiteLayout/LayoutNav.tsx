@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import "../../../styles/index.scss";
-import { ROUTER_PATH } from '../../../router/RouterPath';
-import { UserAuth } from "../../../context/UserDataContext";
+import { ROUTER_PATH } from '../../../../router/RouterPath';
+import { UserAuth } from "../../../../context/UserDataContext";
 
 
 const LayoutNav = () =>{

@@ -1,7 +1,6 @@
 import React, {useState} from "react";
-import "../../../styles/index.scss";
-import ChooseDiv from "../../molecules/CheckProduct/ChooseDiv";
-import SearchDiv from "../../molecules/CheckProduct/SearchDiv";
+import ChooseDiv from "../../../molecules/CheckProduct/ChooseDiv";
+import SearchDiv from "../../../molecules/CheckProduct/SearchDiv";
 
 
 interface Product {

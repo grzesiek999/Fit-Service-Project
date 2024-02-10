@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "../../atoms/buttons/Button";
-import "../../../styles/index.scss";
-import { UserAuth } from "../../../context/UserDataContext";
-import { ROUTER_PATH } from '../../../router/RouterPath';
-import { SESSION } from "../../../constant/Session";
+import Button from "../../../atoms/buttons/Button";
+import { UserAuth } from "../../../../context/UserDataContext";
+import { ROUTER_PATH } from '../../../../router/RouterPath';
+import { SESSION } from "../../../../constant/Session";
 
 
 const AuthorizationDiv = () => {

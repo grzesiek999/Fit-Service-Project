@@ -1,5 +1,5 @@
 import React from "react";
-import CheckProduct from "../organisms/CheckProduct/CheckProduct";
+import CheckProduct from "../organisms/Calculators/CheckProduct/CheckProduct";
 import "../../styles/index.scss";
 
 

@@ -20,8 +20,8 @@ import CheckProductPage from "../pages/CheckProductPage";
 import UserProfilPage from "../pages/UserProfilPage";
 import {ROUTER_PATH} from "./RouterPath";
 import CalculatorsPage from '../pages/CalculatorsPage';
-import CalculatorsLyaout from '../components/organisms/Layouts/CalculatorsLayout';
-import UserPanelLyaout from '../components/organisms/Layouts/UserPanelLayout';
+import CalculatorsLyaout from '../components/organisms/Layouts/Calculators/CalculatorsLayout';
+import UserPanelLyaout from '../components/organisms/Layouts/UserPanel/UserPanelLayout';
 import AddParametersPage from '../pages/AddParametersPage';
 
 

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Squash as Hamburger } from 'hamburger-react'
 import { Link, useNavigate } from "react-router-dom";
-import LayoutNav from "../../molecules/Layout/LayoutNav";
-import "../../../styles/index.scss";
-import AuthorizationDiv from "../../molecules/Layout/AuthorizationDiv";
-import { ROUTER_PATH } from '../../../router/RouterPath';
+import LayoutNav from "../../../molecules/Layouts/WebsiteLayout/LayoutNav";
+import "../../../../styles/index.scss";
+import AuthorizationDiv from "../../../molecules/Layouts/WebsiteLayout/AuthorizationDiv";
+import { ROUTER_PATH } from '../../../../router/RouterPath';
 import { useMedia } from 'use-media';
-import MobileLayoutNav from "../../molecules/Layout/MobileLayoutNav";
-import Button from "../../atoms/buttons/Button";
+import MobileLayoutNav from "../../../molecules/Layouts/WebsiteLayout/MobileLayoutNav";
+import Button from "../../../atoms/buttons/Button";
 
 
 

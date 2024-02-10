@@ -1,7 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import "../../../styles/index.scss";
-import CalculatorsNav from "../../molecules/Calculators/CalculatorsNav";
+import CalculatorsNav from "../../../molecules/Layouts/Calculators/CalculatorsNav";
 
 
 

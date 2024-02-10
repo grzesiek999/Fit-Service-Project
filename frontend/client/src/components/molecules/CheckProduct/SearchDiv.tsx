@@ -1,7 +1,6 @@
 import React, {useState, useContext, useEffect,} from "react";
 import SearchProductInput from "../../atoms/inputs/SearchProductInput";
 import ProductSearchList from "../../atoms/lists/ProductSearchList";
-import "../../../styles/index.scss";
 import { UserAuth } from "../../../context/UserDataContext";
 import AddProductDiv from "./AddProductDiv";
 
@@ -56,7 +55,8 @@ const SearchDiv = ({handleProductClick}: SearchDivProps) => {
     const addProduct = () => {
         if(user){
             if(user.is_active){
-                setIsDisplayed(true);
+                if(isDisplayed===false) {setIsDisplayed(true);}
+                else {setIsDisplayed(false);}
             }
             else{
                 alert('Aby dodać produkt musisz aktywować swoje konto, jesli nie otrzymałes linku aktywujacego wejdz w zakładke Moje Konto i wyslij ponownie link');

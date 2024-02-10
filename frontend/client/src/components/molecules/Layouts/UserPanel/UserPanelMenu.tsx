@@ -1,6 +1,6 @@
 import React from "react";
 import WelcomeUserSpan from "../../../atoms/spans/WelcomeUserSpan";
-import UserPanelNav from "../../../molecules/Layout/UserPanelNav";
+import UserPanelNav from "./UserPanelNav";
 
 
 const UserPanelMenu = () => {

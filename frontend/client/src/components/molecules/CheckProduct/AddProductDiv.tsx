@@ -1,5 +1,4 @@
 import React, { useState, SyntheticEvent} from "react";
-import "../../../styles/index.scss";
 import { AddProductTextInput, AddProductNumberInput } from "../../atoms/inputs/AddProductInput";
 import Button from "../../atoms/buttons/Button";
 

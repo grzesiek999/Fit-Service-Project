@@ -24,9 +24,9 @@
 
 @import "./molecules/layout-nav-wrapper.scss";
 
-@import "./organism/Layouts/layout-menu-div-wrapper.scss";
+@import "./organism/Layouts/WebsiteLayout/layout-menu-div-wrapper.scss";
 
-@import "./organism/Calculators/calculators-nav-div-wrapper.scss";
+@import "./molecules/Layouts/Calculators/calculators-nav-div-wrapper.scss";
 
 @import "./atoms/calculators-nav-link-wrapper.scss";
 
@@ -46,9 +46,9 @@
 
 @import "./molecules/add-product-div-wrapper.scss";
 
-@import "./organism/UserPanel/Main/user-panel-menu-div-wrapper.scss";
+@import "./molecules/Layouts/UserPanel/user-panel-menu-div-wrapper.scss";
 
-@import "./molecules/UserPanel/user-nav-div-wrapper.scss";
+@import "./molecules/Layouts/UserPanel/user-nav-div-wrapper.scss";
 
 @import "./organism/UserPanel/MyProfil/user-profil-div-wrapper.scss";
 
@@ -68,15 +68,13 @@
 
 @import "./atoms/Inputs/checkbox-register-input.scss";
 
-@import "./molecules/Layout/mobile-layout-menu-logo-div-wrapper.scss";
-
 @import "./atoms/Spans/welcome-user-span-wrapper.scss";
 
 @import "./molecules/UserPanel/parameters-history-div-wrapper.scss";
 
 @import "./atoms/Buttons/show-history-button-wrapper.scss";
 
-@import "./molecules/Layout/mobile-nav-div-wrapper.scss";
+@import "./molecules/Layouts/WebsiteLayout/mobile-nav-div-wrapper.scss";
 
 @import "./organism/Footer/footer-div-wrapper";
 
@@ -88,7 +86,7 @@
 
 @import "./tmpls/calculators-page-template-div-wrepper.scss";
 
-@import "./organism/Layouts/user-panel-layout-div-wrapper.scss";
+@import "./organism/Layouts/UserPanel/user-panel-layout-div-wrapper.scss";
 
 @import "./tmpls/user-settings-page-template-div-wrapper.scss";
 
@@ -110,7 +108,7 @@
 
 @import "./tmpls/account-confirm-page-template-div-wrapper.scss";
 
-@import "./organism/Layouts/calculators-layout-div-wrapper.scss";
+@import "./organism/Layouts/Calculators/calculators-layout-div-wrapper.scss";
 
 @import "./organism/UserPanel/AccountSettings/user-settings-div-wrapper.scss";
 

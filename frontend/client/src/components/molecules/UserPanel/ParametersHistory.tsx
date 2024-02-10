@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Button from "../../atoms/buttons/Button";
 import { SESSION } from "../../../constant/Session";
 import { getUserWithExpiry } from "../../../utils/LocalStorageManagment";
-import "../../../styles/index.scss";
 
 
 interface Parameters {

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../../../styles/index.scss";
 import Button from "../../atoms/buttons/Button";
 import SignInInput from "../../atoms/inputs/SignInInput";
 import MessageTextArea from "../../atoms/inputs/MessageTextArea";

@@ -1,7 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import "../../../styles/index.scss";
-import UserPanelMenu from "../UserPanel/Main/UserPanelMenu";
+import UserPanelMenu from "../../../molecules/Layouts/UserPanel/UserPanelMenu";
 
 
 

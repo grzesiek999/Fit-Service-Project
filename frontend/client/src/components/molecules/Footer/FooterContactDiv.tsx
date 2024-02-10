@@ -1,7 +1,6 @@
 import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IconContext } from "react-icons";
-import "../../../styles/index.scss";
 
 const FooterContactDiv = () => {
     return(
