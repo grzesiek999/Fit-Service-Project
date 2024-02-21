@@ -10,41 +10,25 @@
 
 @import "./variables";
 
-@import "./atoms/Buttons/login-button-wrapper.scss";
+@import "./molecules/Layouts/WebsiteLayout/authorization-div-wrapper.scss";
 
-@import "./atoms/Buttons/logout-button-wrapper.scss";
-
-@import "./atoms/Buttons/create-account-button-wrapper.scss";
-
-@import "./atoms/Buttons/my-account-button-wrapper.scss";
-
-@import "./molecules/authorization-div-wrapper.scss";
-
-@import "./atoms/nav-link-wrapper.scss";
-
-@import "./molecules/layout-nav-wrapper.scss";
+@import "./molecules/Layouts/WebsiteLayout/layout-nav-wrapper.scss";
 
 @import "./organism/Layouts/WebsiteLayout/layout-menu-div-wrapper.scss";
 
 @import "./molecules/Layouts/Calculators/calculators-nav-div-wrapper.scss";
 
-@import "./atoms/calculators-nav-link-wrapper.scss";
+@import "./molecules/Calculators/calculators-nav-link-wrapper.scss";
 
-@import "./molecules/search-results-ul-wrapper.scss";
+@import "./molecules/CheckProduct/search-choose-div-wrapper.scss";
 
-@import "./molecules/search-choose-div-wrapper.scss";
+@import "./molecules/CheckProduct/search-bar-div-wrapper.scss";
 
-@import "./molecules/search-bar-div-wrapper.scss";
+@import "./molecules/CheckProduct/search-div-wrapper.scss";
 
-@import "./atoms/search-result-li-wrapper.scss";
+@import "./molecules/CheckProduct/add-product-div-button-wrapper.scss";
 
-@import "./molecules/search-div-wrapper.scss";
-
-@import "./atoms/Icons/search-icon.scss";
-
-@import "./molecules/add-product-div-button-wrapper.scss";
-
-@import "./molecules/add-product-div-wrapper.scss";
+@import "./molecules/CheckProduct/add-product-div-wrapper.scss";
 
 @import "./molecules/Layouts/UserPanel/user-panel-menu-div-wrapper.scss";
 
@@ -56,7 +40,7 @@
 
 @import "./organism/Login/login-form-div-wrapper.scss";
 
-@import "./atoms/Labels/signin-label.scss";
+@import "./general/signin-label.scss";
 
 @import "./molecules/Login/login-form-links-div-wrapper.scss";
 
@@ -64,15 +48,9 @@
 
 @import "./tmpls/register-page-template-div-wrapper.scss";
 
-@import "./atoms/Inputs/signin-input.scss";
-
-@import "./atoms/Inputs/checkbox-register-input.scss";
-
-@import "./atoms/Spans/welcome-user-span-wrapper.scss";
+@import "./general/signin-input.scss";
 
 @import "./molecules/UserPanel/parameters-history-div-wrapper.scss";
-
-@import "./atoms/Buttons/show-history-button-wrapper.scss";
 
 @import "./molecules/Layouts/WebsiteLayout/mobile-nav-div-wrapper.scss";
 
@@ -117,3 +95,7 @@
 @import "./organism/UserPanel/MyProfil/edit-parameters-div-wrapper.scss";
 
 @import "./organism/UserPanel/MyProfil/add-parameters-div-wrapper.scss";
+
+@import "./organism/RestorePassword/restore-password-form-div.scss";
+
+@import "./organism/RegisterSuccessful/register-successful-banner-div-wrapper.scss";

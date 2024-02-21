@@ -1,3 +1,8 @@
+.search-div-wrapper {
+    margin: 100px 0px 0px 100px;
+    width: 500px;
+}
+
 .search-results-ul-wrapper {
     width: 100%;
     display: flex;
@@ -9,4 +14,13 @@
     padding: 0px 15px;
     max-height: 200px;
     overflow-y: scroll;
+}
+
+.search-result-li-wrapper{
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    cursor: pointer;  
+    &:hover {
+        background-color: #efefef;
+    }
 }

@@ -1,4 +1,11 @@
-.login-button-wrapper{
+.authorization-div-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-button-wrapper {
     display: flex;
 	justify-content: center;
 	align-items: center;
@@ -6,7 +13,7 @@
 	height: 50px;
 	background-color: #00C82F;
 	border-radius: 25px;
-	font-size: 20px;
+	font-size: 22px;
 	font-family: 'Work Sans', sans-serif;
 	font-weight: bold;
 	color: white;

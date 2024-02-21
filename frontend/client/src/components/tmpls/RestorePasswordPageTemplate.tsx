@@ -1,49 +1,13 @@
-import React, {useState, SyntheticEvent} from "react";
-import Button from "../atoms/buttons/Button";
-import SignInInput from "../atoms/inputs/SignInInput";
+import React from "react";
 import "../../styles/index.scss";
+import RestorePasswordFormDiv from "../organisms/RestorePassword/RestorePasswordFormDiv";
 
 
 const RestorePasswordPageTemplate = () => {
 
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-    
-  const handleEmail = (email :string) => {
-    setEmail(email);
-  };
-
-  const submit = async (e: SyntheticEvent) => {
-    e.preventDefault();
-
-    const response = await fetch('http://localhost:8000/api/send_password_restore', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        email,
-      })
-    });
-    if(response.ok){
-      setMessage('Na podany adres email został wysłany link resetujący hasło')
-    }
-    else {
-      if(response.status === 403){
-        setMessage('Podano nieprawiłowy adres email');
-      }
-      else {
-        console.error('Error', response.status, response.statusText);
-      }
-    }
-  }
-
   return (
     <div className="restore-password-page-template-div-wrapper">
-      <form onSubmit={submit}>
-        <h2>Odzyskaj hasło</h2>
-        <SignInInput inputType="email" className="email-register-input" onChange={handleEmail} />
-        <Button buttonType="submit" className="" onClick={()=>{}} buttonTittle="Resetuj hasło" />
-      </form>
-      {message && <div>{message}</div>}
+      <RestorePasswordFormDiv />
     </div>
   );
 }

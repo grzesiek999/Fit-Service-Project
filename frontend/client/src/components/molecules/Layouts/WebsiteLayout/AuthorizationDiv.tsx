@@ -36,7 +36,7 @@ const AuthorizationDiv = () => {
           </div> 
           :
           <div className='authorization-div-wrapper'>
-            <Button buttonType="button" className="login-button-wrapper" onClick={()=>{navigate(ROUTER_PATH.LOGIN);}} buttonTittle="Zaloguj" />
+            <Button buttonType="button" className="signin-button-wrapper" onClick={()=>{navigate(ROUTER_PATH.LOGIN);}} buttonTittle="Zaloguj" />
           </div>        
         }
       </div>
