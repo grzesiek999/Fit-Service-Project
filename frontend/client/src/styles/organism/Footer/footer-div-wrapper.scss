@@ -1,6 +1,11 @@
 .footer-div-wrapper{
-    padding: 25px 20px;
     background-color: $footer-background-color;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-main-div-part-wrapper{
+    padding: 25px 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
