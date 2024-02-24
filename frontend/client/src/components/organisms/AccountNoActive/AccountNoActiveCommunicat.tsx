@@ -9,7 +9,7 @@ const AccountNoActiveCommunicat = () => {
     const [message, setMessage] = useState('');
     const [email, setEmail] = useState(getUserWithExpiry(SESSION.USER).email);
 
-    const send = async () => {
+    const sendEmailAgain = async () => {
 
         const response = await fetch('http://localhost:8000/api/send_email_again', {
             method: 'POST',
@@ -27,14 +27,13 @@ const AccountNoActiveCommunicat = () => {
         }
     }
 
-
     return (
-    <div>
-        <div>Konto nie aktywne</div>
-        <div>Sprawdź folder spam na poczcie elektronicznej lub wyślij link aktywacyjny ponownie </div>
-        <Button buttonType="button" className="" onClick={send} buttonTittle="Wyślij" />
-        <div>{message}</div>
-    </div>
+        <div className="account-no-active-communicat-div-wrapper">
+            <span>Konto nie zweryfikowane !</span>
+            <p>Sprawdź folder spam na poczcie elektronicznej lub wyślij link aktywacyjny ponownie.</p>
+            <Button buttonType="button" className="send-email-agian-button-wrapper" onClick={sendEmailAgain} buttonTittle="Wyślij" />
+            <div className="sended-status-div-message-wrapper">{message}</div>
+        </div>
     );
 }
 

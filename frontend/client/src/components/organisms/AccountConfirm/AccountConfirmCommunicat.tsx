@@ -57,15 +57,15 @@ const AccountConfirmCommunicat = () => {
 
     if(actived) {
         return(
-            <div>
-                Twoje konto zostało zaaktywowane!
+            <div className="account-confirm-communicat-div-wrapper">
+                <span className="succesfull-span-information">Twoje konto zostało zaaktywowane!</span>
             </div>
         );
     }
     else {
         return(
-            <div>
-                Nieważny link aktywacyjny!
+            <div className="account-confirm-communicat-div-wrapper">
+                <span className="fault-span-information">Nieważny link aktywacyjny!</span>
             </div>
         );
     }

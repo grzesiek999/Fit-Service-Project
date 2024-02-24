@@ -44,7 +44,7 @@ const RestorePasswordFormDiv = () => {
           <p>W celu przypomnienia hasła, zostanie wysłany na twój adres email link resetujący hasło.</p>
           <Button buttonType="submit" className="restore-password-button-wrapper" onClick={()=>{}} buttonTittle="Wyślij" />
         </form>
-        {message && <div>{message}</div>}
+        {message && <div className="error-message-div-wrapper">{message}</div>}
       </div>
     );
   }
