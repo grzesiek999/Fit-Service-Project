@@ -1,7 +1,7 @@
 .layout-nav-div-wrapper {
     display: flex;
     flex-direction: row;
-    margin-left: 27vw;
+    margin-left: 750px;
 }
 
 .layout-nav-div-wrapper nav ul {
@@ -9,14 +9,24 @@
     flex-direction: row;
     list-style-type: none;
     padding: 0px;
+    margin-right: 75px;
 }
 
 .layout-nav-div-wrapper nav ul li {
-    margin-right: 7vw;
-    font-size: 18px;
+    margin: 0 25px;
 }
 
 .layout-nav-link-wrapper{
+    padding: 10px;
     text-decoration: none;
-    color: inherit;
+    color: #000000;
+    font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+        color: #333333;
+        opacity: 0.8;
+    }
 }

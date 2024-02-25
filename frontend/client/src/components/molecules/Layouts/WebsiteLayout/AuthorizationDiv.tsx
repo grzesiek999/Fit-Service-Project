@@ -1,46 +1,35 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../../atoms/buttons/Button";
 import { UserAuth } from "../../../../context/UserDataContext";
 import { ROUTER_PATH } from '../../../../router/RouterPath';
-import { SESSION } from "../../../../constant/Session";
+import { FaUser } from "react-icons/fa";
+import HiddenNavList from "../../../atoms/lists/HiddenNavList";
 
 
 const AuthorizationDiv = () => {
 
-    const navigate = useNavigate();
-    const {user, logOut} = useContext(UserAuth);
+  const navigate = useNavigate();
+  const {user} = useContext(UserAuth);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-    const logout = async () => {
-      const response = await fetch('http://localhost:8000/api/logout', {
-        method: 'DELETE',
-        headers: {'Content-Type': 'application/json'},
-        credentials: 'include',
-      });
-      if(response.ok){
-        logOut();
-        localStorage.removeItem(SESSION.USER);
-        navigate(ROUTER_PATH.HOME);
-      }
-      else{
-        console.log('Logout problem')
-      }
-    }
+  const handleMouseEnter = () => { setIsOpen(true); }
+  const handleMouseLeave = () => { setIsOpen(false); }
 
-    return (
-      <div>
-        {user ?
-          <div className='authorization-div-wrapper'>
-            <Button buttonType="button" className="my-account-button-wrapper" onClick={()=>{navigate(ROUTER_PATH.USER_PANEL);}} buttonTittle="Moje Konto" />
-            <Button buttonType="button" className="logout-button-wrapper" onClick={logout} buttonTittle="Wyloguj" />
-          </div> 
-          :
-          <div className='authorization-div-wrapper'>
-            <Button buttonType="button" className="signin-button-wrapper" onClick={()=>{navigate(ROUTER_PATH.LOGIN);}} buttonTittle="Zaloguj" />
-          </div>        
-        }
-      </div>
-    );
+  return (
+    <>
+      {user ?
+        <div className='authorization-div-wrapper' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <FaUser className='user-icon' onClick={()=>{navigate(ROUTER_PATH.USER_PANEL);}}/>
+          {isOpen && <div className="hidden-nav-div-wrapper"><HiddenNavList temp={setIsOpen} /></div>}
+        </div>
+        :
+        <div className='authorization-div-wrapper'>
+          <Button buttonType="button" className="signin-button-wrapper" onClick={()=>{navigate(ROUTER_PATH.LOGIN);}} buttonTittle="Zaloguj" />
+        </div>        
+      }
+    </>
+  );
       
 }
 
