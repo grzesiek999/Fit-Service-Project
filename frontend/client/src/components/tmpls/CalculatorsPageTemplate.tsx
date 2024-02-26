@@ -1,11 +1,12 @@
 import React from "react";
 import "../../styles/index.scss";
+import CalculatorsHomeDiv from "../organisms/Calculators/Home/CalculatorsHomeDiv";
 
 
 const CalculatorsPageTempalte = () => {
     return (
         <div className="calculators-page-template-div-wrapper">
-            kalkulatory
+            <CalculatorsHomeDiv />
         </div>     
     );
 }

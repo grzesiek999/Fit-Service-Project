@@ -29,7 +29,7 @@ const HiddenNavList = ({temp}: HiddenNavListProps) => {
         else{
           console.log('Logout problem')
         }
-      }
+    }
 
     return (
         <ul>
