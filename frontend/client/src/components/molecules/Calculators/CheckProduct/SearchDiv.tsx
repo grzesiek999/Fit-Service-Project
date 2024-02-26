@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect,} from "react";
-import SearchProductInput from "../../atoms/inputs/SearchProductInput";
-import ProductSearchList from "../../atoms/lists/ProductSearchList";
-import { UserAuth } from "../../../context/UserDataContext";
+import SearchProductInput from "../../../atoms/inputs/SearchProductInput";
+import ProductSearchList from "../../../atoms/lists/ProductSearchList";
+import { UserAuth } from "../../../../context/UserDataContext";
 import AddProductDiv from "./AddProductDiv";
 
 

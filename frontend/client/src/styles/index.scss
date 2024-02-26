@@ -18,17 +18,15 @@
 
 @import "./molecules/Layouts/Calculators/calculators-nav-div-wrapper.scss";
 
-@import "./molecules/Calculators/calculators-nav-link-wrapper.scss";
+@import "./molecules/Calculators/CheckProduct/search-choose-div-wrapper.scss";
 
-@import "./molecules/CheckProduct/search-choose-div-wrapper.scss";
+@import "./molecules/Calculators/CheckProduct/search-bar-div-wrapper.scss";
 
-@import "./molecules/CheckProduct/search-bar-div-wrapper.scss";
+@import "./molecules/Calculators/CheckProduct/search-div-wrapper.scss";
 
-@import "./molecules/CheckProduct/search-div-wrapper.scss";
+@import "./molecules/Calculators/CheckProduct/add-product-div-button-wrapper.scss";
 
-@import "./molecules/CheckProduct/add-product-div-button-wrapper.scss";
-
-@import "./molecules/CheckProduct/add-product-div-wrapper.scss";
+@import "./molecules/Calculators/CheckProduct/add-product-div-wrapper.scss";
 
 @import "./molecules/Layouts/UserPanel/user-panel-menu-div-wrapper.scss";
 
@@ -113,3 +111,7 @@
 @import "./molecules/Footer/footer-end-part-div-wrapper.scss";
 
 @import "./organism/Calculators/Home/calculators-home-div-wrapper.scss";
+
+@import "./tmpls/bmi-calculator-page-template-wrapper.scss";
+
+@import "./organism/Calculators/BMI/bmi-calculator-div-wrapper.scss";

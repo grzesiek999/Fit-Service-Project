@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import ChooseDiv from "../../../molecules/CheckProduct/ChooseDiv";
-import SearchDiv from "../../../molecules/CheckProduct/SearchDiv";
+import ChooseDiv from "../../../molecules/Calculators/CheckProduct/ChooseDiv";
+import SearchDiv from "../../../molecules/Calculators/CheckProduct/SearchDiv";
 
 
 interface Product {

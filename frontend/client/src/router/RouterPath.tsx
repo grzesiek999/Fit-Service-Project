@@ -12,6 +12,7 @@ export const ROUTER_PATH = {
     USER_PROFIL: '/user_panel/user_profil',
     ADD_PARAMETERS: '/user_panel/user_profil/add_parameters',
     CALCULATORS: '/calculators',
+    BMI: '/calculators/bmi',
     CHECK_PRODUCT: '/calculators/check_product',
     ACCOUNT_NO_ACTIVE: 'account_no_active',
   };

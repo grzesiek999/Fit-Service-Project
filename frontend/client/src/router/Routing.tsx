@@ -23,6 +23,7 @@ import CalculatorsPage from '../pages/CalculatorsPage';
 import CalculatorsLyaout from '../components/organisms/Layouts/Calculators/CalculatorsLayout';
 import UserPanelLyaout from '../components/organisms/Layouts/UserPanel/UserPanelLayout';
 import AddParametersPage from '../pages/AddParametersPage';
+import BmiCalculatorPage from '../pages/BmiCalculatorPage';
 
 
 const ROUTER = createBrowserRouter(
@@ -35,6 +36,7 @@ const ROUTER = createBrowserRouter(
       <Route path={ROUTER_PATH.ACCOUNT_NO_ACTIVE} element={<AccountNoActivePage />} />
       <Route path={ROUTER_PATH.CALCULATORS} element={<CalculatorsLyaout />} >
         <Route path={ROUTER_PATH.CALCULATORS} element={ <CalculatorsPage /> } />
+        <Route path={ROUTER_PATH.BMI} element={ <BmiCalculatorPage /> } />
         <Route path={ROUTER_PATH.CHECK_PRODUCT} element={ <CheckProductPage /> } />
       </Route>
       

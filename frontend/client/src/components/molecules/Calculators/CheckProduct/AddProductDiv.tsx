@@ -1,6 +1,6 @@
 import React, { useState, SyntheticEvent} from "react";
-import { AddProductTextInput, AddProductNumberInput } from "../../atoms/inputs/AddProductInput";
-import Button from "../../atoms/buttons/Button";
+import { AddProductTextInput, AddProductNumberInput } from "../../../atoms/inputs/AddProductInput";
+import Button from "../../../atoms/buttons/Button";
 
 
 type AddProductDivProps = {
