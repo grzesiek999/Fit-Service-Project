@@ -1,0 +1,39 @@
+.bmr-informator-div-wrapper {
+    padding: 20px 220px 20px 220px; 
+    font-size: 20px;
+}
+
+.bmr-informator-title {
+    margin: 15px 0;
+    display: block;
+    font-size: 26px;
+    font-weight: 500;
+    font-family: 'Work Sans', sans-serif;
+    color: #008efc;
+}
+
+.bmr-advertisement-title{
+    margin: 60px 0 15px 0;
+    display: block;
+    font-size: 26px;
+    font-weight: 500;
+    font-family: 'Work Sans', sans-serif;
+    color: #008efc;
+}
+
+.buy-diet-link-button{
+    margin-top: 50px;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 350px;
+	height: 50px;
+	background-color: #008efc;
+	border-radius: 2px;
+	font-size: 22px;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: bold;
+	color: white;
+	border: none;
+	cursor: pointer;
+}

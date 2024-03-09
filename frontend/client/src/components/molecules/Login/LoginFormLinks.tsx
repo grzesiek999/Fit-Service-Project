@@ -10,11 +10,11 @@ const LoginFormLinks = () => {
         <div className="login-form-links-div-wrapper">
             <div>
                 <label>Nie pamiętasz hasła?</label>
-                <Link className='login-form-link' to={ROUTER_PATH.RESTORE_PASSWORD}>Przypomnij hasło &#10148;</Link>
+                <Link className='login-form-link' to={ROUTER_PATH.RESTORE_PASSWORD} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Przypomnij hasło &#10148;</Link>
             </div>
             <div>
                 <label>Nie masz konta?</label>
-                <Link className='login-form-link' to={ROUTER_PATH.REGISTER}>Stwórz konto &#10148;</Link>
+                <Link className='login-form-link' to={ROUTER_PATH.REGISTER} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Stwórz konto &#10148;</Link>
             </div>
         </div>
     );

@@ -25,7 +25,7 @@ const AuthorizationDiv = () => {
         </div>
         :
         <div className='authorization-div-wrapper'>
-          <Button buttonType="button" className="signin-button-wrapper" onClick={()=>{navigate(ROUTER_PATH.LOGIN);}} buttonTittle="Zaloguj" />
+          <Button buttonType="button" className="signin-button-wrapper" onClick={()=>{navigate(ROUTER_PATH.LOGIN); document.body.scrollIntoView({ behavior: "smooth", block: "start" });}} buttonTittle="Zaloguj" />
         </div>        
       }
     </>

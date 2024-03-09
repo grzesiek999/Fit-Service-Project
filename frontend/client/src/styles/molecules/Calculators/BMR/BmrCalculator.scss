@@ -1,0 +1,118 @@
+.bmr-calculator-div-wrapper {
+    padding: 35px 50px 15px 50px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sex-choose-button-no-active {
+    margin-right: 20px;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px 20px;
+    background-color: white;
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+	border: 1px solid $layout-border-color;
+    border-radius: 15px;
+    line-height: 1em;
+    height: 30px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+    &:hover{
+        background-color: #444444;
+        opacity: 0.9;
+        color: white;
+    }
+}
+
+.sex-choose-button-active {
+    margin-right: 20px;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px 20px;
+    background-color: #1b83f7;
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+	border: 1px solid $layout-border-color;
+    border-radius: 15px;
+    line-height: 1em;
+    height: 30px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+}
+
+.bmr-input-div-wrapper {
+    margin: 18px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.bmr-physic-active-input-div-wrapper {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.span-input-title{
+    width: 150px;
+}
+
+.bmr-physic-active-input-div-wrapper .span-input-title{
+    font-weight: 500;
+    margin-bottom: 5px;
+    width: 500px;
+}
+
+.bmr-calculator-input {
+    margin: 0 20px 0 0;
+    padding-left: 10px;
+    width: 150px;
+    height: 40px;
+    border: 1px solid $layout-border-color;
+    border-radius: 4px;
+    font-size: 20px;
+    outline: none;
+}
+
+.bmr-physic-active-input-div-wrapper label {
+    margin: 5px 0 5px 10px;
+    font-size: 18px;
+}
+
+.bmr-calculate-button {
+    margin-top: 10px;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+	width: 140px;
+	height: 50px;
+	background-color: #008efc;
+	border-radius: 2px;
+	font-size: 22px;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: bold;
+	color: white;
+	border: 1px solid #007fe0;
+	cursor: pointer;
+    transition: all 0.6s ease-in-out;
+    &:hover{
+        opacity: 0.8;
+        background-color: black;
+        border-color: black;
+    }
+}

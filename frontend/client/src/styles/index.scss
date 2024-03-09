@@ -114,4 +114,26 @@
 
 @import "./tmpls/bmi-calculator-page-template-wrapper.scss";
 
-@import "./organism/Calculators/BMI/bmi-calculator-div-wrapper.scss";
+@import "./organism/Calculators/BMI/bmi-calculator-organism-div-wrapper.scss";
+
+@import "./molecules/Calculators/BMI/BmiCalculator.scss";
+
+@import "./molecules/Calculators/BMI/BmiInformator.scss";
+
+@import "./molecules/Calculators/Home/CalculatorsHomeP1.scss";
+
+@import "./molecules/Calculators/Home/CalculatorsHomeP2.scss";
+
+@import "./tmpls/bmr-calculator-page-template-wrapper.scss";
+
+@import "./organism/Calculators/BMR/bmr-calculator-organism-div-wrapper.scss";
+
+@import "./molecules/Calculators/BMR/BmrCalculator.scss";
+
+@import "./molecules/Calculators/BMR/BmrInformator.scss";
+
+@import "./molecules/Calculators/BMR/BmrResults.scss";
+
+@import "./tmpls/diets-page-template-div-wrapper.scss";
+
+@import "./organism/Diets/diets-organism.scss";

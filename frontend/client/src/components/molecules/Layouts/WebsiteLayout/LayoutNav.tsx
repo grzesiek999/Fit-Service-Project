@@ -25,19 +25,19 @@ const LayoutNav = () =>{
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/" className='layout-nav-link-wrapper'>Aktualności</Link>
+                            <Link to="/" className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Aktualności</Link>
                         </li>
                         <li>
-                            <Link to="/" className='layout-nav-link-wrapper'>Informacje</Link>
+                            <Link to="/" className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Informacje</Link>
                         </li>
                         <li>
-                            <Link to="/" className='layout-nav-link-wrapper'>Diety</Link>
+                            <Link to={ROUTER_PATH.DIETS} className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Diety</Link>
                         </li>
                         <li>
-                            <Link to={ROUTER_PATH.CALCULATORS} className='layout-nav-link-wrapper'>Kalkulatory</Link>
+                            <Link to={ROUTER_PATH.CALCULATORS} className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Kalkulatory</Link>
                         </li>
                         <li>
-                            <Link to="/" className='layout-nav-link-wrapper'>Kontakt</Link>
+                            <Link to="/" className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Kontakt</Link>
                         </li>
                     </ul>
                 </nav>

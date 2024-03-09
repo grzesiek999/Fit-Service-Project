@@ -10,7 +10,7 @@ const CalculatorsNav = () => {
             <nav>
                 <ul>
                     <li><Link to={ROUTER_PATH.BMI} className='calculators-nav-link-wrapper'>BMI</Link></li>
-                    <li><Link to="/bmr" className='calculators-nav-link-wrapper'>BMR</Link></li>
+                    <li><Link to={ROUTER_PATH.BMR} className='calculators-nav-link-wrapper'>BMR</Link></li>
                     <li><Link to={ROUTER_PATH.CHECK_PRODUCT} className='calculators-nav-link-wrapper'>Sprawdź produkt</Link></li>
                 </ul>
             </nav>

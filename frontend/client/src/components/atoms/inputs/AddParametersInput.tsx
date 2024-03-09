@@ -4,10 +4,11 @@ import React from "react";
 type AddParameterInputProps = {
     inputType: string;
     value: number | null;
+    className: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const AddParameterInput = ({inputType, value, onChange }: AddParameterInputProps) => {
+const AddParameterInput = ({inputType, value, className, onChange }: AddParameterInputProps) => {
 
     const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
         event.currentTarget.placeholder = '';
@@ -21,7 +22,7 @@ const AddParameterInput = ({inputType, value, onChange }: AddParameterInputProps
         return(
             <input 
                 type='number' 
-                className='add-parameters-number-input-wrapper'
+                className={className}
                 placeholder="0"
                 value={value === null ? '' : value}
                 onFocus={handleFocus}
@@ -36,7 +37,7 @@ const AddParameterInput = ({inputType, value, onChange }: AddParameterInputProps
             <input 
                 type='number'
                 step={0.1} 
-                className='add-parameters-number-input-wrapper'
+                className={className}
                 placeholder="0"
                 value={value === null ? '' : value}
                 onFocus={handleFocus}
@@ -81,52 +82,62 @@ const AddParameterInput = ({inputType, value, onChange }: AddParameterInputProps
     }
     else if(inputType === 'physic_activity'){
         return (
-            <div>
-                <input 
-                    type="radio"
-                    id="none"
-                    name="physActv"
-                    value={1}
-                    checked={value === 1}
-                    onChange={onChange}
-                    required
-                /><label>Brak aktywnosci fizycznej</label>
-                <input 
-                    type="radio"
-                    id="small"
-                    name="physActv"
-                    value={2}
-                    checked={value === 2}
-                    onChange={onChange}
-                    required
-                /><label>Mała aktywnosc fizyczna</label>
-              <input 
-                    type="radio"
-                    id="middle"
-                    name="physActv"
-                    value={3}
-                    checked={value === 3}
-                    onChange={onChange}
-                    required
-                /><label>Umiarkowana aktywnosc fizyczna</label>
-              <input 
-                    type="radio"
-                    id="Huge"
-                    name="physActv"
-                    value={4}
-                    checked={value === 4}
-                    onChange={onChange}
-                    required
-                /><label>Duza aktywnosc fizyczna</label>
-              <input 
-                    type="radio"
-                    id="EveryDay"
-                    name="physActv"
-                    value={5}
-                    checked={value === 5}
-                    onChange={onChange}
-                    required
-                /><label>Codzienna aktywnosc fizyczna</label>
+            <div className="physic-activity-input-div-wrapper">
+                <div>
+                    <input 
+                        type="radio"
+                        id="none"
+                        name="physActv"
+                        value={1}
+                        checked={value === 1}
+                        onChange={onChange}
+                        required
+                    /><label>praca siedząca, aktywność fizyczna na niskim poziomie</label>
+                </div>    
+                <div> 
+                    <input 
+                        type="radio"
+                        id="small"
+                        name="physActv"
+                        value={2}
+                        checked={value === 2}
+                        onChange={onChange}
+                        required
+                    /><label>praca niefizyczna, trening 2 razy w tygodniu</label>
+                </div>
+                <div>  
+                    <input 
+                        type="radio"
+                        id="middle"
+                        name="physActv"
+                        value={3}
+                        checked={value === 3}
+                        onChange={onChange}
+                        required
+                    /><label>lekka praca fizyczna, trening 3–4 razy w tygodniu</label>
+                </div>
+                <div>  
+                    <input 
+                        type="radio"
+                        id="Huge"
+                        name="physActv"
+                        value={4}
+                        checked={value === 4}
+                        onChange={onChange}
+                        required
+                    /><label>praca fizyczna, trening 5 razy w tygodniu</label>
+                </div>
+                <div>  
+                    <input 
+                        type="radio"
+                        id="EveryDay"
+                        name="physActv"
+                        value={5}
+                        checked={value === 5}
+                        onChange={onChange}
+                        required
+                    /><label>ciężka praca fizyczna, codzienny trening</label>
+                </div> 
             </div>
         );
     }
