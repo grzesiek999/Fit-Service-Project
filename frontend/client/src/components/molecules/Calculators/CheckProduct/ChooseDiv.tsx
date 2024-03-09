@@ -18,18 +18,20 @@ type ChooseDivProps = {
 
 const ChooseDiv = ({selectedProduct}: ChooseDivProps) => {
   return (
-    <div>
-      {selectedProduct && (
-        <div className="search-choose-div-wrapper">
-          <p>{selectedProduct.name}</p>
-          <p>Waga: {selectedProduct.weight}g</p>
-          <p>Energia: {selectedProduct.energy} kcal</p>
-          <p>Białko: {selectedProduct.proteins} g</p>
-          <p>Węglowodany: {selectedProduct.carbohydrates} g</p>
-          <p>Tłuszcze: {selectedProduct.fats} g</p>
-          <p>Błonnik: {selectedProduct.fiber} g</p>
-        </div>
-      )}
+    <div className="choose-div-wrapper">
+        {selectedProduct && (
+          <>
+            <span className="choose-title-span">Wybrano: {selectedProduct.name}</span>    
+            <ul>
+              <li><p>Waga:</p><p className="p-r">{selectedProduct.weight} g</p></li>
+              <li><p>Energia:</p><p className="p-r">{selectedProduct.energy} kcal</p></li>
+              <li><p>Białko:</p><p className="p-r">{selectedProduct.proteins} g</p></li>
+              <li><p>Węglowodany:</p><p className="p-r">{selectedProduct.carbohydrates} g</p></li>
+              <li><p>Tłuszcze:</p><p className="p-r">{selectedProduct.fats} g</p></li>
+              <li><p>Błonnik:</p><p className="p-r">{selectedProduct.fiber} g</p></li>
+            </ul>
+          </>
+        )}
     </div>
   );
 }

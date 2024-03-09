@@ -6,11 +6,11 @@ import "../../../styles/index.scss";
 
 type SearchProductInputProps = {
     fetchProduct: (value: string) => void;
-    addDivClass: string;
     addProduct: () => void;
+    is_admin: undefined | boolean;
 }
 
-const SearchProductInput = ({fetchProduct, addDivClass, addProduct}: SearchProductInputProps) => {
+const SearchProductInput = ({fetchProduct, addProduct, is_admin}: SearchProductInputProps) => {
 
     const [input, setInput] = useState("");
 
@@ -37,10 +37,12 @@ const SearchProductInput = ({fetchProduct, addDivClass, addProduct}: SearchProdu
                 onFocus={handleFocus}
                 onBlur={handleBlur}
             />
-            <div className={addDivClass} onClick={addProduct}>
-                <CgAdd className="add-icon" />
-                <p>dodaj</p>
-            </div>
+            {is_admin ?
+                <div className='active-add-product-div-button-wrapper' onClick={addProduct}>
+                    <CgAdd className="add-icon" />
+                    <p>dodaj</p>
+                </div>
+            :null}
         </div>
     );
 }

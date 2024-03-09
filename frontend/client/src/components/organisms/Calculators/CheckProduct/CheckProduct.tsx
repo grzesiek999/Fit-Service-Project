@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import ChooseDiv from "../../../molecules/Calculators/CheckProduct/ChooseDiv";
 import SearchDiv from "../../../molecules/Calculators/CheckProduct/SearchDiv";
+import CheckProductInformator from "../../../molecules/Calculators/CheckProduct/ChceckProductInformator";
 
 
 interface Product {
@@ -23,9 +24,13 @@ const CheckProduct = () => {
   };
 
   return (
-    <div>
-      <SearchDiv  handleProductClick={handleProductClick} />
-      <ChooseDiv selectedProduct={selectedProduct} />
+    <div className="check-product-organism-div-wrapper">
+      <h5>Sprawdź energie i makroskładniki produktu</h5>
+      <div className="search-choose-div-wrapper">
+        <SearchDiv  handleProductClick={handleProductClick} />
+        <ChooseDiv selectedProduct={selectedProduct} />
+      </div>
+      <CheckProductInformator />
     </div>
   );
 };

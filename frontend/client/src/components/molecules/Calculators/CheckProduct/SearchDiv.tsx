@@ -25,7 +25,6 @@ const SearchDiv = ({handleProductClick}: SearchDivProps) => {
     const {user} = useContext(UserAuth);
     const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
     const [results, setResults] = useState<Product[]>([]);
-    const [addDivClass, setAddDivClass] = useState('');
 
     const fetchProduct = (value:string) => {
         fetch("http://localhost:8000/api/products/get")
@@ -43,35 +42,21 @@ const SearchDiv = ({handleProductClick}: SearchDivProps) => {
           });
     };
 
-    useEffect(() => {
-        if (user && user.is_active) {
-            setAddDivClass('active-add-product-div-button-wrapper');
-        } else {
-            setAddDivClass('no-active-add-product-div-button-wrapper');
-            setIsDisplayed(false);
-        }
-    }, [user]);
-
     const addProduct = () => {
         if(user){
             if(user.is_active){
                 if(isDisplayed===false) {setIsDisplayed(true);}
                 else {setIsDisplayed(false);}
             }
-            else{
-                alert('Aby dodać produkt musisz aktywować swoje konto, jesli nie otrzymałes linku aktywujacego wejdz w zakładke Moje Konto i wyslij ponownie link');
-            }
-        }
-        else{
-            alert(`Aby dodać produkt musisz być zalogowany!`);
         }
     };
 
     return (
         <div className="search-div-wrapper">
-            <SearchProductInput fetchProduct={fetchProduct} addDivClass={addDivClass} addProduct={addProduct}/>
+            <span className="search-title-span">Wprowadź nazwę produktu jaki chcesz sprawdzić:</span>
+            <SearchProductInput fetchProduct={fetchProduct} addProduct={addProduct} is_admin={user?.is_admin}/>
             <ProductSearchList results={results} handleProductClick={handleProductClick} />
-            <AddProductDiv isDisplayed={isDisplayed} setIsDisplayed={setIsDisplayed} />
+            {user?.is_admin ?<AddProductDiv isDisplayed={isDisplayed} setIsDisplayed={setIsDisplayed} /> : null}
         </div>
     );
 }

@@ -20,9 +20,9 @@ type ProductSearchListProps = {
 const ProductSearchList = ({results, handleProductClick}: ProductSearchListProps ) => {
     
     return (
-        <ul className="search-results-ul-wrapper">
+        <ul>
           {results.map((product: Product) => (
-            <li className="search-result-li-wrapper" key={product.id} onClick={() => handleProductClick(product)}>
+            <li key={product.id} onClick={() => handleProductClick(product)}>
               {product.name}
             </li>
             ))}

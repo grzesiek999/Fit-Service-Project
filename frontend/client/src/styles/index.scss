@@ -18,9 +18,7 @@
 
 @import "./molecules/Layouts/Calculators/calculators-nav-div-wrapper.scss";
 
-@import "./molecules/Calculators/CheckProduct/search-choose-div-wrapper.scss";
-
-@import "./molecules/Calculators/CheckProduct/search-bar-div-wrapper.scss";
+@import "./molecules/Calculators/CheckProduct/choose-div-wrapper.scss";
 
 @import "./molecules/Calculators/CheckProduct/search-div-wrapper.scss";
 
@@ -137,3 +135,7 @@
 @import "./tmpls/diets-page-template-div-wrapper.scss";
 
 @import "./organism/Diets/diets-organism.scss";
+
+@import "./organism/Calculators/CheckProduct/check-product-organism-div-wrapper.scss";
+
+@import "./molecules/Calculators/CheckProduct/check-product-informator-div-wrapper.scss";
