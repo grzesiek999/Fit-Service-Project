@@ -25,10 +25,10 @@ const LayoutNav = () =>{
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/" className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Aktualności</Link>
+                            <Link to={ROUTER_PATH.NEWS} className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Aktualności</Link>
                         </li>
                         <li>
-                            <Link to="/" className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Informacje</Link>
+                            <Link to={ROUTER_PATH.INFORMATIONS} className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Informacje</Link>
                         </li>
                         <li>
                             <Link to={ROUTER_PATH.DIETS} className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Diety</Link>

@@ -17,4 +17,7 @@ export const ROUTER_PATH = {
     CHECK_PRODUCT: '/calculators/check_product',
     ACCOUNT_NO_ACTIVE: '/account_no_active',
     DIETS: '/diets',
+    NEWS: '/news',
+    INFORMATIONS: '/informations',
+    MY_MEALS: '/user_panel/my_meals',
   };

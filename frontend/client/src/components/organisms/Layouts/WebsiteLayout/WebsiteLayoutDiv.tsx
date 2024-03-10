@@ -27,7 +27,7 @@ const WebsiteLayoutDiv = () => {
         <>
             {isWide?
                 <div className='layout-menu-div-wrapper'>
-                    <div>
+                    <div className="layout-logo-div-wrapper">
                         <Link to={ROUTER_PATH.HOME}>Logo</Link>
                     </div>
                     <LayoutNav />

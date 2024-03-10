@@ -26,6 +26,9 @@ import AddParametersPage from '../pages/AddParametersPage';
 import BmiCalculatorPage from '../pages/BmiCalculatorPage';
 import BmrCalculatorPage from '../pages/BmrCalculatorPage';
 import DietsPage from '../pages/DietsPage';
+import NewsPage from '../pages/NewsPage';
+import InformationsPage from '../pages/InformationsPage';
+import MyMealsPage from '../pages/MyMealsPage';
 
 
 const ROUTER = createBrowserRouter(
@@ -43,12 +46,16 @@ const ROUTER = createBrowserRouter(
         <Route path={ROUTER_PATH.CHECK_PRODUCT} element={ <CheckProductPage /> } />
       </Route>
       <Route path={ROUTER_PATH.DIETS} element={<DietsPage />} />
+      <Route path={ROUTER_PATH.NEWS} element={<NewsPage />} />
+      <Route path={ROUTER_PATH.INFORMATIONS} element={<InformationsPage />} />
       <Route element={<ProtectedRoute />}>
         <Route path={ROUTER_PATH.USER_PANEL} element={<UserPanelLyaout />} >
           <Route path={ROUTER_PATH.USER_PANEL} element={<UserPanelPage />} />
-          <Route path={ROUTER_PATH.USER_SETTINGS} element={<UserSettingsPage />} />
           <Route path={ROUTER_PATH.USER_PROFIL} element={<UserProfilPage />} />
           <Route path={ROUTER_PATH.ADD_PARAMETERS} element={<AddParametersPage />} />
+
+          <Route path={ROUTER_PATH.MY_MEALS} element={<MyMealsPage />} />
+          <Route path={ROUTER_PATH.USER_SETTINGS} element={<UserSettingsPage />} />
         </Route>
       </Route>
       <Route element={<PublicRoute />}>

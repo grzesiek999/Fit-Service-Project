@@ -7,20 +7,22 @@ const UserPanelNav = () => {
     
     return (    
         <div className="user-nav-div-wrapper">
-            <div>Panel Użytkownika</div>
+            <div className="user-panel-header-nav-div-wrapper">
+                <Link to={ROUTER_PATH.USER_PANEL}  className="user-panel-header-link-wrapper" onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Panel Użytkownika</Link>
+            </div>
             <nav>
                 <ul>
                     <li>
-                        <Link to={ROUTER_PATH.USER_PROFIL} className='user-panel-link-wrapper'>Mój Profil</Link>
+                        <Link to={ROUTER_PATH.USER_PROFIL} className='user-panel-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Mój Profil</Link>
                     </li>
                     <li>
-                        <Link to="/" className='user-panel-link-wrapper'>Moje Diety</Link>
+                        <Link to="/" className='user-panel-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Moje Diety</Link>
                     </li>
                     <li>
-                        <Link to="/" className='user-panel-link-wrapper'>Moje Posiłki</Link>
+                        <Link to={ROUTER_PATH.MY_MEALS} className='user-panel-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Moje Posiłki</Link>
                     </li>
                     <li>
-                        <Link to={ROUTER_PATH.USER_SETTINGS} className='user-panel-link-wrapper'>Ustawienia konta</Link>
+                        <Link to={ROUTER_PATH.USER_SETTINGS} className='user-panel-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Ustawienia konta</Link>
                     </li>
                 </ul>
             </nav>
