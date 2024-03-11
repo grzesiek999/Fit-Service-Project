@@ -20,7 +20,7 @@ const AuthorizationDiv = () => {
     <>
       {user ?
         <div className='authorization-div-wrapper' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-          <FaUser className='user-icon' onClick={()=>{navigate(ROUTER_PATH.USER_PANEL);}}/>
+          <FaUser className='user-icon' onClick={()=>{navigate(ROUTER_PATH.USER_PANEL); document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}/>
           {isOpen && <div className="hidden-nav-div-wrapper"><HiddenNavList temp={setIsOpen} /></div>}
         </div>
         :

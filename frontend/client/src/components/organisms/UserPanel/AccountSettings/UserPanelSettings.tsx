@@ -1,42 +1,18 @@
-import React, {useContext, useState} from "react";
-import Button from "../../../atoms/buttons/Button";
-import { UserAuth } from "../../../../context/UserDataContext";
-
-
+import React, { useState } from "react";
+import ChangePassword from "../../../molecules/UserPanel/AccountesSettings/ChangePassword";
 
 
 const UserPanelSettings = () => {
 
-    const {user} = useContext(UserAuth);
-    const [message, setMessage] = useState('');   
-    const email = user?.email;
-
-    const changePassword = async () => {
-        const response = await fetch('http://localhost:8000/api/send_password_restore', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                email,
-            })
-        });
-        if(response.ok){
-            setMessage('Na podany adres email został wysłany link resetujący hasło')
-        }
-        else {
-            if(response.status === 403){
-                setMessage('Podano nieprawiłowy adres email');
-            }
-            else {
-                console.error('Error', response.status, response.statusText);
-            }
-        }
-    }
-
+    
     return (
         <div className="user-settings-div-wrapper">
-            <div>Twój email {user?.email}</div>
-            <Button buttonType="button" className="" onClick={changePassword} buttonTittle="Zmień hasło" />
-            <div>{message}</div>
+            <h5>Ustawienia Konta</h5>
+            <span className="prolog-user-settings-span">Witaj w panelu ustawień konta znajdziesz szeroki zakres opcji, które umożliwiają dostosowanie platformy do Twoich indywidualnych preferencji. Możesz tutaj zmieniać hasło, aktualizować dane osobowe, zarządzać powiadomieniami e-mail, dostosowywać ustawienia prywatności oraz wiele innych. Dzięki temu możesz kontrolować, jakie informacje są udostępniane innym użytkownikom i jak otrzymujesz powiadomienia od naszej platformy.</span>
+            <div className="options-div-wrapper">
+                <span className="option-title-span">Ustawienia</span>
+                <ChangePassword />
+            </div>
         </div>
     );
 }

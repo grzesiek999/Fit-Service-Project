@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { IoIosArrowDown } from "react-icons/io";
 import { ROUTER_PATH } from '../../../../router/RouterPath';
 import { UserAuth } from "../../../../context/UserDataContext";
 
@@ -37,7 +38,7 @@ const LayoutNav = () =>{
                             <Link to={ROUTER_PATH.CALCULATORS} className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Kalkulatory</Link>
                         </li>
                         <li>
-                            <Link to="/" className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Kontakt</Link>
+                            <Link to="#" className='layout-nav-link-wrapper'>Artykuły<IoIosArrowDown /></Link>
                         </li>
                     </ul>
                 </nav>

@@ -1,4 +1,39 @@
 .user-settings-div-wrapper{
+    padding: 75px 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.prolog-user-settings-span {
+    padding: 0 98px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.options-div-wrapper{
     margin-top: 100px;
-    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.option-title-span{
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600; 
+    color: #1e73d3;
+}
+
+.option-span {
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+}
+
+.comunicate-div-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
 }

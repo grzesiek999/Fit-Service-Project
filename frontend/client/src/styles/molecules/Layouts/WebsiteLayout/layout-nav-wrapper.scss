@@ -1,7 +1,7 @@
 .layout-nav-div-wrapper {
     display: flex;
     flex-direction: row;
-    margin-left: 500px;
+    margin-left: 480px;
 }
 
 .layout-nav-div-wrapper nav ul {
@@ -17,6 +17,9 @@
 }
 
 .layout-nav-link-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     text-decoration: none;
     color: #000000;
@@ -29,4 +32,8 @@
         color: #333333;
         opacity: 0.8;
     }
+}
+
+.layout-nav-link-wrapper svg{
+    font-size: 18px;
 }

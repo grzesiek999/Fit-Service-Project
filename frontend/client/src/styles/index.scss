@@ -46,7 +46,7 @@
 
 @import "./general/signin-input.scss";
 
-@import "./molecules/UserPanel/parameters-history-div-wrapper.scss";
+@import "./molecules/UserPanel/MyProfil/parameters-history-div-wrapper.scss";
 
 @import "./molecules/Layouts/WebsiteLayout/mobile-nav-div-wrapper.scss";
 
@@ -145,3 +145,5 @@
 @import "./tmpls/informations-page-template-div-wrapper.scss";
 
 @import "./tmpls/my-meals-page-template-div-wrapper.scss";
+
+@import "./molecules/UserPanel/AccountSettings/ChangePassword.scss";

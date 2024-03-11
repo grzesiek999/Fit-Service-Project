@@ -2,12 +2,12 @@ import React, {useEffect, useState } from "react";
 import { getUserWithExpiry } from "../../../../utils/LocalStorageManagment";
 import { SESSION } from "../../../../constant/Session";
 import Button from "../../../atoms/buttons/Button";
-import ParametersHistory from "../../../molecules/UserPanel/ParametersHistory";
 import { useNavigate } from "react-router-dom";
 import { ROUTER_PATH } from "../../../../router/RouterPath";
 import AddParametersForm from "./AddParametersForm";
 import { calculateAge } from "../../../../utils/CalculateAge";
 import EditParametersForm from "./EditParametersForm";
+import ParametersHistory from "../../../molecules/UserPanel/MyProfil/ParametersHistory";
 
 
 interface Parameters {
