@@ -1,4 +1,7 @@
 .user-panel-content-div-wrapper{
-    margin-top: 100px;
-    margin-left: 100px;
+    width: 100%;
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

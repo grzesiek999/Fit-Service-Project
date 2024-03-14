@@ -1,0 +1,76 @@
+.edit-parameters-div-form-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    padding: 5px 0px 20px 0;
+    align-items: center;
+}
+
+.edit-parameters-open-button-wrapper {
+    margin-top: 0;
+    margin-left: 1100px;
+    z-index: 2;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 86px;
+	height: 30px;
+    background-color: white;
+    border: none;
+    color: #666666;
+	border-radius: 4px; 
+	font-size: 20px;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: bold;
+	cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+        color: #333333;
+    }
+}
+
+.edit-parameters-button-wrapper {
+    margin-left: 1000px;
+    margin-top: 40px;
+    z-index: 2;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 86px;
+	height: 30px;
+    background-color: white;
+    border: none;
+    color: #666666;
+	border-radius: 4px; 
+	font-size: 20px;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: bold;
+	cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+        color: #333333;
+    }
+}
+
+.change-parameters-button-wrapper{
+    margin-top: 50px;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+	width: 100px;
+	height: 50px;
+	background-color: #008efc;
+	border-radius: 4px;
+	font-size: 22px;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: bold;
+	color: white;
+	border: 1px solid #007fe0;
+	cursor: pointer;
+    transition: all 0.5s ease-in-out;
+	&:hover{
+		scale: 1.1;
+	}
+}

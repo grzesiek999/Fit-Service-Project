@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Button from "../../../atoms/buttons/Button";
 import { SESSION } from "../../../../constant/Session";
 import { getUserWithExpiry } from "../../../../utils/LocalStorageManagment";
+import { IoIosArrowDown } from "react-icons/io";
+
 
 
 interface Parameters {
@@ -35,27 +37,28 @@ const ParametersHistory = () => {
         if(response.ok){
             const results = await response.json();
             setHistoryParameters(results);
+            window.scrollTo({ top: 650, behavior: 'smooth' });
         }
         else {console.log(response.statusText);}
     }
 
     return (
         <div className="parameters-history-div-wrapper">
-            <Button buttonType="button" className="show-history-button-wrapper" onClick={showHistory} buttonTittle="Historia"/>
-            <ul>
+            <span className="show-history-span-wrapper" onClick={showHistory}>Pokaz historie parametrów<IoIosArrowDown /></span>
+            <ul id="l1">
                 {historyParameters.map((parameters: Parameters) => (
-                    <li key={parameters.id}>
+                    <li id='l2' key={parameters.id}>
                         <ul>
-                            <li>{new Date(parameters.created_at).toLocaleDateString()}</li>
-                            <li>{parameters.height}</li>
-                            <li>{parameters.weight}</li>
-                            <li>{parameters.bmi}</li>
-                            <li>{parameters.biceps}</li>
-                            <li>{parameters.chest}</li>
-                            <li>{parameters.arms}</li>
-                            <li>{parameters.belly}</li>
-                            <li>{parameters.thighs}</li>
-                            <li>{parameters.calves}</li>
+                            <li><p className="parameters-date">{new Date(parameters.created_at).toLocaleDateString()}</p></li>
+                            <li><p>Wzrost:</p><p className="p-ph">{parameters.height} cm</p></li>
+                            <li><p>Waga:</p><p className="p-ph">{parameters.weight} kg</p></li>
+                            <li><p>BMI:</p><p className="p-ph">{parameters.bmi.toFixed(2)}</p></li>
+                            <li><p>Biceps:</p><p className="p-ph">{parameters.biceps} cm</p></li>
+                            <li><p>Klata:</p><p className="p-ph">{parameters.chest} cm</p></li>
+                            <li><p>Przedrammie:</p><p className="p-ph">{parameters.arms} cm</p></li>
+                            <li><p>Brzuch:</p><p className="p-ph">{parameters.belly} cm</p></li>
+                            <li><p>Uda:</p><p className="p-ph">{parameters.thighs} cm</p></li>
+                            <li><p>Łydki:</p><p className="p-ph">{parameters.calves} cm</p></li>
                         </ul>
                     </li>
                 ))}

@@ -1,3 +1,148 @@
-.add-parameters-div-wrapper{
+.add-parameters-div-form-wrapper{
     display: flex;
+    flex-direction: column;
+    width: 1200px;
+    padding: 5px 0px 20px 0;
+    align-items: center;
+}
+
+.add-parameters-div-form-wrapper form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+} 
+
+.add-parameters-inputs-div-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.add-parameters-inputs-part1-div-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    width: 550px;
+}
+
+.add-parameters-inputs-part2-div-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    width: 500px;
+}
+
+.add-parameters-inputs-part-div-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.parameters-input-div-wrapper {
+    margin: 18px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.parameters-physic-active-input-div-wrapper {
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
+}
+
+.parameters-physic-active-input-div-wrapper .parameters-span-input-title{
+    font-weight: 500;
+    margin-bottom: 10px;
+    width: 500px;
+}
+
+.parameters-physic-active-input-div-wrapper label {
+    margin: 10px 0 10px 10px;
+    font-size: 20px;
+}
+
+.parameters-sex-span-input-title{
+    width: 250px;
+}
+
+.parameters-span-input-title{
+    width: 200px;
+}
+
+.parameters-calculator-input {
+    margin: 0 20px 0 0;
+    padding-left: 10px;
+    width: 150px;
+    height: 40px;
+    border: 1px solid $layout-border-color;
+    border-radius: 4px;
+    font-size: 20px;
+    outline: none;
+}
+
+.add-parameters-open-button-wrapper{
+    margin-top: 715px;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+	width: 100px;
+	height: 50px;
+	background-color: #008efc;
+	border-radius: 4px;
+	font-size: 22px;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: bold;
+	color: white;
+	border: 1px solid #007fe0;
+	cursor: pointer;
+    transition: all 0.5s ease-in-out;
+	&:hover{
+		scale: 1.1;
+	}
+}
+
+.add-parameters-button-wrapper{
+    margin-top: 50px;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+	width: 100px;
+	height: 50px;
+	background-color: #008efc;
+	border-radius: 4px;
+	font-size: 22px;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: bold;
+	color: white;
+	border: 1px solid #007fe0;
+	cursor: pointer;
+    transition: all 0.5s ease-in-out;
+	&:hover{
+		scale: 1.1;
+	}
+}
+
+.close-add-parameters-button{
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 90px;
+	height: 40px;
+	background-color: #f0f0f0;
+	border: none;
+	border-radius: 8px;
+	font-size: 18px;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 500;
+	color: black;
+	border: 2px solid rgb(175, 175, 175);
+	cursor: pointer;
 }

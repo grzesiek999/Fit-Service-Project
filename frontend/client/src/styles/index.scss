@@ -88,8 +88,6 @@
 
 @import "./organism/UserPanel/Main/user-panel-content-div-wrapper.scss";
 
-@import "./organism/UserPanel/MyProfil/edit-parameters-div-wrapper.scss";
-
 @import "./organism/UserPanel/MyProfil/add-parameters-div-wrapper.scss";
 
 @import "./organism/RestorePassword/restore-password-form-div.scss";
@@ -147,3 +145,5 @@
 @import "./tmpls/my-meals-page-template-div-wrapper.scss";
 
 @import "./molecules/UserPanel/AccountSettings/ChangePassword.scss";
+
+@import "./molecules/UserPanel/MyProfil/edit-parameters-div-wrapper.scss";

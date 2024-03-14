@@ -67,7 +67,7 @@ const BmiCalculator = ( {setBmr, setDemand} : BmiCalculatorProps ) => {
                 const demand = bmr * multipler;
                 setBmr(bmr);
                 setDemand(demand);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.scrollTo({ top: 300, behavior: 'smooth' });
             }
             else {return null;}
         }

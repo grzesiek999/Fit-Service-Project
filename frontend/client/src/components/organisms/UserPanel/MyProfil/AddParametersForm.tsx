@@ -15,6 +15,8 @@ type AddParametersFormProps = {
 const AddParametersForm = ( {isSex = null}: AddParametersFormProps) =>  {
 
     const navigate = useNavigate();
+    const [b1, setB1] = useState<string>('sex-choose-button-no-active');
+    const [b2, setB2] = useState<string>('sex-choose-button-no-active');
     const [message, setMessage] = useState<string>('');
     const user_id = getUserWithExpiry(SESSION.USER).id;
     const [sex, setSex] = useState<number>(isSex===null ? 0 : isSex);
@@ -28,10 +30,6 @@ const AddParametersForm = ( {isSex = null}: AddParametersFormProps) =>  {
     const [thighs, setThighs] = useState<number | null>(null);
     const [calves, setCalves] = useState<number | null>(null);
 
-
-    const handleSex = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSex(parseInt(e.target.value));
-    };
     
     const handleHeight = (e: React.ChangeEvent<HTMLInputElement>) => {
         if(e.target.value === '') { setHeight(null); }
@@ -130,18 +128,59 @@ const AddParametersForm = ( {isSex = null}: AddParametersFormProps) =>  {
 
 
     return (
-        <div className="add-parameters-div-wrapper">
+        <div className="add-parameters-div-form-wrapper">
             <form onSubmit={addParameters}>
-                {isSex===null ? <AddParameterInput inputType="sex" value={sex} onChange={handleSex}/> : null}
-                <AddParameterInput inputType="float" value={height} onChange={handleHeight}/>
-                <AddParameterInput inputType="float" value={weight} onChange={handleWeight}/>
-                <AddParameterInput inputType="physic_activity" value={physic_activity} onChange={handlePhysicActivity}/>
-                <AddParameterInput inputType="float" value={chest} onChange={handleChest}/>
-                <AddParameterInput inputType="float" value={belly} onChange={handleBelly}/>
-                <AddParameterInput inputType="float" value={biceps} onChange={handleBiceps}/>
-                <AddParameterInput inputType="float" value={arms} onChange={handleArms}/>
-                <AddParameterInput inputType="float" value={thighs} onChange={handleThighs}/>
-                <AddParameterInput inputType="float" value={calves} onChange={handleCalves}/>
+                <h5>Dodaj swoje parametry</h5>
+                <div className="add-parameters-inputs-div-wrapper">
+                    <div className="add-parameters-inputs-part1-div-wrapper">
+                        {isSex ===null ? 
+                        <div className="parameters-input-div-wrapper">
+                            <span className="parameters-sex-span-input-title">Wybierz swoją płeć:</span>
+                            <Button buttonType="button" className={b1} onClick={()=>{setSex(2); setB1('sex-choose-button-active'); setB2('sex-choose-button-no-active');}} 
+                            buttonTittle="Kobieta" />
+                            <Button buttonType="button" className={b2} onClick={()=>{setSex(1); setB1('sex-choose-button-no-active'); setB2('sex-choose-button-active');}} 
+                            buttonTittle="Męzczyzna" />
+                        </div> : null}
+                        <div className="parameters-input-div-wrapper">
+                            <span className="parameters-span-input-title">Wzorst:</span>
+                            <AddParameterInput inputType="float" value={height} className="parameters-calculator-input" onChange={handleHeight} /> cm
+                        </div>
+                        <div className="parameters-input-div-wrapper">
+                            <span className="parameters-span-input-title">Waga:</span>
+                            <AddParameterInput inputType="float" value={weight} className="parameters-calculator-input" onChange={handleWeight} /> kg
+                        </div>
+                        <div className="parameters-physic-active-input-div-wrapper">
+                            <span className="parameters-span-input-title">Aktywność fizyczna:</span>
+                            <AddParameterInput inputType="physic_activity" value={physic_activity} className="" onChange={handlePhysicActivity}/>
+                        </div>
+                    </div>
+                    <div className="add-parameters-inputs-part2-div-wrapper">
+                        <div className="parameters-input-div-wrapper">
+                            <span className="parameters-span-input-title">Biceps:</span>
+                            <AddParameterInput inputType="float" value={biceps} className="parameters-calculator-input" onChange={handleBiceps} /> cm
+                        </div>
+                        <div className="parameters-input-div-wrapper">
+                            <span className="parameters-span-input-title">Klata:</span>
+                            <AddParameterInput inputType="float" value={chest} className="parameters-calculator-input" onChange={handleChest} /> cm
+                        </div>
+                        <div className="parameters-input-div-wrapper">
+                            <span className="parameters-span-input-title">Przedramie:</span>
+                            <AddParameterInput inputType="float" value={arms} className="parameters-calculator-input" onChange={handleArms} /> cm
+                        </div>
+                        <div className="parameters-input-div-wrapper">
+                            <span className="parameters-span-input-title">Brzuch:</span>
+                            <AddParameterInput inputType="float" value={belly} className="parameters-calculator-input" onChange={handleBelly} /> cm
+                        </div>
+                        <div className="parameters-input-div-wrapper">
+                            <span className="parameters-span-input-title">Udo:</span>
+                            <AddParameterInput inputType="float" value={thighs} className="parameters-calculator-input" onChange={handleThighs} /> cm
+                        </div>
+                        <div className="parameters-input-div-wrapper">
+                            <span className="parameters-span-input-title">Łydka:</span>
+                            <AddParameterInput inputType="float" value={calves} className="parameters-calculator-input" onChange={handleCalves} /> cm
+                        </div>
+                    </div>
+                </div>
                 <Button buttonType="submit" className="add-parameters-button-wrapper" onClick={()=>{}} buttonTittle="Dodaj" />
             </form>
             {message && <div>{message}</div>}

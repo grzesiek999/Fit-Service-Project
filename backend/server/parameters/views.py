@@ -17,7 +17,7 @@ class AddParametersView(APIView):
 class GetAllUserParametersView(APIView):
     def get(self, request):
         user_id = request.query_params.get('user_id')
-        parameters = Parameters.objects.filter(user_id=user_id)
+        parameters = Parameters.objects.filter(user_id=user_id).order_by('-created_at')
         
         if parameters.exists():
             serializer = ParametersSerializer(parameters, many=True)

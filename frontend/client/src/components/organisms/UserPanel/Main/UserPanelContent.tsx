@@ -4,7 +4,7 @@ import React from "react";
 const UserPanelContent = () => {
     return (
         <div className="user-panel-content-div-wrapper">
-            <p>Znajdujesz sie w panelu uzytkownika</p>
+            <h5>Witaj w panelu uzytkownika</h5>
         </div>
     );
 }

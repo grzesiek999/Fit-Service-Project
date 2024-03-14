@@ -36,6 +36,8 @@ const UserProfilContent = () => {
     const navigate = useNavigate();
     const birthday = getUserWithExpiry(SESSION.USER).birthday;
     const age = calculateAge(birthday);
+    const [addParButtonClass, setAddParButtonClass] = useState('add-parameters-open-button-wrapper');
+    const [editParButtonClass, setEditParButtonClass] = useState('edit-parameters-open-button-wrapper');
 
     const fetchParameters = async () => {
         const url = `http://localhost:8000/api/parameters/last_users_parameters?user_id=${user_id}`
@@ -54,12 +56,22 @@ const UserProfilContent = () => {
         fetchParameters();
     }, []);
 
+    const determineColor = (num: number | undefined) => {
+        if (num){
+            if (num < 18.5) { return '#008efc'; } 
+            else if (num >= 25) { return '#e71f16'; }
+            else { return '#00C82F'; }
+        }
+    };
+
     return (
         <div className="user-profil-div-wrapper">
-            <div className="edit-parameters-div-wrapper">
-                {displayEditPar ? null : <Button buttonType="button" className="edit-parameters-button-wrapper" onClick={()=>{setDisplayEditPar(true);}} buttonTittle="Edytuj"/>}
+            <div className="edit-parameters-div-wrapper" style={{backgroundColor: displayEditPar ? 'white' : 'transparent'}}>
+                {displayEditPar ? null : <Button buttonType="button" className={editParButtonClass} onClick={()=>{setDisplayEditPar(true);
+                setDisplayAddPar(false); setEditParButtonClass('edit-parameters-button-wrapper'); setAddParButtonClass('add-parameters-open-button-wrapper');}} buttonTittle="Edytuj"/>}
                 {displayEditPar ? <EditParametersForm parameters_id={avaibleParameters?.id} isSex={avaibleParameters?.sex} /> : null}
-                {displayEditPar ? <Button buttonType="button" className="edit-parameters-button-wrapper" onClick={()=>{setDisplayEditPar(false);}} buttonTittle="Zamknij"/> : null}
+                {displayEditPar ? <Button buttonType="button" className={editParButtonClass} onClick={()=>{setDisplayEditPar(false);
+                setEditParButtonClass('edit-parameters-open-button-wrapper');}} buttonTittle="Zamknij"/> : null}
             </div>
             <div className="user-main-parameters-div-wrapper">
                 <div className="height-parameters-div-wrapper">
@@ -82,11 +94,11 @@ const UserProfilContent = () => {
                         <div className="parameter-value-div-wrapper">{avaibleParameters?.biceps} cm</div>
                     </div>
                     <div className="arms-parameters-div-wrapper">
-                        <div className="parameter-title-div-wrapper">PRZEDRAMIĘ</div>
+                        <div className="parameter-title-div-wrapper">PRZEDRAMIE</div>
                         <div className="parameter-value-div-wrapper">{avaibleParameters?.arms} cm</div>
                     </div>
                     <div className="calves-parameters-div-wrapper">
-                        <div className="parameter-title-div-wrapper">ŁYDKA</div>
+                        <div className="parameter-title-div-wrapper">ŁYDKI</div>
                         <div className="parameter-value-div-wrapper">{avaibleParameters?.arms} cm</div>
                     </div>
                 </div>
@@ -101,19 +113,21 @@ const UserProfilContent = () => {
                         <div className="parameter-value-div-wrapper">{avaibleParameters?.belly} cm</div>
                     </div>
                     <div className="thighs-parameters-div-wrapper">
-                        <div className="parameter-title-div-wrapper">UDO</div>
+                        <div className="parameter-title-div-wrapper">UDA</div>
                         <div className="parameter-value-div-wrapper">{avaibleParameters?.thighs} cm</div>
                     </div>
                 </div>
             </div>
             <div className="bmi-parameters-div-wrapper">
                 <div className="bmi-title-div-wrapper">BMI</div>
-                <div className="bmi-value-div-wrapper">{avaibleParameters?.bmi.toFixed(2)}</div>
+                <div className="bmi-value-div-wrapper" style={{ color: determineColor(avaibleParameters?.bmi) }}>{avaibleParameters?.bmi.toFixed(2)}</div>
             </div>
-            <div className="add-parameters-div-wrapper">
-                {displayAddPar ? null : <Button buttonType="button" className="add-parameters-button-wrapper" onClick={()=>{setDisplayAddPar(true);}} buttonTittle="Dodaj" />}
+            <div className="add-parameters-div-wrapper" style={{backgroundColor: displayAddPar ? 'white' : 'transparent'}}>
+                {displayAddPar ? null : <Button buttonType="button" className={addParButtonClass} 
+                onClick={()=>{setDisplayAddPar(true); setAddParButtonClass('add-parameters-button-wrapper'); setEditParButtonClass('edit-parameters-open-button-wrapper'); setDisplayEditPar(false);}} buttonTittle="Dodaj" />}
                 {displayAddPar ? <AddParametersForm isSex={avaibleParameters?.sex} /> : null}
-                {displayAddPar ? <Button buttonType="button" className="p" onClick={()=>{setDisplayAddPar(false);}} buttonTittle="Zamknij" /> : null}
+                {displayAddPar ? <Button buttonType="button" className="close-add-parameters-button" 
+                onClick={()=>{setDisplayAddPar(false); setAddParButtonClass('add-parameters-open-button-wrapper'); }} buttonTittle="Zamknij" /> : null}
             </div>
             <ParametersHistory />
         </div>
