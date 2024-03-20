@@ -1,0 +1,43 @@
+.target-choosing-div-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.target-choose-button-no-active{
+    margin-bottom: 20px;
+    width: 428px;
+    display: flex;
+	align-items: center;
+	padding: 8px 25px;
+    background-color: white;
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+	border: 1px solid $layout-border-color;
+    border-radius: 25px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+    &:hover{
+        background-color: #444444;
+        opacity: 0.9;
+        color: white;
+    }
+}
+
+.target-choose-button-active{
+    margin-bottom: 20px;
+    width: 428px;
+    display: flex;
+	align-items: center;
+	padding: 8px 25px;
+    background-color: #1b83f7;
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+	border: 1px solid $layout-border-color;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+}

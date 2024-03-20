@@ -20,4 +20,6 @@ export const ROUTER_PATH = {
     NEWS: '/news',
     INFORMATIONS: '/informations',
     MY_MEALS: '/user_panel/my_meals',
+    DIET_QUESTIONNAIRE: '/diet/:diet_type/questionnaire',
+    DIET_PURCHASED: '/diet/purchased_status'
   };

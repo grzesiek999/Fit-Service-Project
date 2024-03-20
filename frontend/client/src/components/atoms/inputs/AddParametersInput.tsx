@@ -47,39 +47,6 @@ const AddParameterInput = ({inputType, value, className, onChange }: AddParamete
             />
         );
     }
-    else if(inputType === 'sex'){
-        return (
-            <div>
-                <input 
-                    type="radio"
-                    id="women"
-                    name="sex"
-                    value={2}
-                    checked={value === 2}
-                    onChange={onChange}
-                    required
-                /><label>Kobieta</label>
-                <input 
-                    type="radio"
-                    id="man"
-                    name="sex"
-                    value={1}
-                    checked={value === 1}
-                    onChange={onChange}
-                    required
-                /><label>Męzczyzna</label>
-              <input 
-                    type="radio"
-                    id="not_defined"
-                    name="sex"
-                    value={0}
-                    checked={value === 0}
-                    onChange={onChange}
-                    required
-                /><label>Nie chce podawać</label>
-            </div>
-        );
-    }
     else if(inputType === 'physic_activity'){
         return (
             <div className="physic-activity-input-div-wrapper">

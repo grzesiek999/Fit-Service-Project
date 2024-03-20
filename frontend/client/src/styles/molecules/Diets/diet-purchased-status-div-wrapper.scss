@@ -1,0 +1,41 @@
+.diet-purchased-status-div-wrapper {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-status-inf-span{
+    width: 700px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.payment-status-div-wrapper {
+    padding: 30px 50px;
+    margin-top: 25px;
+    width: 600px;
+    border-radius: 15px;
+    background-color: #E9FFDB;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-status-title-span {
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.payment-status-value-span {
+    color: #009E60;
+    font-size: 28px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+}
+
+.payment-status-problem-span {
+    margin-top: 40px;
+    font-size: 15px;
+    color: #666666;
+}

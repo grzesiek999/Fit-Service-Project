@@ -29,6 +29,9 @@ import DietsPage from '../pages/DietsPage';
 import NewsPage from '../pages/NewsPage';
 import InformationsPage from '../pages/InformationsPage';
 import MyMealsPage from '../pages/MyMealsPage';
+import InformationsToDiet from '../pages/DietQuestionnairePage';
+import DietQuestionnairePage from '../pages/DietQuestionnairePage';
+import DietPurchasedPage from '../pages/DietPurchasedPage';
 
 
 const ROUTER = createBrowserRouter(
@@ -57,6 +60,8 @@ const ROUTER = createBrowserRouter(
           <Route path={ROUTER_PATH.MY_MEALS} element={<MyMealsPage />} />
           <Route path={ROUTER_PATH.USER_SETTINGS} element={<UserSettingsPage />} />
         </Route>
+        <Route path={ROUTER_PATH.DIET_QUESTIONNAIRE} element={<DietQuestionnairePage />} />
+        <Route path={ROUTER_PATH.DIET_PURCHASED} element={<DietPurchasedPage />} />
       </Route>
       <Route element={<PublicRoute />}>
         <Route path={ROUTER_PATH.LOGIN} element={<LoginPage />} />

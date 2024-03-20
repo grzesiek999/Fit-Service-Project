@@ -29,7 +29,7 @@ interface Parameters {
 
 const UserProfilContent = () => {
 
-    const user_id =getUserWithExpiry(SESSION.USER).id;
+    const user_id = getUserWithExpiry(SESSION.USER).id;
     const [avaibleParameters, setAvaibleParameters] = useState<Parameters | null>(null);
     const [displayAddPar, setDisplayAddPar] = useState<boolean>(false);
     const [displayEditPar, setDisplayEditPar] = useState<boolean>(false);

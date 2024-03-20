@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../../atoms/buttons/Button";
 import AddParameterInput from "../../../atoms/inputs/AddParametersInput";
+import ChooseSex from "../../../atoms/inputs/ChooseSex";
 
 
 type BmiCalculatorProps = {
@@ -10,9 +11,7 @@ type BmiCalculatorProps = {
 
 const BmiCalculator = ( {setBmr, setDemand} : BmiCalculatorProps ) => {
 
-    const [sex, setSex] = useState<0 | 1 | 2>(0);
-    const [b1, setB1] = useState<string>('sex-choose-button-no-active');
-    const [b2, setB2] = useState<string>('sex-choose-button-no-active');
+    const [sex, setSex] = useState<number>(0);
     const [weight, setWeight] = useState<number | null>(null);
     const [height, setHeight] = useState<number | null>(null);
     const [age, setAge] = useState<number | null>(null);
@@ -75,13 +74,7 @@ const BmiCalculator = ( {setBmr, setDemand} : BmiCalculatorProps ) => {
 
     return(
         <div className="bmr-calculator-div-wrapper">
-            <div className="bmr-input-div-wrapper">
-                <span className="span-input-title">Płeć:</span>
-                <Button buttonType="button" className={b1} onClick={()=>{setSex(2); setB1('sex-choose-button-active'); setB2('sex-choose-button-no-active');}} 
-                buttonTittle="Kobieta" />
-                <Button buttonType="button" className={b2} onClick={()=>{setSex(1); setB1('sex-choose-button-no-active'); setB2('sex-choose-button-active');}} 
-                buttonTittle="Męzczyzna" />
-            </div>
+            <ChooseSex setSex={setSex} inputDivClass="bmr-input-div-wrapper" sexSpanClass="span-input-title" />
             { messageSex ? <span>{messageSex}</span> : null}
             <div className="bmr-input-div-wrapper">
                 <span className="span-input-title">Waga:</span>

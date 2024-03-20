@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'diets',
     'orders',
     'user_messages',
-    'diet_meals'
+    'diet_meals',
+    'diets_prices'
 ]
 
 MIDDLEWARE = [

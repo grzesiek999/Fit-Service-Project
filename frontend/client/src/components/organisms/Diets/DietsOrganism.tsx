@@ -1,12 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../atoms/buttons/Button";
+import { useNavigate } from "react-router-dom";
 
 
 const DietsOrganism = () => {
 
-    const [priceBasic, setPriceBasic] = useState(69);
-    const [priceComfort, setPriceComfort] = useState(129);
-    const [priceComplex, setPriceComplex] = useState(249);
+    const navigate = useNavigate();
+    const [priceBasic, setPriceBasic] = useState(null);
+    const [priceComfort, setPriceComfort] = useState(null);
+    const [priceComplex, setPriceComplex] = useState(null);
+
+    const fetchPrices = async () =>{
+        const url = `http://localhost:8000/api/diets_prices/get?d1_type=basic&d2_type=comfort&d3_type=complex`;
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {'Content-Type': 'application/json'},
+        });
+        if (response.ok) {
+            const content = await response.json();
+            setPriceBasic(content.basic);
+            setPriceComfort(content.comfort);
+            setPriceComplex(content.complex);
+        }
+        else { console.log("price fetch error", response.status, response.statusText)}
+    }
+
+    useEffect (()=>{
+        fetchPrices();
+    }, []);
+
 
     return (
         <div className="diets-organism-div-wrapper">
@@ -21,7 +43,7 @@ const DietsOrganism = () => {
                         <li>konsultacje dietetyczne</li>
                     </ul>
                     <span className="diet-offer-price-span">{priceBasic} zł</span>
-                    <Button buttonType="button" className="buy-diet-button" onClick={()=>{}} buttonTittle="Biorę !" />
+                    <Button buttonType="button" className="buy-diet-button" onClick={()=>{ navigate('/diet/basic/questionnaire'); document.body.scrollIntoView({ behavior: "smooth", block: "start" });}} buttonTittle="Biorę !" />
                 </div>
                 <div className="diet-offer-div-wrapper">
                     <span className="diet-offer-title-span">Pakiet Comfort</span>
@@ -33,7 +55,7 @@ const DietsOrganism = () => {
                         <li>aktualizacje posiłków</li>
                     </ul>
                     <span className="diet-offer-price-span">{priceComfort} zł</span>
-                    <Button buttonType="button" className="buy-diet-button" onClick={()=>{}} buttonTittle="Biorę !" />
+                    <Button buttonType="button" className="buy-diet-button" onClick={()=>{ navigate('/diet/comfort/questionnaire'); document.body.scrollIntoView({ behavior: "smooth", block: "start" });}} buttonTittle="Biorę !" />
                 </div>
                 <div className="diet-offer-div-wrapper">
                     <span className="diet-offer-title-span">Pakiet Complex</span>
@@ -47,7 +69,7 @@ const DietsOrganism = () => {
                         <li>aktualizacja planu dietetycznego</li>
                     </ul>
                     <span className="diet-offer-price-span">{priceComplex} zł</span>
-                    <Button buttonType="button" className="buy-diet-button" onClick={()=>{}} buttonTittle="Biorę !" />
+                    <Button buttonType="button" className="buy-diet-button" onClick={()=>{ navigate('/diet/complex/questionnaire'); document.body.scrollIntoView({ behavior: "smooth", block: "start" });}} buttonTittle="Biorę !" />
                 </div>
             </div>
         </div>

@@ -1,0 +1,21 @@
+.diet-purchased-information-div-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.diet-purchased-information-title-span {
+    font-weight: 600;
+    font-size: 34px;
+    font-family: "Work Sans", sans-serif;
+    color: #008efc;
+    margin-bottom: 50px;
+}
+
+.diet-purchased-information-div-wrapper p{
+    width: 800px;
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif ;
+    margin: 0;
+    line-height: 25px;
+    margin: 20px 0;
+}

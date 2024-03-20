@@ -5,18 +5,18 @@ import { useNavigate } from "react-router-dom";
 import AddParameterInput from "../../../atoms/inputs/AddParametersInput";
 import { getUserWithExpiry } from "../../../../utils/LocalStorageManagment";
 import { SESSION } from "../../../../constant/Session";
+import ChooseSex from "../../../atoms/inputs/ChooseSex";
 
 
 type AddParametersFormProps = {
     isSex?: number | null;
+    fromDiets?: boolean;
 }
 
 
-const AddParametersForm = ( {isSex = null}: AddParametersFormProps) =>  {
+const AddParametersForm = ( {isSex = null, fromDiets = false}: AddParametersFormProps) =>  {
 
     const navigate = useNavigate();
-    const [b1, setB1] = useState<string>('sex-choose-button-no-active');
-    const [b2, setB2] = useState<string>('sex-choose-button-no-active');
     const [message, setMessage] = useState<string>('');
     const user_id = getUserWithExpiry(SESSION.USER).id;
     const [sex, setSex] = useState<number>(isSex===null ? 0 : isSex);
@@ -120,7 +120,7 @@ const AddParametersForm = ( {isSex = null}: AddParametersFormProps) =>  {
             })
         });
         if(response.ok) {
-            if(isSex===null) { return navigate(ROUTER_PATH.USER_PROFIL); }
+            if(isSex===null && fromDiets === false) { return navigate(ROUTER_PATH.USER_PROFIL); }
             else { window.location.reload(); } 
         }
         else { setMessage(response.statusText) }
@@ -133,14 +133,7 @@ const AddParametersForm = ( {isSex = null}: AddParametersFormProps) =>  {
                 <h5>Dodaj swoje parametry</h5>
                 <div className="add-parameters-inputs-div-wrapper">
                     <div className="add-parameters-inputs-part1-div-wrapper">
-                        {isSex ===null ? 
-                        <div className="parameters-input-div-wrapper">
-                            <span className="parameters-sex-span-input-title">Wybierz swoją płeć:</span>
-                            <Button buttonType="button" className={b1} onClick={()=>{setSex(2); setB1('sex-choose-button-active'); setB2('sex-choose-button-no-active');}} 
-                            buttonTittle="Kobieta" />
-                            <Button buttonType="button" className={b2} onClick={()=>{setSex(1); setB1('sex-choose-button-no-active'); setB2('sex-choose-button-active');}} 
-                            buttonTittle="Męzczyzna" />
-                        </div> : null}
+                        {isSex ===null ? <ChooseSex setSex={setSex} inputDivClass="parameters-input-div-wrapper" sexSpanClass="parameters-sex-span-input-title" />: null}
                         <div className="parameters-input-div-wrapper">
                             <span className="parameters-span-input-title">Wzorst:</span>
                             <AddParameterInput inputType="float" value={height} className="parameters-calculator-input" onChange={handleHeight} /> cm

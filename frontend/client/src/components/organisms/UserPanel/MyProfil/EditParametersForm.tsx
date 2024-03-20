@@ -1,6 +1,7 @@
 import React, { SyntheticEvent, useEffect, useState } from "react";
 import Button from "../../../atoms/buttons/Button";
 import AddParameterInput from "../../../atoms/inputs/AddParametersInput";
+import ChooseSex from "../../../atoms/inputs/ChooseSex";
 
 
 type EditParametersProps = {
@@ -11,8 +12,6 @@ type EditParametersProps = {
 const EditParametersForm = ({parameters_id, isSex = null}: EditParametersProps) => {
 
     const [message, setMessage] = useState<string>('');
-    const [b1, setB1] = useState<string>('sex-choose-button-no-active');
-    const [b2, setB2] = useState<string>('sex-choose-button-no-active');
     const [sex, setSex] = useState<number>(isSex===null ? 0 : isSex);
     const [height, setHeight] = useState<number | null>(null);
     const [weight, setWeight] = useState<number | null>(null);
@@ -114,20 +113,7 @@ const EditParametersForm = ({parameters_id, isSex = null}: EditParametersProps) 
         });
         if(response.ok) { window.location.reload(); }
         else { setMessage(response.statusText); }
-    }
-
-    useEffect(() => {
-        if(isSex === 2) {
-            setB1('sex-choose-button-active'); 
-            setB2('sex-choose-button-no-active');
-        }
-        else if(isSex === 1) { 
-            setB1('sex-choose-button-no-active'); 
-            setB2('sex-choose-button-active');
-        }
-        else {}
-    }, []);
-    
+    }    
 
     return(
         <div className="edit-parameters-div-form-wrapper">
@@ -135,13 +121,7 @@ const EditParametersForm = ({parameters_id, isSex = null}: EditParametersProps) 
             <h5>Edytuj swoje parametry</h5>
                 <div className="add-parameters-inputs-div-wrapper">
                     <div className="add-parameters-inputs-part1-div-wrapper"> 
-                        <div className="parameters-input-div-wrapper">
-                            <span className="parameters-sex-span-input-title">Wybierz swoją płeć:</span>
-                            <Button buttonType="button" className={b1} onClick={()=>{setSex(2); setB1('sex-choose-button-active'); setB2('sex-choose-button-no-active');}} 
-                            buttonTittle="Kobieta" />
-                            <Button buttonType="button" className={b2} onClick={()=>{setSex(1); setB1('sex-choose-button-no-active'); setB2('sex-choose-button-active');}} 
-                            buttonTittle="Męzczyzna" />
-                        </div>
+                        <ChooseSex setSex={setSex} inputDivClass="parameters-input-div-wrapper" sexSpanClass="parameters-sex-span-input-title" isSex={isSex}/>
                         <div className="parameters-input-div-wrapper">
                             <span className="parameters-span-input-title">Wzorst:</span>
                             <AddParameterInput inputType="float" value={height} className="parameters-calculator-input" onChange={handleHeight} /> cm
