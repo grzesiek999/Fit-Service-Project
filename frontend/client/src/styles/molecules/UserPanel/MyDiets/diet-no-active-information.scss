@@ -1,0 +1,27 @@
+.diet-no-active-information {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 75px 0;
+    margin-bottom: 150px;
+}
+
+.diet-no-active-span {
+    margin-bottom: 40px;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: "Work Sans", sans-serif;
+    color: #008efc;
+}
+
+.diet-no-active-information p{
+    margin: 15px 0px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+}
+
+.diet-in-proggress-loader {
+    margin-top: 40px;
+}

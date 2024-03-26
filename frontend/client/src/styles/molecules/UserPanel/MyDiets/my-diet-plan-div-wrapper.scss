@@ -1,0 +1,34 @@
+.my-diet-plan-div-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.diet-plan-title-span {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 34px;
+    font-weight: 500;
+    font-family: "Work Sans", sans-serif;
+    color: #008efc;
+}
+
+.diet-describe-paragraf{
+    margin-bottom: 0;
+    width: 1000px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+}
+
+.diet-details-div-wrapper{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 55px;
+    border-bottom: 1px solid #777777;
+}

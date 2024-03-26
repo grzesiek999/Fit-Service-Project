@@ -35,7 +35,7 @@ const HiddenNavList = ({temp}: HiddenNavListProps) => {
     return (
         <ul>
             <li><Link to={ROUTER_PATH.USER_PROFIL} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Mój Profil</Link></li>
-            <li><Link to="/" onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Moje Diety</Link></li>
+            <li><Link to={ROUTER_PATH.MY_DIETS} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Plan Dietetyczny</Link></li>
             <li><Link to={ROUTER_PATH.MY_MEALS} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Moje Posiłki</Link></li>
             <li><Link to={ROUTER_PATH.USER_SETTINGS} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Ustawienia konta</Link></li>
             <li onClick={logout}>Wyloguj</li>

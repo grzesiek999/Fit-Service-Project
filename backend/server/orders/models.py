@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from users.models import User
 from diets.models import Diet
+from user_messages.models import UserMessage
+
 
 
 class Order(models.Model):
@@ -13,6 +15,12 @@ class Order(models.Model):
     )
     diet_id = models.ForeignKey(
         Diet,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+    )
+    user_message_id = models.ForeignKey(
+        UserMessage,
         on_delete=models.CASCADE,
         blank=True,
         null=True,

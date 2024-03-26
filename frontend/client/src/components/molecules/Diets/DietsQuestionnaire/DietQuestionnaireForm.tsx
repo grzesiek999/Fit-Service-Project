@@ -54,29 +54,32 @@ const DietQuestionnaireForm = ({diet_type}: DietQuestionnaireFormProps) =>{
             })
         });
         if (message_response.ok) {
+
             const message_response_content = await message_response.json();
             const user_message_id = message_response_content.id;
-            
+        
             const diet_response = await fetch('http://localhost:8000/api/diets/add', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    user_message_id
-                })
             });
+
             if (diet_response.ok) {
+                
                 const diet_response_content = await diet_response.json();
                 const diet_id = diet_response_content.id;
+
                 const order_response = await fetch('http://localhost:8000/api/orders/create_order', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({
                     user_id,
                     diet_id,
+                    user_message_id,
                     expiry_days,
                     price
                     })
                 });
+
                 if (order_response.ok) {
                     navigate(ROUTER_PATH.DIET_PURCHASED); 
                     document.body.scrollIntoView({ behavior: "smooth", block: "start" });

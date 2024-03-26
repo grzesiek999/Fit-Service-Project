@@ -1,0 +1,59 @@
+.diet-macro-detais-div-wrapper {
+    padding-left: 5%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.macro-components-title-span {
+    font-size: 24px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.diet-macro-components-table-div {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.needed-calories-span {
+    font-size: 22px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.diet-macro-components-table-div ul{
+    margin: 0;
+    padding: 0;
+    width: 400px;
+    list-style-type: none;
+    font-size: 22px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.diet-macro-components-table-div  ul li{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.diet-macro-components-table-div  ul li p{
+    margin: 0;
+    width: 50%;
+    border-bottom: 1px solid $layout-border-color;
+    padding: 12px 15px;
+}
+
+.diet-macro-components-table-div  li:last-child p{
+    margin: 0;
+    width: 50%;
+    border: none;    
+    padding: 10px 15px;
+}
+
+.p-macro{
+    text-align: center;
+}

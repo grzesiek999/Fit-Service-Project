@@ -70,7 +70,7 @@ class ActivateOrderView(APIView):
 
 class GetOrderByUserIdView(APIView):
     def get(self, request):
-        user_id = request.data.get('user_id')
+        user_id = request.query_params.get('user_id')
         orders = Order.objects.filter(user_id=user_id)
 
         if orders.exists():

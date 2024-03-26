@@ -32,6 +32,7 @@ import MyMealsPage from '../pages/MyMealsPage';
 import InformationsToDiet from '../pages/DietQuestionnairePage';
 import DietQuestionnairePage from '../pages/DietQuestionnairePage';
 import DietPurchasedPage from '../pages/DietPurchasedPage';
+import MyDietsPage from '../pages/MyDietsPage';
 
 
 const ROUTER = createBrowserRouter(
@@ -56,7 +57,7 @@ const ROUTER = createBrowserRouter(
           <Route path={ROUTER_PATH.USER_PANEL} element={<UserPanelPage />} />
           <Route path={ROUTER_PATH.USER_PROFIL} element={<UserProfilPage />} />
           <Route path={ROUTER_PATH.ADD_PARAMETERS} element={<AddParametersPage />} />
-
+          <Route path={ROUTER_PATH.MY_DIETS} element={<MyDietsPage />} />
           <Route path={ROUTER_PATH.MY_MEALS} element={<MyMealsPage />} />
           <Route path={ROUTER_PATH.USER_SETTINGS} element={<UserSettingsPage />} />
         </Route>
