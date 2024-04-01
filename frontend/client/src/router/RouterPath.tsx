@@ -32,4 +32,8 @@ export const ROUTER_PATH = {
   MY_MEALS: '/user_panel/my_meals',
   USER_SETTINGS: '/user_panel/user_settings',
 
+  NO_PERMISSIONS: '/no_permissions',
+
+  ADMIN_MESSAGES: 'admin/messages',
+
 };

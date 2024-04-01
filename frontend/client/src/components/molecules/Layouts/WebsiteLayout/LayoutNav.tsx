@@ -16,10 +16,16 @@ const LayoutNav = () =>{
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/" className='layout-nav-link-wrapper'>Diety</Link>
+                            <Link to="/" className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Plany Dietetyczne</Link>
                         </li>
                         <li>
-                            <Link to="/" className='layout-nav-link-wrapper'>Produkty</Link>
+                            <Link to="/" className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Produkty</Link>
+                        </li>
+                        <li>
+                            <Link to="/" className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Zamówienia</Link>
+                        </li>
+                        <li>
+                            <Link to="/" className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Wiadomości</Link>
                         </li>
                     </ul>
                 </nav>:

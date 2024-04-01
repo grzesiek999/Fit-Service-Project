@@ -33,6 +33,9 @@ import InformationsToDiet from '../pages/DietQuestionnairePage';
 import DietQuestionnairePage from '../pages/DietQuestionnairePage';
 import DietPurchasedPage from '../pages/DietPurchasedPage';
 import MyDietsPage from '../pages/MyDietsPage';
+import AdminRoute from './AdminRoute';
+import NoPermissionsPage from '../pages/NoPermissionsPage';
+import AdminMessagesPage from '../pages/AdminMessagesPage';
 
 
 const ROUTER = createBrowserRouter(
@@ -43,6 +46,7 @@ const ROUTER = createBrowserRouter(
       <Route path={ROUTER_PATH.SET_NEW_PASSWORD} element={<SetNewPasswordPage />} />
       <Route path={ROUTER_PATH.PASSWORD_CHANGED} element={<PasswordChangedPage />} />
       <Route path={ROUTER_PATH.ACCOUNT_NO_ACTIVE} element={<AccountNoActivePage />} />
+      <Route path={ROUTER_PATH.NO_PERMISSIONS} element={<NoPermissionsPage />} />
       <Route path={ROUTER_PATH.CALCULATORS} element={<CalculatorsLyaout />} >
         <Route path={ROUTER_PATH.CALCULATORS} element={ <CalculatorsPage /> } />
         <Route path={ROUTER_PATH.BMI} element={ <BmiCalculatorPage /> } />
@@ -63,6 +67,9 @@ const ROUTER = createBrowserRouter(
         </Route>
         <Route path={ROUTER_PATH.DIET_QUESTIONNAIRE} element={<DietQuestionnairePage />} />
         <Route path={ROUTER_PATH.DIET_PURCHASED} element={<DietPurchasedPage />} />
+      </Route>
+      <Route element={<AdminRoute />}>
+        <Route path={ROUTER_PATH.ADMIN_MESSAGES} element={<AdminMessagesPage />} />
       </Route>
       <Route element={<PublicRoute />}>
         <Route path={ROUTER_PATH.LOGIN} element={<LoginPage />} />

@@ -12,7 +12,7 @@ type HiddenNavListProps = {
 const HiddenNavList = ({temp}: HiddenNavListProps) => {
 
     const navigate = useNavigate();
-    const {logOut} = useContext(UserAuth);
+    const {logOut, user} = useContext(UserAuth);
 
     const logout = async () => {
         const response = await fetch('http://localhost:8000/api/logout', {
@@ -32,15 +32,23 @@ const HiddenNavList = ({temp}: HiddenNavListProps) => {
         }
     }
 
-    return (
+  return (
+    <>
+      {user?.is_admin ?
         <ul>
-            <li><Link to={ROUTER_PATH.USER_PROFIL} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Mój Profil</Link></li>
-            <li><Link to={ROUTER_PATH.MY_DIETS} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Plan Dietetyczny</Link></li>
-            <li><Link to={ROUTER_PATH.MY_MEALS} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Moje Posiłki</Link></li>
-            <li><Link to={ROUTER_PATH.USER_SETTINGS} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Ustawienia konta</Link></li>
-            <li onClick={logout}>Wyloguj</li>
+          <li><Link to={ROUTER_PATH.USER_SETTINGS} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Ustawienia konta</Link></li>
+          <li onClick={logout}>Wyloguj</li>
+        </ul>:
+        <ul>
+          <li><Link to={ROUTER_PATH.USER_PROFIL} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Mój Profil</Link></li>
+          <li><Link to={ROUTER_PATH.MY_DIETS} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Plan Dietetyczny</Link></li>
+          <li><Link to={ROUTER_PATH.MY_MEALS} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Moje Posiłki</Link></li>
+          <li><Link to={ROUTER_PATH.USER_SETTINGS} onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Ustawienia konta</Link></li>
+          <li onClick={logout}>Wyloguj</li>
         </ul>
-    );
+      }
+    </>
+  );
 }
 
 export default HiddenNavList;
