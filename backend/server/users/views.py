@@ -165,3 +165,15 @@ class SetNewPasswordView(APIView):
                 'message': 'password change error'
             }
         return response
+    
+
+class GetByUserIdView(APIView):
+    def get(self, request):
+        user_id = request.query_params.get('user_id')
+        user = User.objects.get(id=user_id)
+        
+        if not user:
+            return Response("No user founds", status=404)
+        
+        serializer = UserSerializer(user)
+        return Response(serializer.data)

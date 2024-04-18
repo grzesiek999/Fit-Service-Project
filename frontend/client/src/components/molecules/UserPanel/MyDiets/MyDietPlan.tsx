@@ -46,7 +46,7 @@ const MyDietPlan = ({isLastDay}: MyDietPlanProps ) => {
 
     return (
         <div className="my-diet-plan-div-wrapper">
-            {isLastDay?<span>Uwaga ! Jutro twój plan dietetyczny wygasa, przejdź do zakładki diety aby wykupić nowy plan.</span>:null}
+            {isLastDay?<span className="islastday-diet-span">Uwaga ! Jutro twój plan dietetyczny wygasa, przejdź do zakładki diety aby wykupić nowy plan.</span>:null}
             <span className="diet-plan-title-span">Plan Dietetyczny</span>
             <p className="diet-describe-paragraf">{diet?.describe}</p>
             <div className="diet-details-div-wrapper">

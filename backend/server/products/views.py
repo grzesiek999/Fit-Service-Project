@@ -20,3 +20,10 @@ class GetProductsView(APIView):
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
 
+
+class GetProductByID(APIView):
+    def get(self, request):
+        product_id = request.query_params.get('product_id')
+        product = Product.objects.get(id=product_id)
+        serializer = ProductSerializer(product)
+        return Response(serializer.data)

@@ -9,7 +9,15 @@ class DietMeal(models.Model):
         blank=True,
         null=True,
     )
-    meal = models.CharField(max_length=255)
+    MEALS = [
+        (1, "FIRST MEAL"),
+        (2, "SECOND MEAL"),
+        (3, "THIRD MEAL"),
+        (4, "FOURTH MEAL"),
+        (5, "FIFTH MEAL"),
+        (6, "SIXTH MEAL"),
+    ]
+    meal = models.IntegerField(choices=MEALS)
     name = models.CharField(max_length=255)
     describe = models.TextField()
     product1_weight = models.IntegerField(blank=True, null=True)

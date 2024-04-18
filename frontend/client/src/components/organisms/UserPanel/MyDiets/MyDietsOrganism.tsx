@@ -31,8 +31,12 @@ const MyDietsOrganism = () => {
                     setIsActive(true);
                     let expiry_date = new Date(order_content.expiry_date);
                     const today = new Date();
-                    if(expiry_date === today) {setIsLastDay(true);}
-                    else if (expiry_date < today) {return null;}
+                    if (
+                        expiry_date.getFullYear() === today.getFullYear() &&
+                        expiry_date.getMonth() === today.getMonth() &&
+                        expiry_date.getDate() === today.getDate()
+                    ) { setIsLastDay(true); }
+                    if (expiry_date < today) {return null;}
                     else {setIsEnd(true);}
                 }
             }

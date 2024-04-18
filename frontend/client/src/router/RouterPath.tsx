@@ -34,6 +34,9 @@ export const ROUTER_PATH = {
 
   NO_PERMISSIONS: '/no_permissions',
 
+  ADMIN_ORDERS: 'admin/orders',
+  ADMIN_ORDER_CHOSE: 'admin/orders/:order_id',
+  ADMIN_DIETS: 'admin/diets',
   ADMIN_MESSAGES: 'admin/messages',
 
 };

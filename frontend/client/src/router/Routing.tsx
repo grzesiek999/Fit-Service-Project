@@ -36,6 +36,9 @@ import MyDietsPage from '../pages/MyDietsPage';
 import AdminRoute from './AdminRoute';
 import NoPermissionsPage from '../pages/NoPermissionsPage';
 import AdminMessagesPage from '../pages/AdminMessagesPage';
+import AdminDietsPage from '../pages/AdminDietsPage';
+import AdminOrdersPage from '../pages/AdminOrdersPage';
+import AdminOrderChosePage from '../pages/AdminOrderChosePage';
 
 
 const ROUTER = createBrowserRouter(
@@ -69,6 +72,9 @@ const ROUTER = createBrowserRouter(
         <Route path={ROUTER_PATH.DIET_PURCHASED} element={<DietPurchasedPage />} />
       </Route>
       <Route element={<AdminRoute />}>
+        <Route path={ROUTER_PATH.ADMIN_ORDERS} element={<AdminOrdersPage />} />
+        <Route path={ROUTER_PATH.ADMIN_ORDER_CHOSE} element={<AdminOrderChosePage />} />
+        <Route path={ROUTER_PATH.ADMIN_DIETS} element={<AdminDietsPage />} />
         <Route path={ROUTER_PATH.ADMIN_MESSAGES} element={<AdminMessagesPage />} />
       </Route>
       <Route element={<PublicRoute />}>

@@ -30,3 +30,4 @@ class Order(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     expiry_date = models.DateTimeField(blank = True, null = True)
     price = models.IntegerField()
+    diet_type = models.CharField(max_length=255)

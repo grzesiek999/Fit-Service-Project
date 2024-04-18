@@ -6,6 +6,7 @@ from .models import Order
 from .utils import OrderMessages
 from django.utils import timezone
 from datetime import timedelta
+from diets.models import Diet
 
 
 class AddOrderView(APIView):
@@ -26,60 +27,70 @@ class SetPaymentStatusView(APIView):
     def patch(self, request):
         message = OrderMessages()
         user_id = request.data.get('user_id')
-        orders = Order.objects.filter(user_id=user_id)
+        order = Order.objects.filter(user_id=user_id).order_by('-created_at').first()
 
-        if orders.exists():
-            temp = orders[0]
-            for order in orders:
-                if temp.created_at < order.created_at:
-                    temp = order
-            last_order = Order.objects.get(id=temp.id)
-            last_order.payment_status = True
-            last_order.save()
-            serializer = OrderSerializer(last_order)
-            if message.sendPaymentConfirmation(user_id):
-                return Response(serializer.data)
-            else:
-                return Response({"error": "sending email message error"})
-            
-        return Response({'error': 'order doesnt error'})
+        if not order:
+            return Response("No orders found", status=404)
+
+        order.payment_status = True
+        order.save()
+        serializer = OrderSerializer(order)
+        if message.sendPaymentConfirmation(user_id):
+            return Response(serializer.data)
+        else:
+            return Response({"error": "sending email message error"})
     
 
 class ActivateOrderView(APIView):
     def patch(self, request):
         message = OrderMessages()
         user_id = request.data.get('user_id')
-        orders = Order.objects.filter(user_id=user_id)
+        order = Order.objects.filter(user_id=user_id).order_by('-created_at').first()
 
-        if orders.exists():
-            temp = orders[0]
-            for order in orders:
-                if temp.created_at < order.created_at:
-                    temp = order
-            last_order = Order.objects.get(id=temp.id)
-            last_order.expiry_date = timezone.now() + timedelta(days=last_order.expiry_days)
-            last_order.save()
-            serializer = OrderSerializer(last_order)
-            if message.sendDietReadyInformation(user_id):
-                return Response(serializer.data)
-            else:
-                return Response({"error": "sending email message error"})
-            
-        return Response({'error': 'order doesnt exist'})
+        if not order:
+            return Response("No orders found", status=404)
+
+        order.expiry_date = timezone.now() + timedelta(days=order.expiry_days)
+        order.save()
+        serializer = OrderSerializer(order)
+        if message.sendDietReadyInformation(user_id):
+            return Response(serializer.data)
+        else:
+            return Response({"error": "sending email message error"})
     
 
 class GetOrderByUserIdView(APIView):
     def get(self, request):
         user_id = request.query_params.get('user_id')
-        orders = Order.objects.filter(user_id=user_id)
+        order = Order.objects.filter(user_id=user_id).order_by('-created_at').first()
 
-        if orders.exists():
-            temp = orders[0]
-            for order in orders:
-                if temp.created_at < order.created_at:
-                    temp = order
-            last_order = Order.objects.get(id=temp.id)
-            serializer = OrderSerializer(last_order)
-            return Response(serializer.data)
-        else:
-            return Response({'error': 'order doesnt exist'})
+        if not order:
+            return Response("No orders found", status=404)
+        
+        serializer = OrderSerializer(order)
+        return Response(serializer.data)
+
+
+class GetOrdersToMakeView(APIView):
+    def get(self, request):
+        orders = Order.objects.filter(payment_status=True, expiry_date__isnull=True).order_by('-created_at')
+
+        if not orders:
+            return Response("No orders found", status=404)
+        
+        serializer = OrderSerializer(orders, many=True)
+        return Response(serializer.data)
+    
+
+class DeleteOrderView(APIView):
+    def delete(self, request):
+        order_id = request.data.get('order_id')
+        order = Order.objects.get(pk=order_id)
+        diet = order.diet_id
+        message = order.user_message_id
+        
+        diet.delete()
+        message.delete()
+        order.delete()
+        
+        return Response("Order deleted succesfull")

@@ -76,7 +76,8 @@ const DietQuestionnaireForm = ({diet_type}: DietQuestionnaireFormProps) =>{
                     diet_id,
                     user_message_id,
                     expiry_days,
-                    price
+                    price,
+                    diet_type
                     })
                 });
 

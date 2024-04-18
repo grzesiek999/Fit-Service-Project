@@ -183,3 +183,17 @@
 @import "./tmpls/no-permissions-page-template-div-wrapper.scss";
 
 @import "./tmpls/admin-messages-page-template-div-wrapper.scss";
+
+@import "./molecules/UserPanel/MyDiets/diet-meal-example-div-wrapper.scss";
+
+@import "./tmpls/admin-diets-page-template-div-wrapper.scss";
+
+@import "./organism/AdminDiets/admin-diets-organism-div-wrapper.scss";
+
+@import "./tmpls/admin-orders-page-template-div-wrapper.scss";
+
+@import "./organism/AdminOrders/admin-orders-organism-div-wrapper.scss";
+
+@import "./molecules/AdminOrders/order-view.scss";
+
+@import "./tmpls/admin-order-chose-page-template-div-wrapper.scss";

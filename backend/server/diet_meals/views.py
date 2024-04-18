@@ -30,7 +30,7 @@ class EditDietMealView(APIView):
 
 class GetByIdView(APIView):
     def get(self, request):
-        diet_meal_id = request.data.get('id')
+        diet_meal_id = request.query_params.get('id')
         try:
             diet_meal = DietMeal.objects.get(id=diet_meal_id)
             serializer = DietMealSerializer(diet_meal)
@@ -42,8 +42,8 @@ class GetByIdView(APIView):
 
 class GetAllForDietByKindView(APIView):
     def get(self, request):
-        diet_id = request.data.get('diet_id')
-        meal = request.data.get('meal', None)
+        diet_id = request.query_params.get('diet_id')
+        meal = request.query_params.get('meal', None)
         if meal:
             diet_meals = DietMeal.objects.filter(diet_id=diet_id, meal=meal)
         else:
@@ -52,7 +52,7 @@ class GetAllForDietByKindView(APIView):
             serializer = DietMealSerializer(diet_meals, many=True)
             return Response(serializer.data)
         else:
-            return Response({'error': 'meals for this diet doeasnt exist'})
+            return Response({'message': 'none'})
 
 
 class DeleteDietMealView(APIView):

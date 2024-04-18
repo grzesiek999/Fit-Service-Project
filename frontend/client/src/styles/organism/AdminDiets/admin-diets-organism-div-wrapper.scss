@@ -1,0 +1,73 @@
+.admin-diets-organism-div-wrapper{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 100px 0;
+}
+
+.actuall-prices-div-wrapper {
+    margin-left: 220px;
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.actuall-prices-title-span {
+    margin-bottom: 25px;
+    font-size: 30px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 600;
+    color: #1e73d3;
+}
+
+.each-one-price-div-wrapper {
+    margin: 25px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.each-one-price-div-wrapper label {
+    width: 450px;
+    font-size: 24px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.give-new-price-span {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.set-new-price-input{
+    margin: 0 50px 0 25px;
+    padding-left: 10px;
+    width: 100px;
+    height: 40px;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    font-size: 22px;
+    font-weight: 500;
+    font-family: 'Work Sans', sans-serif;
+    outline: none;
+}
+
+.set-new-price-button {
+	width: 90px;
+	height: 36px;
+	background-color: #008efc;
+	border-radius: 2px;
+	font-size: 18px;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: bold;
+	color: white;
+	border: 1px solid #007fe0;
+	cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+        opacity: 0.8;
+        background-color: black;
+        border-color: black;
+    }
+}
