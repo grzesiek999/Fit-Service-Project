@@ -34,7 +34,6 @@ const OrderView = ({order}: OrderViewProps) => {
         if(response.ok){
             const content = await response.json();
             setUserFullName(upperFirstLetter(content.name)+' '+upperFirstLetter(content.surname));
-            console.log(order.diet_type)
         }
     }
 

@@ -36,6 +36,7 @@ export const ROUTER_PATH = {
 
   ADMIN_ORDERS: 'admin/orders',
   ADMIN_ORDER_CHOSE: 'admin/orders/:order_id',
+  ADMIN_USERS: 'admin/users',
   ADMIN_DIETS: 'admin/diets',
   ADMIN_MESSAGES: 'admin/messages',
 

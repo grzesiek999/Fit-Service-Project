@@ -94,3 +94,15 @@ class DeleteOrderView(APIView):
         order.delete()
         
         return Response("Order deleted succesfull")
+    
+
+class GetByOrderIdView(APIView):
+    def get(self, request):
+        order_id = request.query_params.get('order_id')
+        order = Order.objects.get(pk=order_id)
+
+        if not order:
+            return Response('Order doeasnt found', status=404)
+        
+        serializer = OrderSerializer(order)
+        return Response(serializer.data)

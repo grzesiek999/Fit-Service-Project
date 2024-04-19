@@ -22,7 +22,7 @@ const LayoutNav = () =>{
                             <Link to={ROUTER_PATH.ADMIN_ORDERS} className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Zamówienia</Link>
                         </li>
                         <li>
-                            <Link to="/" className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Uzytkownicy</Link>
+                            <Link to={ROUTER_PATH.ADMIN_USERS} className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Uzytkownicy</Link>
                         </li>
                         <li>
                             <Link to={ROUTER_PATH.ADMIN_DIETS} className='layout-nav-link-wrapper' onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Diety</Link>
