@@ -13,6 +13,11 @@
     margin-bottom: 50px;
 }
 
+.order-details-all-div-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
 .order-details-div-wrapper {
     display: flex;
     flex-direction: column;
@@ -37,6 +42,33 @@
     margin: 10px 0;
 }
 
+.order-options-div-wrapper {
+    margin: 50px 0 0 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-diet-button-wrapper {
+    text-decoration: none;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 350px;
+	height: 50px;
+	background-color: #008efc;
+	border-radius: 2px;
+	font-size: 22px;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: bold;
+	color: white;
+	border: none;
+	cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
 .client-details-div-wrapper {
     margin-top: 10px;
     display: flex;
@@ -51,7 +83,33 @@
 }
 
 .user-messages-div-wrapper {
-    margin: 50px;
+    margin: 35px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.target-span-title  {
+    margin-bottom: 35px;
+    color: #333333;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.target-span-content  {
+    color: #1e73d3;
+}
+
+.user-messages-titles-span {
+    font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+}
+
+.user-messages-div-wrapper p {
+    margin: 15px 0 25px 0;
+    font-size: 18px;
+    max-width: 700px;
 }
 
 .client-details-span {

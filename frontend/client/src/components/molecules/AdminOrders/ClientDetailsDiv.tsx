@@ -37,9 +37,10 @@ interface Parameters {
 
 type OrderDetailsDivProps = {
     user_id: number | undefined
+    user_message_id: number | undefined
 }
 
-const ClientDetailsDiv = ({user_id}: OrderDetailsDivProps) => {
+const ClientDetailsDiv = ({user_id, user_message_id}: OrderDetailsDivProps) => {
 
     const [user, setUser] = useState<User>();
     const [historyParameters, setHistoryParameters] = useState<Parameters[]>([]);
@@ -66,7 +67,7 @@ const ClientDetailsDiv = ({user_id}: OrderDetailsDivProps) => {
             const results = await response.json();
             setHistoryParameters(results);
         }
-        else {console.log(response.statusText);}
+        else { console.log(response.statusText, response.status); }
     }
 
     useEffect (()=>{
@@ -77,7 +78,7 @@ const ClientDetailsDiv = ({user_id}: OrderDetailsDivProps) => {
     return(
         <div className="client-details-div-wrapper">
             <span className="client-title-span">Użytkownik: {upperFirstLetter(user?.name) + ' ' + upperFirstLetter(user?.surname)}</span>
-            <UserMessagesDiv user_id={user_id} />
+            <UserMessagesDiv user_message_id={user_message_id} />
             <span className="client-details-span">Parametry użytkownika:</span>
             <ul id="l1">
                 {historyParameters.map((parameters: Parameters) => (

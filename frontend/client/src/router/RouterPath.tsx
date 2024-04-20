@@ -34,10 +34,14 @@ export const ROUTER_PATH = {
 
   NO_PERMISSIONS: '/no_permissions',
 
-  ADMIN_ORDERS: 'admin/orders',
-  ADMIN_ORDER_CHOSE: 'admin/orders/:order_id',
-  ADMIN_USERS: 'admin/users',
-  ADMIN_DIETS: 'admin/diets',
-  ADMIN_MESSAGES: 'admin/messages',
+  ADMIN_ORDERS: '/admin/orders',
+  ADMIN_ORDER_CHOSE: '/admin/orders/:order_id',
+  ADMIN_DIET_PLAN: '/admin/diet_plan/:diet_id/:user_id',
+  ADMIN_DIET_PLAN_MEALS: '/admin/diet_plan_meal/:diet_id',
+  ADMIN_USERS: '/admin/users',
+  ADMIN_DIETS: '/admin/diets',
+  ADMIN_MESSAGES: '/admin/messages',
+
+  
 
 };

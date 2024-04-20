@@ -1,0 +1,18 @@
+.admin-diet-plan-meals-organism-div-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 100px 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.no-meal-for-user-diet-div-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.add-first-meals-to-user-diet-div-wrapper {
+    display: flex;
+    flex-direction: column;
+}

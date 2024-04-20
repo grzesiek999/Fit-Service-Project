@@ -1,0 +1,125 @@
+.admin-create-diet-plan-organism-div-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 50px 220px;
+}
+
+.admin-create-diet-plan-organism-div-wrapper h5{
+    margin-bottom: 30px;
+}
+
+.admin-create-diet-plan-organism-div-wrapper form{
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-diet-form-inputs-divs-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.create-form-inputs-part1-div-wrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.macro-title-span {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.create-diet-number-input-div-wrapper {
+    margin: 10px 0;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.create-diet-number-input-div-wrapper label{
+    min-width: 200px;
+    font-size: 22px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.create-diet-input {
+    margin: 0 10px 0 0;
+    padding-left: 10px;
+    width: 75px;
+    height: 40px;
+    border: 1px solid $layout-border-color;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Work Sans', sans-serif;
+    outline: none;
+}
+
+.create-diet-plan-piechart-div-wrapper {
+    margin: 25px 0;
+}
+
+.diet-create-calories-span {
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: #1e73d3;
+}
+
+.create-form-inputs-part2-div-wrapper {
+    width: 50%;
+    padding-top: 45px;
+    display: flex;
+    flex-direction: column;
+}
+
+.describe-title-span {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 30px 0 20px 0;
+}
+
+.create-diet-describe-input {
+    box-sizing: border-box;
+    height: 450px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #3a3a3a;
+    padding: 15px 20px;
+    font-size: 18px;
+    color: black
+}
+
+.path-diet-button-wrapper {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+	width: 120px;
+	height: 50px;
+	background-color: #008efc;
+	border-radius: 2px;
+	font-size: 22px;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: bold;
+	color: white;
+	border: 1px solid #007fe0;
+	cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+        opacity: 0.8;
+        background-color: black;
+        border-color: black;
+    }
+}

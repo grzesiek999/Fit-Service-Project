@@ -8,21 +8,19 @@ type MessageTextAreaTypes = {
 
 const MessageTextArea = ({className, onChange}: MessageTextAreaTypes) => {
 
-    const [message, setMessage] = useState('');
-
     const handleFocus = (event: React.FocusEvent<HTMLTextAreaElement>) => {
         event.currentTarget.placeholder = '';
-      };
+    };
         
-      const handleBlur = (event: React.FocusEvent<HTMLTextAreaElement>) => {
+    const handleBlur = (event: React.FocusEvent<HTMLTextAreaElement>) => {
         event.currentTarget.placeholder = 'Treść wiadomości ...';
-      };
+    };
 
-      const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-          const newMessage = event.target.value;
-          setMessage(newMessage);
-          onChange(newMessage);
-      }
+    const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        const newMessage = event.target.value;
+      onChange(newMessage);
+    }
+
     return(
         <textarea
             name="message"

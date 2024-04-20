@@ -18,7 +18,7 @@ class AddMessageView(APIView):
 
 class GetMessageView(APIView):
     def get(self, request):
-        message_id = request.data.get('message_id')
+        message_id = request.query_params.get('message_id')
 
         try:
             message = UserMessage.objects.get(id=message_id)

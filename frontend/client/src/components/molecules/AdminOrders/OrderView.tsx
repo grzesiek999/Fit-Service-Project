@@ -35,6 +35,7 @@ const OrderView = ({order}: OrderViewProps) => {
             const content = await response.json();
             setUserFullName(upperFirstLetter(content.name)+' '+upperFirstLetter(content.surname));
         }
+        else { console.log(response.statusText, response.status); }
     }
 
     useEffect (()=>{

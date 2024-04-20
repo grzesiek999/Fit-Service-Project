@@ -29,7 +29,6 @@ import DietsPage from '../pages/DietsPage';
 import NewsPage from '../pages/NewsPage';
 import InformationsPage from '../pages/InformationsPage';
 import MyMealsPage from '../pages/MyMealsPage';
-import InformationsToDiet from '../pages/DietQuestionnairePage';
 import DietQuestionnairePage from '../pages/DietQuestionnairePage';
 import DietPurchasedPage from '../pages/DietPurchasedPage';
 import MyDietsPage from '../pages/MyDietsPage';
@@ -40,6 +39,8 @@ import AdminDietsPage from '../pages/AdminDietsPage';
 import AdminOrdersPage from '../pages/AdminOrdersPage';
 import AdminOrderChosePage from '../pages/AdminOrderChosePage';
 import AdminUsersPage from '../pages/AdminUsersPage';
+import AdminDietPlanPage from '../pages/AdminDietPlanPage';
+import AdminDietPlanMealsPage from '../pages/AdminDietPlanMealsPage';
 
 
 const ROUTER = createBrowserRouter(
@@ -78,6 +79,8 @@ const ROUTER = createBrowserRouter(
         <Route path={ROUTER_PATH.ADMIN_USERS} element={<AdminUsersPage />} />
         <Route path={ROUTER_PATH.ADMIN_DIETS} element={<AdminDietsPage />} />
         <Route path={ROUTER_PATH.ADMIN_MESSAGES} element={<AdminMessagesPage />} />
+        <Route path={ROUTER_PATH.ADMIN_DIET_PLAN} element={<AdminDietPlanPage />} />
+        <Route path={ROUTER_PATH.ADMIN_DIET_PLAN_MEALS} element={<AdminDietPlanMealsPage />} />
       </Route>
       <Route element={<PublicRoute />}>
         <Route path={ROUTER_PATH.LOGIN} element={<LoginPage />} />

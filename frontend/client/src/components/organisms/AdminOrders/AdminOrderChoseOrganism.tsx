@@ -45,7 +45,7 @@ const AdminOrderChoseOrganism = () => {
         <div className="admin-order-chose-organism-div-wrapper">
             <span className="orderid-title-span">Numer zamówienia: {order_id}</span>
             <OrderDetailsDiv order={order} />
-            <ClientDetailsDiv user_id={order?.user_id}/>
+            <ClientDetailsDiv user_id={order?.user_id} user_message_id={order?.user_message_id}/>
         </div>
     );
 }
