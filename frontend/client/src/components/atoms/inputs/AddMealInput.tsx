@@ -71,8 +71,8 @@ const AddMealInput = ({inputType, value, weightValue, onChange, onChangeMeal, on
     }
     else if(inputType === 'describe'){
         return (
-            <div>
-                <label>Sposób przygotowania posiłku:</label>
+            <div className="meal-describe-input-div-wrapper">
+                <label>Przepis, sposób przygotowania posiłku, uwagi:</label>
                 <textarea
                     name="describe"
                     className=''

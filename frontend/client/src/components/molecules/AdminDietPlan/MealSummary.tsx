@@ -48,12 +48,13 @@ const MealSummary = ({product, tempWeight}: MealSummaryProps) => {
     return (
         <div className="meal-summary-div-wrapper">
             <div className="meal-product-summary-div-wrapper">
-                {product ? <span>{upperFirstLetter(product?.name)}</span> : null}
-                <span>Wartość energetyczna: {kcal.toFixed(0)} kcal</span>
-                <span>Białko: {protein.toFixed(1)} g.</span>
-                <span>Węglowodany: {carbohydrates.toFixed(1)} g.</span>
-                <span>Tłuszcze: {fats.toFixed(1)} g.</span>
-                <span>Błonnik: {fiber.toFixed(1)} g.</span>
+                <span className="choose-product-to-meal-span">Wybrano produkt:</span>
+                {product ? <span className="product-name-span">{upperFirstLetter(product?.name)}</span> : null}
+                <span className="product-kcal-span">Wartość energetyczna: {kcal.toFixed(0)} kcal</span>
+                <span className="protein-kcal-span">Białko: {protein.toFixed(1)} g.</span>
+                <span className="carbohydrates-kcal-span">Węglowodany: {carbohydrates.toFixed(1)} g.</span>
+                <span className="fats-kcal-span">Tłuszcze: {fats.toFixed(1)} g.</span>
+                <span className="fiber-kcal-span">Błonnik: {fiber.toFixed(1)} g.</span>
             </div>
         </div>
     );

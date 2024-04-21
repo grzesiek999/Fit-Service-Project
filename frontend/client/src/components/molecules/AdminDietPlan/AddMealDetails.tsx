@@ -160,7 +160,7 @@ const AddMealDetails = ({setTempWeight, tempWeight, setSelectedProduct, selected
                 <AddMealInput inputType='weight' value={null} weightValue={tempWeight} onChange={handleWeightChange} onChangeMeal={()=>{}} onChangeDesc={handleDescribeChange}/>
                 <Button buttonType="button" className="add-product-to-meal-button" onClick={AddProductToMeal} buttonTittle="Dodaj produkt do posiłku &#10148;" />
                 <AddMealInput inputType='describe' value={describe} weightValue={null} onChange={()=>{}} onChangeMeal={()=>{}} onChangeDesc={handleChangeDesc}/>
-                <Button buttonType="submit" className="" onClick={()=>{}} buttonTittle="Dodaj posiłek do diety" />
+                <Button buttonType="submit" className="add-meal-to-diet-button" onClick={()=>{}} buttonTittle="Dodaj posiłek do diety &#10148;" />
             </form>
         </div>
     );

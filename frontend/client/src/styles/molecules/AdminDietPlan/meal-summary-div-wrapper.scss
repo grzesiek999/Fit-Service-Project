@@ -1,0 +1,67 @@
+.meal-summary-div-wrapper{
+    box-sizing: border-box;
+    width: 450px;
+    padding: 150px 0 0 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.meal-product-summary-div-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.choose-product-to-meal-span {
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.product-name-span {
+    font-size: 28px;
+    font-family: 'Work Sans', sans-serif;
+    color: #444444;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.product-kcal-span {
+    font-size: 24px;
+    font-family: 'Work Sans', sans-serif;
+    color: #c81419;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.protein-kcal-span {
+    font-size: 24px;
+    font-family: 'Work Sans', sans-serif;
+    color: #4472c4;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.carbohydrates-kcal-span {
+    font-size: 24px;
+    font-family: 'Work Sans', sans-serif;
+    color: #ec7d30;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.fats-kcal-span {
+    font-size: 24px;
+    font-family: 'Work Sans', sans-serif;
+    color: #fbbf05;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.fiber-kcal-span {
+    font-size: 24px;
+    font-family: 'Work Sans', sans-serif;
+    color: #00B42A;
+    font-weight: 500;
+    margin: 10px 0;
+}

@@ -54,7 +54,7 @@ const DietMealExample = ({meal}: DietMealExampleProps) => {
             {meal.map((diet_meal: DietMeal) => (
                 <div key={diet_meal.id} className="single-meal-div-wrapper">
                     <span className="meal-name-span" style={{color: divVisibility[diet_meal.id] ? '#008efc' : '#333333', transform: divVisibility[diet_meal.id] ? 'scale(1.1)' : '' }} onClick={() => toggleDisplay(diet_meal.id)}>{upperFirstLetter(diet_meal.name)}</span>
-                    <div style={{ display: divVisibility[diet_meal.id] ? 'flex' : 'none', flexDirection: 'column', marginBottom: '10px'}}>
+                    <div style={{ display: divVisibility[diet_meal.id] ? 'flex' : 'none', flexDirection: 'column', marginBottom: '10px', width: 280}}>
                         <div className="meal-describe-div-wrapper">
                             <span className="meal-temp-span">Opis:</span>
                             <p>{diet_meal.describe}</p>
