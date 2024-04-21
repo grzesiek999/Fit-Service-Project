@@ -1,0 +1,109 @@
+.add-meals-to-user-diet-div-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.add-meals-title-span {
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+.add-meals-to-user-diet-div-wrapper form{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.meal-select-input-div-wrapper {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+}
+
+.meal-select-input-div-wrapper select {
+    margin-left: 10px;
+    padding: 0 10px;
+    font-size: 20px;
+    height: 40px;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    outline: none;
+}
+
+.meal-name-input-div-wrapper {
+    margin: 15px 0px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+}
+
+.meal-name-input-div-wrapper input{
+    width: 500px;
+    margin: 15px 0px;
+    padding-left: 10px;
+    font-size: 20px;
+    height: 40px;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    outline: none;
+}
+
+.add-meals-to-user-diet-div-wrapper .search-div-wrapper{
+    margin: 15px 0;
+    padding: 0;
+}
+
+.meal-weight-input-div-wrapper{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+}
+
+.meal-weight-input-div-wrapper input{
+    margin: 0 10px 0 20px;
+    padding-left: 10px;
+    width: 75px;
+    height: 40px;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Work Sans", sans-serif;
+    outline: none;
+}
+
+.add-product-to-meal-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 50px;
+    background-color: #008efc;
+    border-radius: 4px;
+    font-size: 22px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        background-color: #555555;
+    }
+}

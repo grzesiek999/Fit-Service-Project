@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DietMealExample from "../../molecules/UserPanel/MyDiets/DietMeals/DietMealExaple";
+import AddMealDetails from "../../molecules/AdminDietPlan/AddMealDetails";
+import MealSummary from "../../molecules/AdminDietPlan/MealSummary";
 
 
 interface DietMeal {
@@ -35,6 +37,17 @@ interface DietMeal {
     product12_id: number | null
 }
 
+interface Product {
+    id: number,
+    name: string,
+    weight: number,
+    energy: number,
+    proteins: number,
+    carbohydrates: number,
+    fats: number,
+    fiber: number
+}
+
 const AdminDietPlanMealsOrganism = () => {
 
     const {diet_id} = useParams();
@@ -45,6 +58,10 @@ const AdminDietPlanMealsOrganism = () => {
     const [fifthMeal, setFifthMeal] = useState<DietMeal[]>([]);
     const [sixthMeal, setSixthMeal] = useState<DietMeal[]>([]);
     const [isMeal, setIsMeal] = useState<boolean[]>(Array(6).fill(false));
+    const [tempWeight, setTempWeight] = useState<number | null>(0);
+    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+
 
     const handleUpdateIsMeal = (indexToUpdate: number) => {
         setIsMeal(prevState => {
@@ -82,40 +99,43 @@ const AdminDietPlanMealsOrganism = () => {
 
     return (
         <div className="admin-diet-plan-meals-organism-div-wrapper">
-            <h5>Jdłospis Planu Dietetycznego</h5>
+            <h5>Jadłospis Planu Dietetycznego</h5>
             { isMeal[0] || isMeal[1] || isMeal[2] || isMeal[3] || isMeal[4] || isMeal[5] ?
-                <div>
-                    <div className="example-meal-div-wrapper">
-                        <span className="meal-title-span">PIERWSZY POSIŁEK</span>
-                        <DietMealExample meal={firstMeal}/> 
+                <div className="there-is-diet-meals-div-wrapper">
+                    <div className="meals-in-diet-div-wrapper">
+                        <div className="example-meal-div-wrapper">
+                            <span className="meal-title-span">PIERWSZY POSIŁEK</span>
+                            <DietMealExample meal={firstMeal}/> 
+                        </div>
+                        <div className="example-meal-div-wrapper">
+                            <span className="meal-title-span">DRUGI POSIŁEK</span>
+                            <DietMealExample meal={secondMeal}/> 
+                        </div>        
+                        <div className="example-meal-div-wrapper">
+                            <span className="meal-title-span">TRZECI POSIŁEK</span> 
+                            <DietMealExample meal={thirdMeal}/> 
+                        </div>        
+                        <div className="example-meal-div-wrapper">
+                            <span className="meal-title-span">CZWARTY POSIŁEK</span>
+                            <DietMealExample meal={fourthMeal}/> 
+                        </div>
+                        <div className="example-meal-div-wrapper">
+                            <span className="meal-title-span">PIĄTY POSIŁEK</span>
+                            <DietMealExample meal={fifthMeal}/> 
+                        </div>                        
+                        <div className="example-meal-div-wrapper">
+                            <span className="meal-title-span">SZÓSTY POSIŁEK</span>
+                            <DietMealExample meal={sixthMeal}/> 
+                        </div>
                     </div>
-                    <div className="example-meal-div-wrapper">
-                        <span className="meal-title-span">DRUGI POSIŁEK</span>
-                        <DietMealExample meal={secondMeal}/> 
-                    </div>        
-                    <div className="example-meal-div-wrapper">
-                        <span className="meal-title-span">TRZECI POSIŁEK</span> 
-                        <DietMealExample meal={thirdMeal}/> 
-                    </div>        
-                    <div className="example-meal-div-wrapper">
-                        <span className="meal-title-span">CZWARTY POSIŁEK</span>
-                        <DietMealExample meal={fourthMeal}/> 
-                    </div>
-                    <div className="example-meal-div-wrapper">
-                        <span className="meal-title-span">PIĄTY POSIŁEK</span>
-                        <DietMealExample meal={fifthMeal}/> 
-                    </div>                        
-                    <div className="example-meal-div-wrapper">
-                    <span className="meal-title-span">SZÓSTY POSIŁEK</span>
-                        <DietMealExample meal={sixthMeal}/> 
+                    <div className="no-meals-for-user-diet-div-wrapper">
+                        <AddMealDetails setTempWeight={setTempWeight} tempWeight={tempWeight} setSelectedProduct={setSelectedProduct} selectedProduct={selectedProduct}/>
+                        <MealSummary product={selectedProduct} tempWeight={tempWeight}/>
                     </div>
                 </div>:
-                <div className="no-meal-for-user-diet-div-wrapper">
-                    <div className="add-first-meals-to-user-diet-div-wrapper">
-                        <span>Dodaj posiłki do jadłospisu użytkownika</span>
-                    </div>
-                    <div>
-                    </div>
+                <div className="no-meals-for-user-diet-div-wrapper">
+                    <AddMealDetails setTempWeight={setTempWeight} tempWeight={tempWeight} setSelectedProduct={setSelectedProduct} selectedProduct={selectedProduct}/>
+                    <MealSummary product={selectedProduct} tempWeight={tempWeight}/>
                 </div>
             }
         </div>

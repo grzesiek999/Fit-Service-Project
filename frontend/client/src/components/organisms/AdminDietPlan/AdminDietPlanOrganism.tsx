@@ -20,9 +20,9 @@ const AdminDietPlanOrganism = () => {
     const [fluids, setFluids] = useState<number | null>(null);
 
     let data = [
-        { label: 'Białko', value: proteins ? proteins : 0.00001, color: '#4472c4' },
-        { label: 'Węglowodany', value: carbohydrates ? carbohydrates : 0.00001, color: '#ed7d30' },
-        { label: 'Tłuszcze', value: fats ? fats : 0.00001, color: '#fbc003' },
+        { label: 'Białko', value: proteins ? proteins : 0.001, color: '#4472c4' },
+        { label: 'Węglowodany', value: carbohydrates ? carbohydrates : 0.001, color: '#ed7d30' },
+        { label: 'Tłuszcze', value: fats ? fats : 0.001, color: '#fbc003' },
     ];
 
     const sizing = {
