@@ -89,6 +89,22 @@
     outline: none;
 }
 
+.succesfull-add-product-to-meal-span {
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    color: #1e73d3;
+}
+
+.error-add-product-to-meal-span {
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    color: #c81419;
+}
+
 .add-product-to-meal-button {
     display: flex;
     justify-content: center;

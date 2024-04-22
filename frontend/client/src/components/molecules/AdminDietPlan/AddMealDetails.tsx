@@ -53,6 +53,7 @@ const AddMealDetails = ({setTempWeight, tempWeight, setSelectedProduct, selected
     const [product11_id, setProduct11ID] = useState<number | null>(null); 
     const [product12_weight, setProduct12Weight] = useState<number | null>(null); 
     const [product12_id, setProduct12ID] = useState<number | null>(null);
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
     const [message, setMessage] = useState<string | null>(null);
     const [whichProduct, setWhichProduct] = useState<number>(1);
 
@@ -84,6 +85,7 @@ const AddMealDetails = ({setTempWeight, tempWeight, setSelectedProduct, selected
     const handleProductClick = (product: Product) => {
         setSelectedProduct(product);
         setTempWeight(100);
+        setMessage(null);
     };
 
     const handleChangeDesc = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -92,19 +94,19 @@ const AddMealDetails = ({setTempWeight, tempWeight, setSelectedProduct, selected
 
     const AddProductToMeal = () => {
         if(selectedProduct){
-            if (whichProduct === 1) { setProduct1ID(selectedProduct.id); setProduct1Weight(tempWeight); setWhichProduct(2); return; }
-            else if (whichProduct === 2) { setProduct2ID(selectedProduct.id); setProduct2Weight(tempWeight); setWhichProduct(2); return; }
-            else if (whichProduct === 3) { setProduct3ID(selectedProduct.id); setProduct3Weight(tempWeight); setWhichProduct(2); return; }
-            else if (whichProduct === 4) { setProduct4ID(selectedProduct.id); setProduct4Weight(tempWeight); setWhichProduct(2); return; }
-            else if (whichProduct === 5) { setProduct5ID(selectedProduct.id); setProduct5Weight(tempWeight); setWhichProduct(2); return; }
-            else if (whichProduct === 6) { setProduct6ID(selectedProduct.id); setProduct6Weight(tempWeight); setWhichProduct(2); return; }
-            else if (whichProduct === 7) { setProduct7ID(selectedProduct.id); setProduct7Weight(tempWeight); setWhichProduct(2); return; }
-            else if (whichProduct === 8) { setProduct8ID(selectedProduct.id); setProduct8Weight(tempWeight); setWhichProduct(2); return; }
-            else if (whichProduct === 9) { setProduct9ID(selectedProduct.id); setProduct9Weight(tempWeight); setWhichProduct(2); return; }
-            else if (whichProduct === 10) { setProduct10ID(selectedProduct.id); setProduct10Weight(tempWeight); setWhichProduct(2); return; }
-            else if (whichProduct === 11) { setProduct11ID(selectedProduct.id); setProduct11Weight(tempWeight); setWhichProduct(2); return; }
-            else if (whichProduct === 12) { setProduct12ID(selectedProduct.id); setProduct12Weight(tempWeight); setWhichProduct(2); return; }
-            else { setMessage('Nie mozesz dodać więcej produktów do tego posiłku !'); return; }
+            if (whichProduct === 1) { setProduct1ID(selectedProduct.id); setProduct1Weight(tempWeight); setWhichProduct(2); setMessage('Pomyślnie dodano produkt do posiłku !'); return; }
+            else if (whichProduct === 2) { setProduct2ID(selectedProduct.id); setProduct2Weight(tempWeight); setWhichProduct(3); setMessage('Pomyślnie dodano produkt do posiłku !'); return; }
+            else if (whichProduct === 3) { setProduct3ID(selectedProduct.id); setProduct3Weight(tempWeight); setWhichProduct(4); setMessage('Pomyślnie dodano produkt do posiłku !'); return; }
+            else if (whichProduct === 4) { setProduct4ID(selectedProduct.id); setProduct4Weight(tempWeight); setWhichProduct(5); setMessage('Pomyślnie dodano produkt do posiłku !'); return; }
+            else if (whichProduct === 5) { setProduct5ID(selectedProduct.id); setProduct5Weight(tempWeight); setWhichProduct(6); setMessage('Pomyślnie dodano produkt do posiłku !'); return; }
+            else if (whichProduct === 6) { setProduct6ID(selectedProduct.id); setProduct6Weight(tempWeight); setWhichProduct(7); setMessage('Pomyślnie dodano produkt do posiłku !'); return; }
+            else if (whichProduct === 7) { setProduct7ID(selectedProduct.id); setProduct7Weight(tempWeight); setWhichProduct(8); setMessage('Pomyślnie dodano produkt do posiłku !'); return; }
+            else if (whichProduct === 8) { setProduct8ID(selectedProduct.id); setProduct8Weight(tempWeight); setWhichProduct(9); setMessage('Pomyślnie dodano produkt do posiłku !'); return; }
+            else if (whichProduct === 9) { setProduct9ID(selectedProduct.id); setProduct9Weight(tempWeight); setWhichProduct(10); setMessage('Pomyślnie dodano produkt do posiłku !'); return; }
+            else if (whichProduct === 10) { setProduct10ID(selectedProduct.id); setProduct10Weight(tempWeight); setWhichProduct(11); setMessage('Pomyślnie dodano produkt do posiłku !'); return; }
+            else if (whichProduct === 11) { setProduct11ID(selectedProduct.id); setProduct11Weight(tempWeight); setWhichProduct(12); setMessage('Pomyślnie dodano produkt do posiłku !'); return; }
+            else if (whichProduct === 12) { setProduct12ID(selectedProduct.id); setProduct12Weight(tempWeight); setWhichProduct(13); setMessage('Pomyślnie dodano produkt do posiłku !'); return; }
+            else { setErrorMessage('Nie mozesz dodać więcej produktów do tego posiłku !'); return; }
         }
         else return;
     }
@@ -144,9 +146,7 @@ const AddMealDetails = ({setTempWeight, tempWeight, setSelectedProduct, selected
                 product12_id,
             })
         });
-        if(response.ok) {
-
-        }
+        if(response.ok) {} else { console.log(response.status, response.statusText); }
     }
 
     return (
@@ -155,10 +155,11 @@ const AddMealDetails = ({setTempWeight, tempWeight, setSelectedProduct, selected
             <form onSubmit={AddMealToDiet}>
                 <AddMealInput inputType='meal' value={null} weightValue={null} onChange={()=>{}} onChangeMeal={handleMealChange} onChangeDesc={()=>{}}/>
                 <AddMealInput inputType='name' value={name} weightValue={null} onChange={handleNameChange} onChangeMeal={()=>{}} onChangeDesc={()=>{}}/>
-                {message ? <span>{message}</span> : null}
                 <SearchDiv handleProductClick={handleProductClick} />
                 <AddMealInput inputType='weight' value={null} weightValue={tempWeight} onChange={handleWeightChange} onChangeMeal={()=>{}} onChangeDesc={handleDescribeChange}/>
                 <Button buttonType="button" className="add-product-to-meal-button" onClick={AddProductToMeal} buttonTittle="Dodaj produkt do posiłku &#10148;" />
+                {message ? <span className="succesfull-add-product-to-meal-span">{message}</span> : null}
+                {errorMessage ? <span className="error-add-product-to-meal-span">{errorMessage}</span> : null}
                 <AddMealInput inputType='describe' value={describe} weightValue={null} onChange={()=>{}} onChangeMeal={()=>{}} onChangeDesc={handleChangeDesc}/>
                 <Button buttonType="submit" className="add-meal-to-diet-button" onClick={()=>{}} buttonTittle="Dodaj posiłek do diety &#10148;" />
             </form>
