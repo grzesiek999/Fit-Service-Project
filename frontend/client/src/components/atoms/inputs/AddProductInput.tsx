@@ -17,16 +17,19 @@ const AddProductTextInput = ({vlaue, onChange}: AddProductTextInputProps) => {
     };
 
     return (
-        <input 
-            type='text' 
-            className='add-product-name-input-wrapper' 
-            placeholder="Nazwa produtku"
-            value={vlaue}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            required
-            onChange={onChange}
-        /> 
+        <div className="product-name-details-input-div">
+            <label>Podaj nazwę produktu: </label>
+            <input 
+                type='text' 
+                className='add-product-name-input-wrapper' 
+                placeholder="Nazwa produtku"
+                value={vlaue}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                required
+                onChange={onChange}
+            />
+        </div> 
     );
 }
 
@@ -49,76 +52,91 @@ const AddProductNumberInput = ({inputType, value, onChange}: AddProductNumberInp
 
     if(inputType==='energy'){
         return(
-            <input 
-                type='number' 
-                className='add-product-number-input-wrapper'
-                placeholder="0"
-                value={value === null ? '' : value}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                required
-                onChange={onChange}
-            />
+            <div className="product-macro-details-input-div">
+                <label>Podaj wartość energetyczną produktu w 100g:</label>
+                <input 
+                    type='number' 
+                    className='add-product-number-input-wrapper'
+                    placeholder="0"
+                    value={value === null ? '' : value}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                    required
+                    onChange={onChange}
+                />
+            </div>
         );
     }
     else if(inputType==='proteins'){
         return(
-            <input 
-                type='number'
-                step={0.1} 
-                className='add-product-number-input-wrapper'
-                placeholder="0"
-                value={value === null ? '' : value}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                required
-                onChange={onChange}
-            />
+            <div className="product-macro-details-input-div">
+                <label>Podaj ilość białka w 100g produktu: </label>
+                <input 
+                    type='number'
+                    step={0.1} 
+                    className='add-product-number-input-wrapper'
+                    placeholder="0"
+                    value={value === null ? '' : value}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                    required
+                    onChange={onChange}
+                />
+            </div>
         );
     }
     else if(inputType==='carbohydrates'){
         return(
-            <input 
-                type='number'
-                step={0.1} 
-                className='add-product-number-input-wrapper'
-                placeholder="0"
-                value={value === null ? '' : value}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                required
-                onChange={onChange}
-            />
+            <div className="product-macro-details-input-div">
+                <label>Podaj ilość węglowodanów w 100g produktu: </label>
+                <input 
+                    type='number'
+                    step={0.1} 
+                    className='add-product-number-input-wrapper'
+                    placeholder="0"
+                    value={value === null ? '' : value}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                    required
+                    onChange={onChange}
+                />
+            </div>
         );
     }
     else if(inputType==='fats'){
         return(
-            <input 
-                type='number'
-                step={0.1} 
-                className='add-product-number-input-wrapper'
-                placeholder="0"
-                value={value === null ? '' : value}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                required
-                onChange={onChange}
-            />
+            <div className="product-macro-details-input-div">
+                <label>Podaj ilość tłuszczy w 100g produktu: </label>
+                <input 
+                    type='number'
+                    step={0.1} 
+                    className='add-product-number-input-wrapper'
+                    placeholder="0"
+                    value={value === null ? '' : value}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                    required
+                    onChange={onChange}
+                />
+            </div>
         );
     }
     else if(inputType==='fiber'){
         return(
-            <input 
-                type='number'
-                step={0.1} 
-                className='add-product-number-input-wrapper'
-                placeholder="0"
-                value={value === null ? '' : value}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                required
-                onChange={onChange}
-            />
+            <div className="product-macro-details-input-div">
+                <label>Podaj ilość błonnika w 100g produktu: </label>
+                <input 
+                    type='number'
+                    step={0.1} 
+                    className='add-product-number-input-wrapper'
+                    placeholder="0"
+                    value={value === null ? '' : value}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                    required
+                    onChange={onChange}
+                />
+            </div>
         );
     }
     else {

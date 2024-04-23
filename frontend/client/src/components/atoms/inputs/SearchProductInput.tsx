@@ -40,7 +40,6 @@ const SearchProductInput = ({fetchProduct, addProduct, is_admin}: SearchProductI
             {is_admin ?
                 <div className='active-add-product-div-button-wrapper' onClick={addProduct}>
                     <CgAdd className="add-icon" />
-                    <p>dodaj</p>
                 </div>
             :null}
         </div>

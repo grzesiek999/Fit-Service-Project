@@ -34,6 +34,7 @@ export const ROUTER_PATH = {
 
   NO_PERMISSIONS: '/no_permissions',
 
+  ADMIN_PRODUCT_CALCULATOR: '/admin/product_calculator',
   ADMIN_ORDERS: '/admin/orders',
   ADMIN_ORDER_CHOSE: '/admin/orders/:order_id',
   ADMIN_DIET_PLAN: '/admin/diet_plan/:diet_id/:user_id',

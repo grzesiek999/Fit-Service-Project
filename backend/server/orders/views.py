@@ -106,3 +106,14 @@ class GetByOrderIdView(APIView):
         
         serializer = OrderSerializer(order)
         return Response(serializer.data)
+    
+
+class GetOrdersHistoryView(APIView):
+    def get(self, request):
+        orders = Order.objects.filter(payment_status=True, expiry_date__isnull=False).order_by('-created_at')
+
+        if not orders:
+            return Response("No orders found", status=404)
+        
+        serializer = OrderSerializer(orders, many=True)
+        return Response(serializer.data)

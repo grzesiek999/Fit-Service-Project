@@ -26,10 +26,16 @@ const OrderDetailsDiv = ({order}: OrderDetailsDivProps) => {
 
     let date;
     let formatedDate;
+    let expiryDate;
+    let formatedExpiryDate;
 
     if(order) {
         date = new Date(order.created_at);
         formatedDate = date.toISOString().split('T')[0];
+        if(order.expiry_date) {
+            expiryDate = new Date(order.expiry_date);
+            formatedExpiryDate = expiryDate.toISOString().split('T')[0];
+        }
     }
 
     return(
@@ -42,11 +48,13 @@ const OrderDetailsDiv = ({order}: OrderDetailsDivProps) => {
                     <li>Cena: {order?.price} zł</li>
                     <li>Rodzaj planu: {upperFirstLetter(order?.diet_type)}</li>
                     <li>Okres opieki dietetycznej: {order?.expiry_days} dni</li>
+                    {order?.expiry_date && <li>Data wygaśnięcia planu dietetycznego: {formatedExpiryDate}</li>}
                 </ul>
             </div>
+            {!order?.expiry_date &&
             <div className="order-options-div-wrapper">
                 <Link to={`/admin/diet_plan/${order?.diet_id}/${order?.user_id}`} className="create-diet-button-wrapper" onClick={()=>{document.body.scrollIntoView({ behavior: "smooth", block: "start" });}}>Stwórz Plan Dietetyczny &#10148;</Link>
-            </div>
+            </div>}
         </div>
     );
 
