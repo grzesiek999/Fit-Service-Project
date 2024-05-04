@@ -28,7 +28,7 @@ const WebsiteLayoutDiv = () => {
             {isWide?
                 <div className='layout-menu-div-wrapper'>
                     <div className="layout-logo-div-wrapper">
-                        <Link to={ROUTER_PATH.HOME}>Logo</Link>
+                        <Link to={ROUTER_PATH.HOME}><img src="/public/icons/logo.jpeg" alt="logo image error" className="logo-image" /></Link>
                     </div>
                     <LayoutNav />
                     <AuthorizationDiv />
