@@ -15,6 +15,7 @@
     "@mui/material": "^5.15.14",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@mui/x-charts": "^7.0.0",
+    "@react-pdf/renderer": "^3.4.4",
     "hamburger-react": "^2.5.0",
     "install": "^0.13.0",
     "npm": "^10.5.0",

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import DietMealExample from "./DietMealExaple";
-
+import DietMealsDownloadPDF from "./DietMealsDownloadPDF";
 
 
 interface DietMeal {
@@ -124,6 +124,7 @@ const DietMeals = ({diet_id}: DietMealsProps) => {
                     </div>        
                 : null }
             </div>
+            <DietMealsDownloadPDF firstMeal={firstMeal} secondMeal={secondMeal} thirdMeal={thirdMeal} fourthMeal={fourthMeal} fifthMeal={fifthMeal} sixthMeal={sixthMeal}/>
         </div>
     );
 }
