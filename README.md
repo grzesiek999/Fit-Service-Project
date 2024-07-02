@@ -28,24 +28,24 @@ git clone https://github.com/grzesiek999/Fit-Service-Project.git
 ```
 ### 2. Go to backend catalog to install virtual environment:
 
-### windows
+windows
 ```
 py -m pip install --user virtualenv
 ```
 
-### unix / mac
+unix / mac
 ```
 python3 -m pip install --user virtualenv
 ```
 
 ### 3. Create virtual enviroment:
 
-### windows
+windows
 ```
 py -m venv env
 ```
 
-### unix / mac
+unix / mac
 ```
 python3 -m venv env
 ```
