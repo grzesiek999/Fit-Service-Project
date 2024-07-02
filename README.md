@@ -21,7 +21,7 @@ Web application created for dietician and their clients, dietician can remote ta
 <br/>
 
 ## Screens
-
+![moj_profil](https://github.com/grzesiek999/Fit-Service-Project/assets/43814123/f90f02d5-2d7d-498a-9b92-249a80bb25f2)
 ![oferta](https://github.com/grzesiek999/Fit-Service-Project/assets/43814123/185cf343-185b-4cb5-800f-fe78f30b4071)
 ![orders](https://github.com/grzesiek999/Fit-Service-Project/assets/43814123/6c8d5d04-da82-4b36-a855-dc7df4b4938c)
 
