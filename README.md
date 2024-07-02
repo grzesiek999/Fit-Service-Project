@@ -52,12 +52,12 @@ python3 -m venv env
 
 ### 4. Install the necessary dependencies:
 
-### windows
+windows
 ```
 py -m pip install -r requirements.txt
 ```
 
-### unix / mac
+unix / mac
 ```
 python3 -m pip install -r requirements.txt
 ```
@@ -92,4 +92,4 @@ npm run dev
 
 <br/>
 
-### Open application: http://localhost:5173
+Run: http://localhost:5173
