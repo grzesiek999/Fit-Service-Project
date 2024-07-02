@@ -15,7 +15,7 @@ Web application created for dietician and their clients, dietician can remote ta
     <li>SCSS</li>
     <li>Django</li>
     <li>PostgreSQL</li>
-    <li>Prototype in Figma</li>
+    <li>Figma</li>
 </ul>
 
 <br/>
