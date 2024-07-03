@@ -6,7 +6,6 @@ The assumption of the project is create complete Web application for remote diet
 
 Web application created for dietician and their clients, dietician can remote take care of own clients and make diets plan for them. Clients can buy diets plans and make reports with own parameters and progress. Additionally, customers can use a few calculators and check products in data base of application.
 
-<br/>
 
 ## Used technology:
 <ul>
@@ -18,7 +17,6 @@ Web application created for dietician and their clients, dietician can remote ta
     <li>Figma</li>
 </ul>
 
-<br/>
 
 ## Screens
 ![moj_profil](https://github.com/grzesiek999/Fit-Service-Project/assets/43814123/f90f02d5-2d7d-498a-9b92-249a80bb25f2)
@@ -27,7 +25,6 @@ Web application created for dietician and their clients, dietician can remote ta
 ![orders](https://github.com/grzesiek999/Fit-Service-Project/assets/43814123/6c8d5d04-da82-4b36-a855-dc7df4b4938c)
 ![create_diet](https://github.com/grzesiek999/Fit-Service-Project/assets/43814123/fafbb0ff-4b45-41ba-8115-428a0e30e880)
 
-<br/>
 
 ## Launch application
 
