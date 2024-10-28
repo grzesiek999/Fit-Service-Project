@@ -1,6 +1,6 @@
 # Fit Service web application
 
-### My BEng Thesis for first-stage studies.
+### My Engineering Thesis for first-stage studies.
 
 The assumption of the project is create complete Web application for remote dietary support.
 
